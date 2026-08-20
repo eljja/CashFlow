@@ -140,35 +140,90 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
             </p>
           </div>
 
-          {/* Quick Metrics Badges */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
-            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
-              <span className="text-[11px] text-gray-400 block mb-1">2024 잉여현금(FCF)</span>
-              <span className="text-base font-extrabold font-mono text-emerald-400">
-                {convertValue(latestFin.freeCashFlow, company, currency).formatted}
-              </span>
-            </div>
-            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
-              <span className="text-[11px] text-gray-400 block mb-1">2024 순현금(Net Cash)</span>
-              <span className="text-base font-extrabold font-mono text-blue-400">
-                {convertValue(latestFin.netCash, company, currency).formatted}
-              </span>
-            </div>
-            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
-              <span className="text-[11px] text-gray-400 block mb-1">FCF 마진율</span>
-              <span className="text-base font-extrabold font-mono text-cyan-400">
-                {latestFin.fcfMargin.toFixed(1)}%
-              </span>
-            </div>
-            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
-              <span className="text-[11px] text-gray-400 block mb-1">5개년 누적 FCF</span>
-              <span className="text-base font-extrabold font-mono text-amber-400">
-                {cumFcfConv.formatted}
-              </span>
+            {/* Quick Metrics Badges */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
+              <div className="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-3 text-center shadow-lg shadow-emerald-950/30">
+                <span className="text-[11px] font-bold text-emerald-300 block mb-1">🌟 2024 잉여현금(FCF)</span>
+                <span className="text-lg font-black font-mono text-emerald-400">
+                  {convertValue(latestFin.freeCashFlow, company, currency).formatted}
+                </span>
+              </div>
+              <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
+                <span className="text-[11px] text-gray-400 block mb-1">2024 순현금(Net Cash)</span>
+                <span className="text-base font-extrabold font-mono text-blue-400">
+                  {convertValue(latestFin.netCash, company, currency).formatted}
+                </span>
+              </div>
+              <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
+                <span className="text-[11px] text-gray-400 block mb-1">FCF 마진율</span>
+                <span className="text-base font-extrabold font-mono text-cyan-400">
+                  {latestFin.fcfMargin.toFixed(1)}%
+                </span>
+              </div>
+              <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
+                <span className="text-[11px] text-gray-400 block mb-1">5개년 누적 FCF</span>
+                <span className="text-base font-extrabold font-mono text-amber-400">
+                  {cumFcfConv.formatted}
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
+        {/* Dedicated FCF Core Metric Breakdown Banner */}
+        <div className="bg-gradient-to-r from-emerald-950/50 via-gray-900 to-blue-950/40 border border-emerald-500/30 rounded-2xl p-4 shadow-lg">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-black text-xs">
+                FCF
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h4 className="text-sm font-bold text-white">잉여현금흐름 (Free Cash Flow) 창출 공식 분석</h4>
+                  <span className="text-[11px] px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-semibold">
+                    핵심 1위 현금지표
+                  </span>
+                </div>
+                <p className="text-xs text-gray-300 mt-0.5">
+                  본업으로 번 현금(OCF)에서 미래를 위한 설비투자(CapEx)를 차감한 후 <strong>기업에 실제로 남는 순수 잉여현금</strong>
+                </p>
+              </div>
+            </div>
+
+            {/* FCF Equation Box */}
+            <div className="flex items-center gap-2 bg-gray-950/80 px-4 py-2 rounded-xl border border-gray-800 font-mono text-xs text-gray-200">
+              <span className="text-blue-400 font-semibold">OCF {convertValue(latestFin.operatingCashFlow, company, currency).formatted}</span>
+              <span className="text-gray-500">-</span>
+              <span className="text-orange-400 font-semibold">CapEx {convertValue(latestFin.capitalExpenditure, company, currency).formatted}</span>
+              <span className="text-gray-500">=</span>
+              <span className="text-emerald-400 font-bold text-sm">FCF {convertValue(latestFin.freeCashFlow, company, currency).formatted}</span>
+            </div>
+          </div>
+
+          {/* 5-Year FCF Progression Pills */}
+          <div className="mt-3 pt-3 border-t border-gray-800/80 flex flex-wrap items-center justify-between gap-2 text-xs">
+            <span className="text-gray-400 font-medium">연도별 FCF 추이:</span>
+            <div className="flex flex-wrap items-center gap-2">
+              {company.financials.map((f) => {
+                const conv = convertValue(f.freeCashFlow, company, currency)
+                const isPos = f.freeCashFlow >= 0
+                return (
+                  <div
+                    key={f.year}
+                    className={`px-2.5 py-1 rounded-lg border font-mono flex items-center gap-1.5 ${
+                      isPos
+                        ? 'bg-emerald-950/30 border-emerald-800/60 text-emerald-300'
+                        : 'bg-rose-950/30 border-rose-800/60 text-rose-300'
+                    }`}
+                  >
+                    <span className="text-gray-400">{f.year}년</span>
+                    <span className="font-bold">{conv.formatted}</span>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
 
       {/* 2. Visual Charts Grid (Main Graphs) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

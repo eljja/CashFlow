@@ -64,15 +64,18 @@ export const ExecutiveSummary: React.FC<ExecutiveSummaryProps> = ({
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
       {/* 1. Top Free Cash Flow */}
-      <div className="bg-gradient-to-br from-gray-900/90 to-blue-950/20 border border-blue-900/30 rounded-2xl p-4 shadow-lg backdrop-blur-sm">
+      <div className="bg-gradient-to-br from-gray-900/90 via-emerald-950/20 to-blue-950/30 border border-emerald-500/40 rounded-2xl p-4 shadow-xl shadow-emerald-950/20 backdrop-blur-sm relative overflow-hidden">
+        <div className="absolute top-0 right-0 px-2 py-0.5 bg-emerald-500/20 border-b border-l border-emerald-500/40 rounded-bl-lg text-[10px] font-bold text-emerald-400">
+          핵심 1위 지표 (FCF)
+        </div>
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
-              <TrendingUp className="w-4 h-4" />
+            <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-black text-xs">
+              FCF
             </div>
             <div>
-              <h3 className="text-xs font-semibold text-white">2024 잉여현금흐름 (FCF) TOP 5</h3>
-              <p className="text-[11px] text-gray-400">실질적인 순현금 창출력</p>
+              <h3 className="text-xs font-bold text-white">2024 잉여현금흐름 (FCF) TOP 5</h3>
+              <p className="text-[11px] text-emerald-400/80">OCF(영업현금) - CapEx(설비투자)</p>
             </div>
           </div>
         </div>
