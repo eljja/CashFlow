@@ -61,6 +61,8 @@ export interface Company {
 export interface DatasetMetadata {
   title: string
   lastUpdated: string
+  lastUpdatedISO: string
+  updateIntervalDays: number
   years: number[]
   totalCompanies: number
   exchangeRates: Record<string, number>

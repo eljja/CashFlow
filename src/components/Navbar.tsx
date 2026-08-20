@@ -1,8 +1,10 @@
 import React from 'react'
 import { Activity, DollarSign, BarChart3, Table, Layers, Search } from 'lucide-react'
-import { Category, Currency } from '../types'
+import { Category, Currency, DatasetMetadata } from '../types'
+import { DataFreshnessBadge } from './DataFreshnessBadge'
 
 interface NavbarProps {
+  metadata: DatasetMetadata
   activeTab: 'overview' | 'comparison' | 'table'
   setActiveTab: (tab: 'overview' | 'comparison' | 'table') => void
   selectedCategory: Category
@@ -16,6 +18,7 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
+  metadata,
   activeTab,
   setActiveTab,
   selectedCategory,
@@ -110,8 +113,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Controls: Currency & GitHub Link */}
-          <div className="flex items-center gap-3">
+          {/* Controls: Data Freshness, Currency & GitHub Link */}
+          <div className="flex items-center gap-2.5">
+            {/* Data Freshness Badge */}
+            <div className="hidden sm:block">
+              <DataFreshnessBadge metadata={metadata} />
+            </div>
+
             {/* Currency Selector */}
             <div className="flex items-center bg-gray-900 rounded-lg p-1 border border-gray-800">
               <button

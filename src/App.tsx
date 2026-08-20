@@ -74,6 +74,7 @@ export const App: React.FC = () => {
     <div className="min-h-screen bg-[#0B0F19] text-slate-100 flex flex-col selection:bg-blue-600 selection:text-white font-sans">
       {/* Top Navigation */}
       <Navbar
+        metadata={data.metadata}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         selectedCategory={selectedCategory}
@@ -149,7 +150,12 @@ export const App: React.FC = () => {
               백엔드 서버 없이 GitHub Pages(github.io) 상에서 100% 클라이언트 정적으로 구동됩니다.
             </p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-1.5 text-gray-400 font-mono">
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>데이터 갱신일: {data.metadata.lastUpdated} (주기: 1개월)</span>
+            </div>
+            <span className="text-gray-700">|</span>
             <a
               href="https://github.com/eljja/CashFlow"
               target="_blank"
@@ -159,8 +165,6 @@ export const App: React.FC = () => {
               <span>GitHub Repository</span>
               <ExternalLink className="w-3 h-3" />
             </a>
-            <span className="text-gray-700">|</span>
-            <span className="text-gray-500">데이터 기준: 2020 ~ 2024 회계연도</span>
           </div>
         </div>
       </footer>

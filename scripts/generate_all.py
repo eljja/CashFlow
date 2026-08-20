@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import os
+from datetime import datetime, timezone, timedelta
 
 # Script to build complete 80 companies financial & shareholder dataset for CashFlow dashboard
 os.makedirs("src/data", exist_ok=True)
@@ -11,10 +12,16 @@ import generate_companies_data
 
 companies = generate_companies_data.build_all_80_companies()
 
+# Current time in KST (UTC+9)
+kst = timezone(timedelta(hours=9))
+now = datetime.now(kst)
+
 dataset = {
     "metadata": {
         "title": "Global 80 Companies 5-Year Cash Flow & Shareholder Analytics",
-        "lastUpdated": "2025-Q1",
+        "lastUpdated": now.strftime("%Y-%m-%d"),
+        "lastUpdatedISO": now.isoformat(),
+        "updateIntervalDays": 30, # 1-month update recommendation cycle
         "years": [2020, 2021, 2022, 2023, 2024],
         "totalCompanies": len(companies),
         "exchangeRates": {
@@ -38,4 +45,4 @@ with open("src/data/companies.json", "w", encoding="utf-8") as f:
 with open("public/data/companies.json", "w", encoding="utf-8") as f:
     json.dump(dataset, f, ensure_ascii=False, indent=2)
 
-print(f"Successfully generated {len(companies)} companies into src/data/companies.json and public/data/companies.json")
+print(f"Successfully generated {len(companies)} companies into src/data/companies.json and public/data/companies.json (Updated: {now.strftime('%Y-%m-%d %H:%M:%S KST')})")
