@@ -1,0 +1,147 @@
+import React, { useState, useMemo } from 'react'
+import dataset from './data/companies.json'
+import { Company, Category, Currency, Dataset } from './types'
+import { Navbar } from './components/Navbar'
+import { ExecutiveSummary } from './components/ExecutiveSummary'
+import { CompanySelector } from './components/CompanySelector'
+import { CompanyDeepDive } from './components/CompanyDeepDive'
+import { PeerComparison } from './components/PeerComparison'
+import { DataTable } from './components/DataTable'
+import { Info, ExternalLink, Sparkles } from 'lucide-react'
+
+export const App: React.FC = () => {
+  const data = dataset as Dataset
+  const allCompanies: Company[] = data.companies
+
+  const [activeTab, setActiveTab] = useState<'overview' | 'comparison' | 'table'>('overview')
+  const [selectedCategory, setSelectedCategory] = useState<Category>('All')
+  const [currency, setCurrency] = useState<Currency>('USD')
+  const [searchQuery, setSearchQuery] = useState('')
+  const [selectedCompanyId, setSelectedCompanyId] = useState<string>('samsung-electronics')
+
+  // Filter companies by category and search query
+  const filteredCompanies = useMemo(() => {
+    return allCompanies.filter((c) => {
+      const matchCategory =
+        selectedCategory === 'All' || c.category === selectedCategory
+      const q = searchQuery.toLowerCase().trim()
+      const matchSearch =
+        q === '' ||
+        c.name.toLowerCase().includes(q) ||
+        c.nameKo.toLowerCase().includes(q) ||
+        c.ticker.toLowerCase().includes(q) ||
+        c.sector.toLowerCase().includes(q) ||
+        c.country.toLowerCase().includes(q)
+      return matchCategory && matchSearch
+    })
+  }, [allCompanies, selectedCategory, searchQuery])
+
+  // Current selected company
+  const currentCompany = useMemo(() => {
+    const found = allCompanies.find((c) => c.id === selectedCompanyId)
+    return found || filteredCompanies[0] || allCompanies[0]
+  }, [allCompanies, selectedCompanyId, filteredCompanies])
+
+  const handleSelectCompany = (id: string) => {
+    setSelectedCompanyId(id)
+    setActiveTab('overview')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  return (
+    <div className="min-h-screen bg-[#0B0F19] text-slate-100 flex flex-col selection:bg-blue-600 selection:text-white font-sans">
+      {/* Top Navigation */}
+      <Navbar
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+        currency={currency}
+        setCurrency={setCurrency}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
+
+      {/* Main Container */}
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* Top Executive KPI Ranking Cards */}
+        <ExecutiveSummary
+          companies={allCompanies}
+          currency={currency}
+          onSelectCompany={handleSelectCompany}
+        />
+
+        {/* Tab 1: Company Deep Dive */}
+        {activeTab === 'overview' && (
+          <div className="space-y-6">
+            <CompanySelector
+              companies={filteredCompanies}
+              selectedCompanyId={currentCompany.id}
+              onSelectCompany={setSelectedCompanyId}
+              currency={currency}
+            />
+            <CompanyDeepDive company={currentCompany} currency={currency} />
+          </div>
+        )}
+
+        {/* Tab 2: Peer Comparison Matrix */}
+        {activeTab === 'comparison' && (
+          <div>
+            <div className="mb-4">
+              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                <span>경쟁사 및 섹터별 현금흐름 비교 매트릭스</span>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-blue-950 text-blue-400 border border-blue-800">
+                  Interactive Matrix
+                </span>
+              </h2>
+              <p className="text-xs text-gray-400 mt-1">
+                메모리 반도체 4사(삼성/하이닉스/마이크론/키옥시아) 및 AI 빅테크, 글로벌 완성차 등 원하는 기업을 다중 선택하여 비교합니다.
+              </p>
+            </div>
+            <PeerComparison companies={allCompanies} currency={currency} />
+          </div>
+        )}
+
+        {/* Tab 3: All 80 Companies Data Table */}
+        {activeTab === 'table' && (
+          <div>
+            <DataTable
+              companies={filteredCompanies}
+              currency={currency}
+              onSelectCompany={handleSelectCompany}
+            />
+          </div>
+        )}
+      </main>
+
+      {/* Footer */}
+      <footer className="mt-16 border-t border-gray-800/80 bg-gray-950/60 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+          <div>
+            <p className="font-semibold text-gray-300">
+              CashFlow Analytics · 글로벌 80대 기업 5개년 현금흐름 & 대주주 지분 분석
+            </p>
+            <p className="text-[11px] text-gray-500 mt-1">
+              백엔드 서버 없이 GitHub Pages(github.io) 상에서 100% 클라이언트 정적으로 구동됩니다.
+            </p>
+          </div>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/eljja/CashFlow"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1 text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              <span>GitHub Repository</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+            <span className="text-gray-700">|</span>
+            <span className="text-gray-500">데이터 기준: 2020 ~ 2024 회계연도</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default App

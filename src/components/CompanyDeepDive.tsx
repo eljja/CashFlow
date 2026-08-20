@@ -1,0 +1,407 @@
+import React from 'react'
+import { Company, Currency } from '../types'
+import { CashFlowChart } from './CashFlowChart'
+import { CashLiquidityChart } from './CashLiquidityChart'
+import { ShareholderChart } from './ShareholderChart'
+import { convertValue } from '../utils/formatters'
+import { Building2, Globe, TrendingUp, DollarSign, ShieldCheck, Gift, BarChart3, Layers } from 'lucide-react'
+import ReactECharts from 'echarts-for-react'
+
+interface CompanyDeepDiveProps {
+  company: Company
+  currency: Currency
+}
+
+export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, currency }) => {
+  const latestFin = company.financials[company.financials.length - 1]
+  const years = company.financials.map((f) => f.year.toString())
+
+  // Cumulative 5-year FCF
+  const cumFcf = company.financials.reduce((sum, f) => sum + f.freeCashFlow, 0)
+  const cumFcfConv = convertValue(cumFcf, company, currency)
+
+  // Shareholder Return ECharts Option
+  const divData = company.financials.map((f) => convertValue(f.dividendsPaid, company, currency).value)
+  const buybackData = company.financials.map((f) => convertValue(f.shareRepurchase, company, currency).value)
+  const fcfLineData = company.financials.map((f) => convertValue(f.freeCashFlow, company, currency).value)
+  const unitLabel = convertValue(1, company, currency).unitLabel
+
+  const shareholderReturnOption = {
+    backgroundColor: 'transparent',
+    tooltip: {
+      trigger: 'axis',
+      backgroundColor: '#111827',
+      borderColor: '#374151',
+      borderWidth: 1,
+      textStyle: { color: '#F3F4F6', fontSize: 12 },
+      formatter: (params: any) => {
+        let res = `<div class="font-bold mb-1 border-b border-gray-700 pb-1 text-white">${params[0].name}년 FCF 대비 주주환원 (${unitLabel})</div>`
+        params.forEach((item: any) => {
+          const val = item.value
+          const color = item.color
+          res += `
+            <div class="flex items-center justify-between gap-4 py-0.5 text-xs">
+              <div class="flex items-center gap-1.5">
+                <span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:${color}"></span>
+                <span class="text-gray-300">${item.seriesName}</span>
+              </div>
+              <span class="font-mono font-semibold text-white">
+                ${val.toLocaleString('ko-KR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${unitLabel}
+              </span>
+            </div>
+          `
+        })
+        return res
+      }
+    },
+    legend: {
+      data: ['현금 배당금 지급 (Dividends)', '자사주 매입/소각 (Buybacks)', '잉여현금흐름 (FCF)'],
+      textStyle: { color: '#9CA3AF', fontSize: 11 },
+      top: 0,
+      itemGap: 14
+    },
+    grid: {
+      left: '3%',
+      right: '3%',
+      bottom: '3%',
+      top: '40px',
+      containLabel: true
+    },
+    xAxis: {
+      type: 'category',
+      data: years,
+      axisLine: { lineStyle: { color: '#374151' } },
+      axisLabel: { color: '#9CA3AF', fontSize: 11 }
+    },
+    yAxis: {
+      type: 'value',
+      name: `(${unitLabel})`,
+      nameTextStyle: { color: '#6B7280', fontSize: 10, align: 'right' },
+      splitLine: { lineStyle: { color: '#1F2937', type: 'dashed' } },
+      axisLabel: { color: '#9CA3AF', fontSize: 11 }
+    },
+    series: [
+      {
+        name: '현금 배당금 지급 (Dividends)',
+        type: 'bar',
+        stack: 'return',
+        barMaxWidth: 30,
+        data: divData,
+        itemStyle: { color: '#F59E0B' }
+      },
+      {
+        name: '자사주 매입/소각 (Buybacks)',
+        type: 'bar',
+        stack: 'return',
+        barMaxWidth: 30,
+        data: buybackData,
+        itemStyle: { color: '#EC4899', borderRadius: [4, 4, 0, 0] }
+      },
+      {
+        name: '잉여현금흐름 (FCF)',
+        type: 'line',
+        data: fcfLineData,
+        smooth: true,
+        symbolSize: 8,
+        lineStyle: { width: 3, color: '#10B981', type: 'dashed' },
+        itemStyle: { color: '#10B981' }
+      }
+    ]
+  }
+
+  return (
+    <div className="space-y-6">
+      {/* 1. Header Profile Banner */}
+      <div className="bg-gradient-to-r from-gray-900 via-gray-900/90 to-blue-950/40 border border-gray-800 rounded-3xl p-6 shadow-xl backdrop-blur-md">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div>
+            <div className="flex flex-wrap items-center gap-2.5 mb-2">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                {company.category === 'Domestic' ? '국내 대표 20' : company.category === 'US' ? '미국 대표 20' : company.category === 'Global' ? '글로벌 대표 20' : '추가 유망 20'}
+              </span>
+              <span className="text-xs px-2.5 py-1 rounded-full bg-gray-800 text-gray-300 border border-gray-700">
+                {company.sector}
+              </span>
+              <span className="text-xs px-2.5 py-1 rounded-full bg-gray-800 text-gray-300 border border-gray-700 flex items-center gap-1">
+                <Globe className="w-3 h-3 text-gray-400" />
+                {company.country}
+              </span>
+              <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800">
+                {company.ticker}
+              </span>
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-3">
+              <span>{company.nameKo}</span>
+              <span className="text-lg font-normal text-gray-400">({company.name})</span>
+            </h2>
+            <p className="text-xs sm:text-sm text-gray-300 mt-2 max-w-3xl leading-relaxed">
+              {company.description}
+            </p>
+          </div>
+
+          {/* Quick Metrics Badges */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
+              <span className="text-[11px] text-gray-400 block mb-1">2024 잉여현금(FCF)</span>
+              <span className="text-base font-extrabold font-mono text-emerald-400">
+                {convertValue(latestFin.freeCashFlow, company, currency).formatted}
+              </span>
+            </div>
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
+              <span className="text-[11px] text-gray-400 block mb-1">2024 순현금(Net Cash)</span>
+              <span className="text-base font-extrabold font-mono text-blue-400">
+                {convertValue(latestFin.netCash, company, currency).formatted}
+              </span>
+            </div>
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
+              <span className="text-[11px] text-gray-400 block mb-1">FCF 마진율</span>
+              <span className="text-base font-extrabold font-mono text-cyan-400">
+                {latestFin.fcfMargin.toFixed(1)}%
+              </span>
+            </div>
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
+              <span className="text-[11px] text-gray-400 block mb-1">5개년 누적 FCF</span>
+              <span className="text-base font-extrabold font-mono text-amber-400">
+                {cumFcfConv.formatted}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 2. Visual Charts Grid (Main Graphs) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Chart 1: Cash Flow Waterfall & Combo Bar */}
+        <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <div className="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                <TrendingUp className="w-4 h-4" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-white">5개년 현금흐름 시계열 (Cash Flow Trends)</h3>
+                <p className="text-xs text-gray-400">영업현금흐름(OCF) · 설비투자(CapEx) · 잉여현금흐름(FCF)</p>
+              </div>
+            </div>
+          </div>
+          <CashFlowChart company={company} currency={currency} />
+        </div>
+
+        {/* Chart 2: Liquidity, Reserves & Net Cash */}
+        <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-white">가용현금 보유고 및 순현금 완충력</h3>
+                <p className="text-xs text-gray-400">총가용현금(현금+단기투자) vs 총차입금 vs 순현금(Net Cash)</p>
+              </div>
+            </div>
+          </div>
+          <CashLiquidityChart company={company} currency={currency} />
+        </div>
+      </div>
+
+      {/* 3. Shareholder Return & Major Shareholder Structure */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* Shareholder Return Chart */}
+        <div className="lg:col-span-5 bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                <Gift className="w-4 h-4" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-white">FCF 대비 주주환원 (배당 & 자사주 매입)</h3>
+                <p className="text-xs text-gray-400">창출된 잉여현금의 주주 환원 비율</p>
+              </div>
+            </div>
+          </div>
+          <div className="h-80 w-full">
+            <ReactECharts option={shareholderReturnOption} style={{ height: '100%', width: '100%' }} notMerge={true} />
+          </div>
+        </div>
+
+        {/* Major Shareholder Breakdown & Time Series */}
+        <div className="lg:col-span-7">
+          <ShareholderChart company={company} />
+        </div>
+      </div>
+
+      {/* 4. Complete 5-Year Financial Statement Table */}
+      <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <div className="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              <BarChart3 className="w-4 h-4" />
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-white">
+                {company.nameKo} 5개년 전체 재무 & 현금 상세 데이터 ({unitLabel})
+              </h3>
+              <p className="text-xs text-gray-400">
+                2020년부터 2024년까지의 모든 현금흐름 및 대차대조표 수치
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs text-left">
+            <thead>
+              <tr className="border-b border-gray-800 text-gray-400">
+                <th className="py-2.5 px-3 font-semibold">재무 지표 항목</th>
+                {company.financials.map((f) => (
+                  <th key={f.year} className="py-2.5 px-3 font-semibold text-right font-mono text-gray-200">
+                    {f.year}년
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-800/60">
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-gray-300">매출액 (Revenue)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-gray-200">
+                    {convertValue(f.revenue, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-gray-300">영업이익 (Operating Income)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-gray-200">
+                    {convertValue(f.operatingIncome, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-gray-300">당기순이익 (Net Income)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-gray-200">
+                    {convertValue(f.netIncome, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30 bg-blue-950/20">
+                <td className="py-2 px-3 font-bold text-blue-400">영업활동 현금흐름 (OCF)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono font-bold text-blue-400">
+                    {convertValue(f.operatingCashFlow, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-orange-400">자본적 지출 (CapEx 설비투자)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-orange-400">
+                    {convertValue(f.capitalExpenditure, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30 bg-emerald-950/20">
+                <td className="py-2 px-3 font-extrabold text-emerald-400">잉여현금흐름 (Free Cash Flow, FCF)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono font-extrabold text-emerald-400">
+                    {convertValue(f.freeCashFlow, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-gray-300">FCF 마진율 (FCF / Revenue)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-emerald-400">
+                    {f.fcfMargin.toFixed(1)}%
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-gray-300">투자활동 현금흐름 (ICF)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-gray-300">
+                    {convertValue(f.investingCashFlow, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-gray-300">재무활동 현금흐름 (Financing CF)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-purple-400">
+                    {convertValue(f.financingCashFlow, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-amber-400">현금 배당금 지급액</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-amber-400">
+                    {convertValue(f.dividendsPaid, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-pink-400">자사주 취득/소각액</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-pink-400">
+                    {convertValue(f.shareRepurchase, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-bold text-amber-400">총 주주환원액 (배당+자사주)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono font-bold text-amber-400">
+                    {convertValue(f.totalShareholderReturn, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-cyan-400">기말 현금 및 현금성자산</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-cyan-400">
+                    {convertValue(f.cashAndEquivalents, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-cyan-400">단기금융상품 및 유동투자자산</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-cyan-400">
+                    {convertValue(f.shortTermInvestments, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30 bg-cyan-950/20">
+                <td className="py-2 px-3 font-bold text-cyan-400">총 가용현금 (Total Cash)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono font-bold text-cyan-400">
+                    {convertValue(f.totalCash, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30">
+                <td className="py-2 px-3 font-medium text-rose-400">총차입금 (Total Debt)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono text-rose-400">
+                    {convertValue(f.totalDebt, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-800/30 bg-blue-950/20">
+                <td className="py-2 px-3 font-extrabold text-blue-400">순현금 (Net Cash = Total Cash - Total Debt)</td>
+                {company.financials.map((f) => (
+                  <td key={f.year} className="py-2 px-3 text-right font-mono font-extrabold text-blue-400">
+                    {convertValue(f.netCash, company, currency).formatted}
+                  </td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  )
+}
