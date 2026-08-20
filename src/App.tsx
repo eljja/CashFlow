@@ -15,15 +15,37 @@ export const App: React.FC = () => {
 
   const [activeTab, setActiveTab] = useState<'overview' | 'comparison' | 'table'>('overview')
   const [selectedCategory, setSelectedCategory] = useState<Category>('All')
+  const [selectedSector, setSelectedSector] = useState<string>('All')
   const [currency, setCurrency] = useState<Currency>('USD')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCompanyId, setSelectedCompanyId] = useState<string>('samsung-electronics')
 
-  // Filter companies by category and search query
+  // Filter companies by category, sector, and search query
   const filteredCompanies = useMemo(() => {
     return allCompanies.filter((c) => {
       const matchCategory =
         selectedCategory === 'All' || c.category === selectedCategory
+      
+      let matchSector = true
+      if (selectedSector !== 'All') {
+        const sec = c.sector.toLowerCase()
+        if (selectedSector === 'Semiconductors') {
+          matchSector = sec.includes('semiconductor') || sec.includes('ai') || sec.includes('nand') || sec.includes('foundry') || sec.includes('equipment')
+        } else if (selectedSector === 'Software') {
+          matchSector = sec.includes('software') || sec.includes('cloud') || sec.includes('internet') || sec.includes('data') || sec.includes('cybersecurity')
+        } else if (selectedSector === 'Automotive') {
+          matchSector = sec.includes('automotive') || sec.includes('batteries') || sec.includes('mobility')
+        } else if (selectedSector === 'Biopharma') {
+          matchSector = sec.includes('biopharma') || sec.includes('pharma') || sec.includes('healthcare')
+        } else if (selectedSector === 'Energy') {
+          matchSector = sec.includes('energy') || sec.includes('oil') || sec.includes('power') || sec.includes('steel') || sec.includes('mining') || sec.includes('chemicals')
+        } else if (selectedSector === 'Financials') {
+          matchSector = sec.includes('financial') || sec.includes('investment') || sec.includes('fintech') || sec.includes('crypto')
+        } else if (selectedSector === 'Consumer') {
+          matchSector = sec.includes('consumer') || sec.includes('luxury') || sec.includes('retail') || sec.includes('gaming') || sec.includes('entertainment') || sec.includes('food') || sec.includes('travel')
+        }
+      }
+
       const q = searchQuery.toLowerCase().trim()
       const matchSearch =
         q === '' ||
@@ -32,9 +54,9 @@ export const App: React.FC = () => {
         c.ticker.toLowerCase().includes(q) ||
         c.sector.toLowerCase().includes(q) ||
         c.country.toLowerCase().includes(q)
-      return matchCategory && matchSearch
+      return matchCategory && matchSector && matchSearch
     })
-  }, [allCompanies, selectedCategory, searchQuery])
+  }, [allCompanies, selectedCategory, selectedSector, searchQuery])
 
   // Current selected company
   const currentCompany = useMemo(() => {
@@ -56,6 +78,8 @@ export const App: React.FC = () => {
         setActiveTab={setActiveTab}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
+        selectedSector={selectedSector}
+        setSelectedSector={setSelectedSector}
         currency={currency}
         setCurrency={setCurrency}
         searchQuery={searchQuery}

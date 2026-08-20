@@ -7,6 +7,8 @@ interface NavbarProps {
   setActiveTab: (tab: 'overview' | 'comparison' | 'table') => void
   selectedCategory: Category
   setSelectedCategory: (cat: Category) => void
+  selectedSector: string
+  setSelectedSector: (sec: string) => void
   currency: Currency
   setCurrency: (c: Currency) => void
   searchQuery: string
@@ -18,6 +20,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   setActiveTab,
   selectedCategory,
   setSelectedCategory,
+  selectedSector,
+  setSelectedSector,
   currency,
   setCurrency,
   searchQuery,
@@ -29,6 +33,17 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: '미국 (US 20)', value: 'US', count: 20 },
     { label: '글로벌 (Global 20)', value: 'Global', count: 20 },
     { label: '추가 유망 (20)', value: 'Additional', count: 20 }
+  ]
+
+  const sectors = [
+    { label: '전체 섹터', value: 'All' },
+    { label: '🔥 반도체 & AI', value: 'Semiconductors' },
+    { label: '☁️ 빅테크 & 클라우드', value: 'Software' },
+    { label: '🚗 완성차 & 배터리', value: 'Automotive' },
+    { label: '🧬 바이오 & 헬스케어', value: 'Biopharma' },
+    { label: '⚡ 에너지 & 원자재', value: 'Energy' },
+    { label: '🏦 금융 & 투자', value: 'Financials' },
+    { label: '💎 럭셔리 & 소비재', value: 'Consumer' }
   ]
 
   return (
@@ -184,7 +199,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Sub-bar: Category Tabs & Search Bar */}
-        <div className="py-3 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-800/60">
+        <div className="py-2.5 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-800/60">
           {/* Category Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 scrollbar-none">
             {categories.map((cat) => (
@@ -221,6 +236,24 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             )}
           </div>
+        </div>
+
+        {/* Sector Quick Theme Bar */}
+        <div className="py-2 flex items-center gap-1.5 overflow-x-auto border-t border-gray-800/40 scrollbar-none text-xs">
+          <span className="text-gray-500 text-[11px] font-semibold whitespace-nowrap mr-1">테마별 필터:</span>
+          {sectors.map((sec) => (
+            <button
+              key={sec.value}
+              onClick={() => setSelectedSector(sec.value)}
+              className={`px-2.5 py-0.5 rounded-lg text-[11px] font-medium whitespace-nowrap transition-all ${
+                selectedSector === sec.value
+                  ? 'bg-purple-600/30 text-purple-300 border border-purple-500/50'
+                  : 'bg-gray-900/40 text-gray-400 hover:text-gray-200 border border-gray-800/80'
+              }`}
+            >
+              {sec.label}
+            </button>
+          ))}
         </div>
       </div>
     </header>
