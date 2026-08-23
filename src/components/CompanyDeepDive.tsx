@@ -143,13 +143,13 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
             {/* Quick Metrics Badges */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
               <div className="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-3 text-center shadow-lg shadow-emerald-950/30">
-                <span className="text-[11px] font-bold text-emerald-300 block mb-1">🌟 2024 잉여현금(FCF)</span>
+                <span className="text-[11px] font-bold text-emerald-300 block mb-1">🌟 2025 잉여현금(FCF)</span>
                 <span className="text-lg font-black font-mono text-emerald-400">
                   {convertValue(latestFin.freeCashFlow, company, currency).formatted}
                 </span>
               </div>
               <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
-                <span className="text-[11px] text-gray-400 block mb-1">2024 순현금(Net Cash)</span>
+                <span className="text-[11px] text-gray-400 block mb-1">2025 순현금(Net Cash)</span>
                 <span className="text-base font-extrabold font-mono text-blue-400">
                   {convertValue(latestFin.netCash, company, currency).formatted}
                 </span>
@@ -161,7 +161,7 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
                 </span>
               </div>
               <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
-                <span className="text-[11px] text-gray-400 block mb-1">5개년 누적 FCF</span>
+                <span className="text-[11px] text-gray-400 block mb-1">6개년 누적 FCF</span>
                 <span className="text-base font-extrabold font-mono text-amber-400">
                   {cumFcfConv.formatted}
                 </span>
@@ -235,7 +235,7 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
                 <TrendingUp className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-white">5개년 현금흐름 시계열 (Cash Flow Trends)</h3>
+                <h3 className="text-sm font-bold text-white">6개년 현금흐름 시계열 (2020~2025)</h3>
                 <p className="text-xs text-gray-400">영업현금흐름(OCF) · 설비투자(CapEx) · 잉여현금흐름(FCF)</p>
               </div>
             </div>
@@ -286,7 +286,7 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
         </div>
       </div>
 
-      {/* 4. Complete 5-Year Financial Statement Table */}
+      {/* 4. Complete 6-Year Financial Statement Table */}
       <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
@@ -295,10 +295,10 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
             </div>
             <div>
               <h3 className="text-sm font-bold text-white">
-                {company.nameKo} 5개년 전체 재무 & 현금 상세 데이터 ({unitLabel})
+                {company.nameKo} 6개년 전체 재무 & 현금 상세 데이터 ({unitLabel})
               </h3>
               <p className="text-xs text-gray-400">
-                2020년부터 2024년까지의 모든 현금흐름 및 대차대조표 수치
+                2020년부터 2025년까지의 모든 현금흐름 및 대차대조표 수치
               </p>
             </div>
           </div>

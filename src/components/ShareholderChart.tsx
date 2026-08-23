@@ -147,7 +147,7 @@ export const ShareholderChart: React.FC<ShareholderChartProps> = ({ company }) =
         <div className="mt-6 pt-5 border-t border-gray-800">
           <div className="flex items-center gap-2 mb-3">
             <History className="w-4 h-4 text-purple-400" />
-            <h4 className="text-xs font-semibold text-gray-200">최근 5개년 주요 주주 지분율 변동 추이 (2020 ~ 2024)</h4>
+            <h4 className="text-xs font-semibold text-gray-200">최근 6개년 주요 주주 지분율 변동 추이 (2020 ~ 2025)</h4>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-left">

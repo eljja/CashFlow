@@ -67,11 +67,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                   CashFlow Analytics
                 </h1>
                 <span className="text-xs px-2 py-0.5 rounded-full bg-blue-950 text-blue-400 border border-blue-800 font-medium">
-                  5-Year Time Series
+                  6-Year Time Series (2020~2025)
                 </span>
               </div>
               <p className="text-xs text-gray-400 hidden sm:block">
-                글로벌 80대 기업 현금흐름(FCF·순현금) & 대주주 지분 분석
+                글로벌 80대 기업 6개년 현금흐름(FCF·순현금) & 대주주 지분 분석
               </p>
             </div>
           </div>

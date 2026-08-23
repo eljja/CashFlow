@@ -50,7 +50,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({ companies, curre
     .map((id) => companies.find((c) => c.id === id))
     .filter((c): c is Company => Boolean(c))
 
-  const years = [2020, 2021, 2022, 2023, 2024]
+  const years = [2020, 2021, 2022, 2023, 2024, 2025]
   const colors = ['#3B82F6', '#10B981', '#F59E0B', '#EC4899', '#8B5CF6', '#06B6D4']
 
   const metricLabels = {
@@ -253,7 +253,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({ companies, curre
         {/* Side-by-Side Comparison Table */}
         <div className="mt-8 pt-6 border-t border-gray-800">
           <h4 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-3">
-            2024년 기준 핵심 지표 직접 비교표 ({unitLabel})
+            2025년 기준 핵심 지표 직접 비교표 ({unitLabel})
           </h4>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-left">

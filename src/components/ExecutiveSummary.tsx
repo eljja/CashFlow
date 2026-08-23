@@ -74,7 +74,7 @@ export const ExecutiveSummary: React.FC<ExecutiveSummaryProps> = ({
               FCF
             </div>
             <div>
-              <h3 className="text-xs font-bold text-white">2024 잉여현금흐름 (FCF) TOP 5</h3>
+              <h3 className="text-xs font-bold text-white">2025 잉여현금흐름 (FCF) TOP 5</h3>
               <p className="text-[11px] text-emerald-400/80">OCF(영업현금) - CapEx(설비투자)</p>
             </div>
           </div>
@@ -114,7 +114,7 @@ export const ExecutiveSummary: React.FC<ExecutiveSummaryProps> = ({
               <ShieldCheck className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-xs font-semibold text-white">2024 순현금 (Net Cash) TOP 5</h3>
+              <h3 className="text-xs font-semibold text-white">2025 순현금 (Net Cash) TOP 5</h3>
               <p className="text-[11px] text-gray-400">총가용현금 - 총부채 완충력</p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export const ExecutiveSummary: React.FC<ExecutiveSummaryProps> = ({
               <Hammer className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-xs font-semibold text-white">2024 설비투자 (CapEx) TOP 5</h3>
+              <h3 className="text-xs font-semibold text-white">2025 설비투자 (CapEx) TOP 5</h3>
               <p className="text-[11px] text-gray-400">미래 성장을 위한 인프라 투자</p>
             </div>
           </div>
@@ -194,7 +194,7 @@ export const ExecutiveSummary: React.FC<ExecutiveSummaryProps> = ({
               <Gift className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-xs font-semibold text-white">2024 총 주주환원 TOP 5</h3>
+              <h3 className="text-xs font-semibold text-white">2025 총 주주환원 TOP 5</h3>
               <p className="text-[11px] text-gray-400">현금배당금 + 자사주 매입/소각</p>
             </div>
           </div>

@@ -59,7 +59,7 @@ export const CompanySelector: React.FC<CompanySelectorProps> = ({
               </div>
 
               <div className="mt-2 pt-1.5 border-t border-gray-700/40 flex items-center justify-between text-[11px]">
-                <span className="text-gray-500">24 FCF</span>
+                <span className="text-gray-500">'{latestFin.year % 100} FCF</span>
                 <span
                   className={`font-mono font-semibold ${
                     latestFin.freeCashFlow >= 0 ? 'text-emerald-400' : 'text-rose-400'

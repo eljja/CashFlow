@@ -1,15 +1,16 @@
 {
   "metadata": {
-    "title": "Global 80 Companies 5-Year Cash Flow & Shareholder Analytics",
-    "lastUpdated": "2026-08-20",
-    "lastUpdatedISO": "2026-08-20T22:16:12.618519+09:00",
+    "title": "Global 80 Companies 6-Year Cash Flow & Shareholder Analytics (2020-2025)",
+    "lastUpdated": "2026-08-23",
+    "lastUpdatedISO": "2026-08-23T22:19:58.222749+09:00",
     "updateIntervalDays": 30,
     "years": [
       2020,
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "totalCompanies": 80,
     "exchangeRates": {
@@ -152,6 +153,29 @@
           "fcfMargin": 4.84,
           "fcfConversion": 42.96,
           "ocfToCapex": 1.28
+        },
+        {
+          "year": 2025,
+          "revenue": 328.5,
+          "operatingIncome": 54.2,
+          "netIncome": 48.6,
+          "operatingCashFlow": 78.5,
+          "capitalExpenditure": 55.4,
+          "freeCashFlow": 23.1,
+          "investingCashFlow": -58.2,
+          "financingCashFlow": -18.5,
+          "dividendsPaid": 9.81,
+          "shareRepurchase": 5.0,
+          "totalShareholderReturn": 14.81,
+          "netChangeInCash": 1.8,
+          "cashAndEquivalents": 32.5,
+          "shortTermInvestments": 86.4,
+          "totalCash": 118.9,
+          "totalDebt": 18.2,
+          "netCash": 100.7,
+          "fcfMargin": 7.03,
+          "fcfConversion": 47.53,
+          "ocfToCapex": 1.42
         }
       ],
       "shareholders": {
@@ -232,6 +256,14 @@
             "블랙록": 5.03,
             "뱅가드": 3.48,
             "기타/소액주주": 63.32
+          },
+          {
+            "year": 2025,
+            "대주주/특수관계인": 20.85,
+            "국민연금": 7.42,
+            "블랙록": 5.05,
+            "뱅가드": 3.52,
+            "기타/소액주주": 63.16
           }
         ]
       }
@@ -363,6 +395,29 @@
           "fcfMargin": 23.57,
           "fcfConversion": 78.79,
           "ocfToCapex": 1.93
+        },
+        {
+          "year": 2025,
+          "revenue": 82.5,
+          "operatingIncome": 31.2,
+          "netIncome": 25.8,
+          "operatingCashFlow": 41.5,
+          "capitalExpenditure": 19.8,
+          "freeCashFlow": 21.7,
+          "investingCashFlow": -21.0,
+          "financingCashFlow": -12.5,
+          "dividendsPaid": 1.8,
+          "shareRepurchase": 1.0,
+          "totalShareholderReturn": 2.8,
+          "netChangeInCash": 8.0,
+          "cashAndEquivalents": 14.8,
+          "shortTermInvestments": 6.5,
+          "totalCash": 21.3,
+          "totalDebt": 16.5,
+          "netCash": 4.8,
+          "fcfMargin": 26.3,
+          "fcfConversion": 84.11,
+          "ocfToCapex": 2.1
         }
       ],
       "shareholders": {
@@ -443,6 +498,14 @@
             "블랙록": 5.08,
             "뱅가드": 3.15,
             "기타/소액주주": 63.8
+          },
+          {
+            "year": 2025,
+            "SK스퀘어": 20.07,
+            "국민연금": 7.95,
+            "블랙록": 5.12,
+            "뱅가드": 3.2,
+            "기타/소액주주": 63.66
           }
         ]
       }
@@ -574,6 +637,29 @@
           "fcfMargin": -18.54,
           "fcfConversion": -1484.38,
           "ocfToCapex": 0.48
+        },
+        {
+          "year": 2025,
+          "revenue": 28.4,
+          "operatingIncome": 1.15,
+          "netIncome": 0.82,
+          "operatingCashFlow": 4.85,
+          "capitalExpenditure": 8.4,
+          "freeCashFlow": -3.55,
+          "investingCashFlow": -8.6,
+          "financingCashFlow": 4.2,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.0,
+          "netChangeInCash": 0.45,
+          "cashAndEquivalents": 10.22,
+          "shortTermInvestments": 1.6,
+          "totalCash": 11.82,
+          "totalDebt": 15.6,
+          "netCash": -3.78,
+          "fcfMargin": -12.5,
+          "fcfConversion": -432.93,
+          "ocfToCapex": 0.58
         }
       ],
       "shareholders": {
@@ -644,6 +730,12 @@
             "LG화학": 81.84,
             "국민연금": 5.42,
             "소액주주": 12.74
+          },
+          {
+            "year": 2025,
+            "LG화학": 81.84,
+            "국민연금": 5.5,
+            "소액주주": 12.66
           }
         ]
       }
@@ -775,6 +867,29 @@
           "fcfMargin": 4.74,
           "fcfConversion": 66.4,
           "ocfToCapex": 1.74
+        },
+        {
+          "year": 2025,
+          "revenue": 186.5,
+          "operatingIncome": 16.4,
+          "netIncome": 13.8,
+          "operatingCashFlow": 21.2,
+          "capitalExpenditure": 12.0,
+          "freeCashFlow": 9.2,
+          "investingCashFlow": -13.5,
+          "financingCashFlow": -6.5,
+          "dividendsPaid": 3.8,
+          "shareRepurchase": 1.2,
+          "totalShareholderReturn": 5.0,
+          "netChangeInCash": 1.2,
+          "cashAndEquivalents": 19.18,
+          "shortTermInvestments": 17.5,
+          "totalCash": 36.68,
+          "totalDebt": 110.5,
+          "netCash": -73.82,
+          "fcfMargin": 4.93,
+          "fcfConversion": 66.67,
+          "ocfToCapex": 1.77
         }
       ],
       "shareholders": {
@@ -843,6 +958,13 @@
             "국민연금": 7.85,
             "외국인/기관": 38.4,
             "기타/소액주주": 24.4
+          },
+          {
+            "year": 2025,
+            "대주주/특수관계인": 29.35,
+            "국민연금": 7.92,
+            "외국인/기관": 39.1,
+            "기타/소액주주": 23.63
           }
         ]
       }
@@ -974,6 +1096,29 @@
           "fcfMargin": 9.49,
           "fcfConversion": 104.08,
           "ocfToCapex": 3.22
+        },
+        {
+          "year": 2025,
+          "revenue": 106.8,
+          "operatingIncome": 12.8,
+          "netIncome": 9.85,
+          "operatingCashFlow": 14.5,
+          "capitalExpenditure": 4.5,
+          "freeCashFlow": 10.0,
+          "investingCashFlow": -5.8,
+          "financingCashFlow": -4.2,
+          "dividendsPaid": 2.4,
+          "shareRepurchase": 0.8,
+          "totalShareholderReturn": 3.2,
+          "netChangeInCash": 4.5,
+          "cashAndEquivalents": 17.65,
+          "shortTermInvestments": 8.5,
+          "totalCash": 26.15,
+          "totalDebt": 4.8,
+          "netCash": 21.35,
+          "fcfMargin": 9.36,
+          "fcfConversion": 101.52,
+          "ocfToCapex": 3.22
         }
       ],
       "shareholders": {
@@ -1042,6 +1187,13 @@
             "국민연금": 7.2,
             "외국인/기관": 42.5,
             "소액주주": 16.14
+          },
+          {
+            "year": 2025,
+            "현대자동차": 34.16,
+            "국민연금": 7.85,
+            "외국인/기관": 42.5,
+            "기타/소액주주": 15.49
           }
         ]
       }
@@ -1173,6 +1325,29 @@
           "fcfMargin": 17.02,
           "fcfConversion": 110.91,
           "ocfToCapex": 3.23
+        },
+        {
+          "year": 2025,
+          "revenue": 11.4,
+          "operatingIncome": 2.15,
+          "netIncome": 1.65,
+          "operatingCashFlow": 2.75,
+          "capitalExpenditure": 0.72,
+          "freeCashFlow": 2.03,
+          "investingCashFlow": -1.2,
+          "financingCashFlow": -1.1,
+          "dividendsPaid": 0.2,
+          "shareRepurchase": 0.35,
+          "totalShareholderReturn": 0.55,
+          "netChangeInCash": 0.45,
+          "cashAndEquivalents": 3.82,
+          "shortTermInvestments": 2.65,
+          "totalCash": 6.47,
+          "totalDebt": 2.45,
+          "netCash": 4.02,
+          "fcfMargin": 17.81,
+          "fcfConversion": 123.03,
+          "ocfToCapex": 3.82
         }
       ],
       "shareholders": {
@@ -1253,6 +1428,13 @@
             "블랙록": 5.05,
             "창업자": 3.75,
             "소액주주": 73.78
+          },
+          {
+            "year": 2025,
+            "A홀딩스": 28.9,
+            "국민연금": 8.65,
+            "블랙록": 5.08,
+            "소액주주": 57.37
           }
         ]
       }
@@ -1384,6 +1566,29 @@
           "fcfMargin": 7.41,
           "fcfConversion": 214.29,
           "ocfToCapex": 2.09
+        },
+        {
+          "year": 2025,
+          "revenue": 8.2,
+          "operatingIncome": 0.62,
+          "netIncome": 0.45,
+          "operatingCashFlow": 1.15,
+          "capitalExpenditure": 0.42,
+          "freeCashFlow": 0.73,
+          "investingCashFlow": -0.65,
+          "financingCashFlow": -0.4,
+          "dividendsPaid": 0.08,
+          "shareRepurchase": 0.12,
+          "totalShareholderReturn": 0.2,
+          "netChangeInCash": 0.1,
+          "cashAndEquivalents": 3.12,
+          "shortTermInvestments": 1.85,
+          "totalCash": 4.97,
+          "totalDebt": 3.95,
+          "netCash": 1.02,
+          "fcfMargin": 8.9,
+          "fcfConversion": 162.22,
+          "ocfToCapex": 2.74
         }
       ],
       "shareholders": {
@@ -1452,6 +1657,13 @@
             "텐센트": 5.88,
             "국민연금": 5.42,
             "소액주주": 64.55
+          },
+          {
+            "year": 2025,
+            "김범수/특수관계인": 24.1,
+            "텐센트": 5.85,
+            "국민연금": 5.4,
+            "소액주주": 64.65
           }
         ]
       }
@@ -1583,6 +1795,29 @@
           "fcfMargin": -3.57,
           "fcfConversion": -216.67,
           "ocfToCapex": 0.62
+        },
+        {
+          "year": 2025,
+          "revenue": 74.5,
+          "operatingIncome": 2.85,
+          "netIncome": 1.95,
+          "operatingCashFlow": 5.2,
+          "capitalExpenditure": 4.8,
+          "freeCashFlow": 0.4,
+          "investingCashFlow": -5.1,
+          "financingCashFlow": -0.6,
+          "dividendsPaid": 0.85,
+          "shareRepurchase": 0.25,
+          "totalShareholderReturn": 1.1,
+          "netChangeInCash": -0.5,
+          "cashAndEquivalents": 5.85,
+          "shortTermInvestments": 12.4,
+          "totalCash": 18.25,
+          "totalDebt": 28.5,
+          "netCash": -10.25,
+          "fcfMargin": 0.54,
+          "fcfConversion": 20.51,
+          "ocfToCapex": 1.08
         }
       ],
       "shareholders": {
@@ -1651,6 +1886,12 @@
             "블랙록": 5.15,
             "우리사주": 1.62,
             "소액주주": 85.68
+          },
+          {
+            "year": 2025,
+            "국민연금": 7.65,
+            "외국인투자자": 53.8,
+            "소액주주/기타": 38.55
           }
         ]
       }
@@ -1782,6 +2023,29 @@
           "fcfMargin": 19.1,
           "fcfConversion": 80.95,
           "ocfToCapex": 1.68
+        },
+        {
+          "year": 2025,
+          "revenue": 4.65,
+          "operatingIncome": 1.58,
+          "netIncome": 1.25,
+          "operatingCashFlow": 2.1,
+          "capitalExpenditure": 1.35,
+          "freeCashFlow": 0.75,
+          "investingCashFlow": -1.45,
+          "financingCashFlow": -0.35,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.0,
+          "netChangeInCash": 0.3,
+          "cashAndEquivalents": 2.25,
+          "shortTermInvestments": 1.45,
+          "totalCash": 3.7,
+          "totalDebt": 2.65,
+          "netCash": 1.05,
+          "fcfMargin": 16.13,
+          "fcfConversion": 60.0,
+          "ocfToCapex": 1.56
         }
       ],
       "shareholders": {
@@ -1846,6 +2110,13 @@
           },
           {
             "year": 2024,
+            "삼성물산": 43.06,
+            "삼성전자": 31.22,
+            "국민연금": 5.15,
+            "소액주주": 20.57
+          },
+          {
+            "year": 2025,
             "삼성물산": 43.06,
             "삼성전자": 31.22,
             "국민연금": 5.15,
@@ -1981,6 +2252,29 @@
           "fcfMargin": 18.87,
           "fcfConversion": 98.53,
           "ocfToCapex": 2.4
+        },
+        {
+          "year": 2025,
+          "revenue": 4.1,
+          "operatingIncome": 1.28,
+          "netIncome": 0.98,
+          "operatingCashFlow": 1.72,
+          "capitalExpenditure": 0.38,
+          "freeCashFlow": 1.34,
+          "investingCashFlow": -0.85,
+          "financingCashFlow": -0.65,
+          "dividendsPaid": 0.25,
+          "shareRepurchase": 0.35,
+          "totalShareholderReturn": 0.6,
+          "netChangeInCash": 0.22,
+          "cashAndEquivalents": 1.65,
+          "shortTermInvestments": 0.95,
+          "totalCash": 2.6,
+          "totalDebt": 2.15,
+          "netCash": 0.45,
+          "fcfMargin": 32.68,
+          "fcfConversion": 136.73,
+          "ocfToCapex": 4.53
         }
       ],
       "shareholders": {
@@ -2037,6 +2331,13 @@
             "지주사/서정진": 22.15,
             "국민연금": 6.85,
             "소액주주": 71.0
+          },
+          {
+            "year": 2025,
+            "셀트리온홀딩스": 21.65,
+            "국민연금": 5.42,
+            "싱가포르테마섹": 4.1,
+            "소액주주": 68.83
           }
         ]
       }
@@ -2168,6 +2469,29 @@
           "fcfMargin": -11.03,
           "fcfConversion": -931.03,
           "ocfToCapex": 0.5
+        },
+        {
+          "year": 2025,
+          "revenue": 51.5,
+          "operatingIncome": 1.65,
+          "netIncome": 1.1,
+          "operatingCashFlow": 4.15,
+          "capitalExpenditure": 3.8,
+          "freeCashFlow": 0.35,
+          "investingCashFlow": -4.2,
+          "financingCashFlow": -0.65,
+          "dividendsPaid": 0.45,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.45,
+          "netChangeInCash": -0.7,
+          "cashAndEquivalents": 4.15,
+          "shortTermInvestments": 3.2,
+          "totalCash": 7.35,
+          "totalDebt": 21.5,
+          "netCash": -14.15,
+          "fcfMargin": 0.68,
+          "fcfConversion": 31.82,
+          "ocfToCapex": 1.09
         }
       ],
       "shareholders": {
@@ -2236,6 +2560,13 @@
             "국민연금": 6.95,
             "외국인": 41.2,
             "소액주주": 18.51
+          },
+          {
+            "year": 2025,
+            "(주)LG": 33.34,
+            "국민연금": 6.85,
+            "외국인투자자": 42.5,
+            "소액주주": 17.31
           }
         ]
       }
@@ -2367,6 +2698,29 @@
           "fcfMargin": -6.65,
           "fcfConversion": -261.9,
           "ocfToCapex": 0.66
+        },
+        {
+          "year": 2025,
+          "revenue": 18.5,
+          "operatingIncome": 0.85,
+          "netIncome": 0.65,
+          "operatingCashFlow": 2.45,
+          "capitalExpenditure": 3.2,
+          "freeCashFlow": -0.75,
+          "investingCashFlow": -3.5,
+          "financingCashFlow": 0.85,
+          "dividendsPaid": 0.12,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.12,
+          "netChangeInCash": -0.2,
+          "cashAndEquivalents": 2.65,
+          "shortTermInvestments": 1.45,
+          "totalCash": 4.1,
+          "totalDebt": 7.85,
+          "netCash": -3.75,
+          "fcfMargin": -4.05,
+          "fcfConversion": -115.38,
+          "ocfToCapex": 0.77
         }
       ],
       "shareholders": {
@@ -2435,6 +2789,13 @@
             "국민연금": 8.25,
             "외국인": 43.5,
             "소액주주": 28.67
+          },
+          {
+            "year": 2025,
+            "삼성전자": 19.58,
+            "국민연금": 7.45,
+            "블랙록": 5.02,
+            "소액주주": 67.95
           }
         ]
       }
@@ -2566,6 +2927,29 @@
           "fcfMargin": 66.67,
           "fcfConversion": 265.35,
           "ocfToCapex": 20.14
+        },
+        {
+          "year": 2025,
+          "revenue": 78.5,
+          "operatingIncome": 7.2,
+          "netIncome": 5.25,
+          "operatingCashFlow": 8.4,
+          "capitalExpenditure": 0.65,
+          "freeCashFlow": 7.75,
+          "investingCashFlow": -1.85,
+          "financingCashFlow": -4.85,
+          "dividendsPaid": 1.35,
+          "shareRepurchase": 0.85,
+          "totalShareholderReturn": 2.2,
+          "netChangeInCash": 1.7,
+          "cashAndEquivalents": 28.5,
+          "shortTermInvestments": 18.2,
+          "totalCash": 46.7,
+          "totalDebt": 0.0,
+          "netCash": 46.7,
+          "fcfMargin": 9.87,
+          "fcfConversion": 147.62,
+          "ocfToCapex": 12.92
         }
       ],
       "shareholders": {
@@ -2634,6 +3018,13 @@
             "블랙록": 5.85,
             "외국인": 76.5,
             "소액주주": 9.41
+          },
+          {
+            "year": 2025,
+            "국민연금": 8.45,
+            "블랙록": 6.12,
+            "외국인투자자": 77.2,
+            "소액주주": 8.23
           }
         ]
       }
@@ -2765,6 +3156,29 @@
           "fcfMargin": 63.56,
           "fcfConversion": 251.58,
           "ocfToCapex": 19.38
+        },
+        {
+          "year": 2025,
+          "revenue": 72.5,
+          "operatingIncome": 6.85,
+          "netIncome": 4.95,
+          "operatingCashFlow": 7.85,
+          "capitalExpenditure": 0.55,
+          "freeCashFlow": 7.3,
+          "investingCashFlow": -1.65,
+          "financingCashFlow": -4.5,
+          "dividendsPaid": 1.25,
+          "shareRepurchase": 0.75,
+          "totalShareholderReturn": 2.0,
+          "netChangeInCash": 1.6,
+          "cashAndEquivalents": 26.2,
+          "shortTermInvestments": 16.5,
+          "totalCash": 42.7,
+          "totalDebt": 0.0,
+          "netCash": 42.7,
+          "fcfMargin": 10.07,
+          "fcfConversion": 147.47,
+          "ocfToCapex": 14.27
         }
       ],
       "shareholders": {
@@ -2833,6 +3247,13 @@
             "블랙록": 5.62,
             "외국인": 61.2,
             "소액주주": 25.23
+          },
+          {
+            "year": 2025,
+            "국민연금": 8.25,
+            "블랙록": 5.85,
+            "외국인투자자": 61.5,
+            "소액주주": 24.4
           }
         ]
       }
@@ -2964,6 +3385,29 @@
           "fcfMargin": 15.73,
           "fcfConversion": 124.65,
           "ocfToCapex": 3.6
+        },
+        {
+          "year": 2025,
+          "revenue": 14.2,
+          "operatingIncome": 1.35,
+          "netIncome": 1.05,
+          "operatingCashFlow": 1.95,
+          "capitalExpenditure": 0.65,
+          "freeCashFlow": 1.3,
+          "investingCashFlow": -0.85,
+          "financingCashFlow": -0.75,
+          "dividendsPaid": 0.18,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.18,
+          "netChangeInCash": 0.35,
+          "cashAndEquivalents": 3.85,
+          "shortTermInvestments": 2.15,
+          "totalCash": 6.0,
+          "totalDebt": 4.2,
+          "netCash": 1.8,
+          "fcfMargin": 9.15,
+          "fcfConversion": 123.81,
+          "ocfToCapex": 3.0
         }
       ],
       "shareholders": {
@@ -3032,6 +3476,13 @@
             "국민연금": 6.8,
             "외국인": 39.5,
             "소액주주": 19.75
+          },
+          {
+            "year": 2025,
+            "(주)한화": 33.95,
+            "국민연금": 6.85,
+            "외국인투자자": 36.5,
+            "소액주주": 22.7
           }
         ]
       }
@@ -3163,6 +3614,29 @@
           "fcfMargin": 9.48,
           "fcfConversion": 236.21,
           "ocfToCapex": 3.85
+        },
+        {
+          "year": 2025,
+          "revenue": 15.8,
+          "operatingIncome": 1.15,
+          "netIncome": 0.88,
+          "operatingCashFlow": 1.85,
+          "capitalExpenditure": 0.45,
+          "freeCashFlow": 1.4,
+          "investingCashFlow": -0.75,
+          "financingCashFlow": -0.65,
+          "dividendsPaid": 0.15,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.15,
+          "netChangeInCash": 0.45,
+          "cashAndEquivalents": 3.15,
+          "shortTermInvestments": 1.85,
+          "totalCash": 5.0,
+          "totalDebt": 2.85,
+          "netCash": 2.15,
+          "fcfMargin": 8.86,
+          "fcfConversion": 159.09,
+          "ocfToCapex": 4.11
         }
       ],
       "shareholders": {
@@ -3220,6 +3694,13 @@
             "HD한국조선해양": 78.02,
             "국민연금": 5.12,
             "소액주주": 16.86
+          },
+          {
+            "year": 2025,
+            "HD한국조선해양": 71.26,
+            "국민연금": 5.45,
+            "외국인": 12.8,
+            "소액주주": 10.49
           }
         ]
       }
@@ -3351,6 +3832,29 @@
           "fcfMargin": 41.85,
           "fcfConversion": 122.83,
           "ocfToCapex": 10.42
+        },
+        {
+          "year": 2025,
+          "revenue": 2.65,
+          "operatingIncome": 1.12,
+          "netIncome": 0.95,
+          "operatingCashFlow": 1.35,
+          "capitalExpenditure": 0.08,
+          "freeCashFlow": 1.27,
+          "investingCashFlow": -0.35,
+          "financingCashFlow": -0.65,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.45,
+          "totalShareholderReturn": 0.45,
+          "netChangeInCash": 0.35,
+          "cashAndEquivalents": 1.85,
+          "shortTermInvestments": 2.45,
+          "totalCash": 4.3,
+          "totalDebt": 0.15,
+          "netCash": 4.15,
+          "fcfMargin": 47.92,
+          "fcfConversion": 133.68,
+          "ocfToCapex": 16.88
         }
       ],
       "shareholders": {
@@ -3412,6 +3916,13 @@
             "텐센트": 13.5,
             "국민연금": 6.85,
             "소액주주": 62.85
+          },
+          {
+            "year": 2025,
+            "장병규의장": 14.85,
+            "텐센트": 13.8,
+            "국민연금": 6.85,
+            "소액주주": 64.5
           }
         ]
       }
@@ -3543,6 +4054,29 @@
           "fcfMargin": -7.45,
           "fcfConversion": 1628.57,
           "ocfToCapex": 0.27
+        },
+        {
+          "year": 2025,
+          "revenue": 82.5,
+          "operatingIncome": 1.45,
+          "netIncome": 0.85,
+          "operatingCashFlow": 4.85,
+          "capitalExpenditure": 5.2,
+          "freeCashFlow": -0.35,
+          "investingCashFlow": -5.8,
+          "financingCashFlow": 0.65,
+          "dividendsPaid": 0.45,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.45,
+          "netChangeInCash": -0.3,
+          "cashAndEquivalents": 4.2,
+          "shortTermInvestments": 2.8,
+          "totalCash": 7.0,
+          "totalDebt": 31.5,
+          "netCash": -24.5,
+          "fcfMargin": -0.42,
+          "fcfConversion": -41.18,
+          "ocfToCapex": 0.93
         }
       ],
       "shareholders": {
@@ -3599,6 +4133,13 @@
             "(주)SK": 36.22,
             "국민연금": 7.45,
             "소액주주": 56.33
+          },
+          {
+            "year": 2025,
+            "SK(주)": 36.22,
+            "국민연금": 7.45,
+            "외국인": 28.5,
+            "소액주주": 27.83
           }
         ]
       }
@@ -3730,6 +4271,29 @@
           "fcfMargin": 14.43,
           "fcfConversion": 89.8,
           "ocfToCapex": 3.1
+        },
+        {
+          "year": 2025,
+          "revenue": 6.47,
+          "operatingIncome": 1.34,
+          "netIncome": 1.06,
+          "operatingCashFlow": 1.39,
+          "capitalExpenditure": 0.44,
+          "freeCashFlow": 0.95,
+          "investingCashFlow": -0.71,
+          "financingCashFlow": -0.9,
+          "dividendsPaid": 0.71,
+          "shareRepurchase": 0.47,
+          "totalShareholderReturn": 1.18,
+          "netChangeInCash": -0.28,
+          "cashAndEquivalents": 0.64,
+          "shortTermInvestments": 1.63,
+          "totalCash": 2.27,
+          "totalDebt": 1.03,
+          "netCash": 1.24,
+          "fcfMargin": 14.68,
+          "fcfConversion": 89.62,
+          "ocfToCapex": 3.16
         }
       ],
       "shareholders": {
@@ -3791,6 +4355,13 @@
             "국민연금": 6.6,
             "퍼스트이글": 6.55,
             "소액주주": 79.74
+          },
+          {
+            "year": 2024,
+            "기업은행": 7.11,
+            "국민연금": 6.85,
+            "퍼스트이글": 6.5,
+            "소액주주": 79.54
           },
           {
             "year": 2024,
@@ -3929,6 +4500,29 @@
           "fcfMargin": 4.16,
           "fcfConversion": 89.41,
           "ocfToCapex": 2.06
+        },
+        {
+          "year": 2025,
+          "revenue": 18.5,
+          "operatingIncome": 1.25,
+          "netIncome": 0.85,
+          "operatingCashFlow": 1.65,
+          "capitalExpenditure": 0.45,
+          "freeCashFlow": 1.2,
+          "investingCashFlow": -0.65,
+          "financingCashFlow": -0.75,
+          "dividendsPaid": 0.15,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.15,
+          "netChangeInCash": 0.25,
+          "cashAndEquivalents": 2.65,
+          "shortTermInvestments": 1.45,
+          "totalCash": 4.1,
+          "totalDebt": 4.8,
+          "netCash": -0.7,
+          "fcfMargin": 6.49,
+          "fcfConversion": 141.18,
+          "ocfToCapex": 3.67
         }
       ],
       "shareholders": {
@@ -3997,6 +4591,13 @@
             "국민연금": 5.8,
             "외국인": 24.5,
             "소액주주": 39.2
+          },
+          {
+            "year": 2025,
+            "(주)두산": 30.5,
+            "국민연금": 5.85,
+            "외국인": 26.2,
+            "소액주주": 37.45
           }
         ]
       }
@@ -4128,6 +4729,29 @@
           "fcfMargin": 44.35,
           "fcfConversion": 90.79,
           "ocfToCapex": 26.25
+        },
+        {
+          "year": 2025,
+          "revenue": 128.5,
+          "operatingIncome": 78.6,
+          "netIncome": 68.4,
+          "operatingCashFlow": 62.8,
+          "capitalExpenditure": 3.8,
+          "freeCashFlow": 59.0,
+          "investingCashFlow": -16.5,
+          "financingCashFlow": -34.2,
+          "dividendsPaid": 0.8,
+          "shareRepurchase": 31.5,
+          "totalShareholderReturn": 32.3,
+          "netChangeInCash": 12.1,
+          "cashAndEquivalents": 12.5,
+          "shortTermInvestments": 32.4,
+          "totalCash": 44.9,
+          "totalDebt": 9.8,
+          "netCash": 35.1,
+          "fcfMargin": 45.91,
+          "fcfConversion": 86.26,
+          "ocfToCapex": 16.53
         }
       ],
       "shareholders": {
@@ -4210,6 +4834,13 @@
             "블랙록": 7.35,
             "젠슨황": 3.52,
             "기타/소액주주": 80.71
+          },
+          {
+            "year": 2025,
+            "뱅가드": 8.45,
+            "블랙록": 7.38,
+            "젠슨황": 3.48,
+            "기타/소액주주": 80.69
           }
         ]
       }
@@ -4341,6 +4972,29 @@
           "fcfMargin": 27.82,
           "fcfConversion": 116.07,
           "ocfToCapex": 12.51
+        },
+        {
+          "year": 2025,
+          "revenue": 405.2,
+          "operatingIncome": 128.5,
+          "netIncome": 106.8,
+          "operatingCashFlow": 122.5,
+          "capitalExpenditure": 11.2,
+          "freeCashFlow": 111.3,
+          "investingCashFlow": -8.5,
+          "financingCashFlow": -108.5,
+          "dividendsPaid": 15.6,
+          "shareRepurchase": 92.5,
+          "totalShareholderReturn": 108.1,
+          "netChangeInCash": -4.5,
+          "cashAndEquivalents": 32.5,
+          "shortTermInvestments": 38.4,
+          "totalCash": 70.9,
+          "totalDebt": 102.5,
+          "netCash": -31.6,
+          "fcfMargin": 27.47,
+          "fcfConversion": 104.21,
+          "ocfToCapex": 10.94
         }
       ],
       "shareholders": {
@@ -4416,6 +5070,13 @@
             "블랙록": 6.85,
             "버크셔해서웨이": 2.8,
             "기타": 81.7
+          },
+          {
+            "year": 2025,
+            "버크셔해서웨이": 2.2,
+            "뱅가드": 8.75,
+            "블랙록": 6.85,
+            "기타/소액주주": 82.2
           }
         ]
       }
@@ -4547,6 +5208,29 @@
           "fcfMargin": 30.22,
           "fcfConversion": 84.04,
           "ocfToCapex": 2.67
+        },
+        {
+          "year": 2025,
+          "revenue": 275.5,
+          "operatingIncome": 122.4,
+          "netIncome": 98.6,
+          "operatingCashFlow": 132.5,
+          "capitalExpenditure": 42.5,
+          "freeCashFlow": 90.0,
+          "investingCashFlow": -45.0,
+          "financingCashFlow": -78.5,
+          "dividendsPaid": 24.5,
+          "shareRepurchase": 22.5,
+          "totalShareholderReturn": 47.0,
+          "netChangeInCash": 9.0,
+          "cashAndEquivalents": 25.5,
+          "shortTermInvestments": 85.0,
+          "totalCash": 110.5,
+          "totalDebt": 75.2,
+          "netCash": 35.3,
+          "fcfMargin": 32.67,
+          "fcfConversion": 91.28,
+          "ocfToCapex": 3.12
         }
       ],
       "shareholders": {
@@ -4615,6 +5299,13 @@
             "블랙록": 7.2,
             "스테이트스트리트": 4.1,
             "기타": 79.8
+          },
+          {
+            "year": 2025,
+            "뱅가드": 8.95,
+            "블랙록": 7.42,
+            "스테이트스트리트": 4.15,
+            "기타/소액주주": 79.48
           }
         ]
       }
@@ -4746,6 +5437,29 @@
           "fcfMargin": 21.14,
           "fcfConversion": 78.56,
           "ocfToCapex": 2.44
+        },
+        {
+          "year": 2025,
+          "revenue": 358.5,
+          "operatingIncome": 112.5,
+          "netIncome": 96.8,
+          "operatingCashFlow": 118.5,
+          "capitalExpenditure": 48.5,
+          "freeCashFlow": 70.0,
+          "investingCashFlow": -52.0,
+          "financingCashFlow": -62.5,
+          "dividendsPaid": 10.5,
+          "shareRepurchase": 52.0,
+          "totalShareholderReturn": 62.5,
+          "netChangeInCash": 4.0,
+          "cashAndEquivalents": 28.5,
+          "shortTermInvestments": 95.0,
+          "totalCash": 123.5,
+          "totalDebt": 28.5,
+          "netCash": 95.0,
+          "fcfMargin": 19.53,
+          "fcfConversion": 72.31,
+          "ocfToCapex": 2.44
         }
       ],
       "shareholders": {
@@ -4814,6 +5528,13 @@
             "뱅가드": 8.1,
             "블랙록": 6.95,
             "기타": 73.15
+          },
+          {
+            "year": 2025,
+            "래리페이지/세르게이브린": 11.2,
+            "뱅가드": 7.95,
+            "블랙록": 6.35,
+            "기타/소액주주": 74.5
           }
         ]
       }
@@ -4945,6 +5666,29 @@
           "fcfMargin": 8.2,
           "fcfConversion": 93.06,
           "ocfToCapex": 1.87
+        },
+        {
+          "year": 2025,
+          "revenue": 655.0,
+          "operatingIncome": 58.5,
+          "netIncome": 46.8,
+          "operatingCashFlow": 108.5,
+          "capitalExpenditure": 58.0,
+          "freeCashFlow": 50.5,
+          "investingCashFlow": -62.0,
+          "financingCashFlow": -32.5,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.0,
+          "netChangeInCash": 14.0,
+          "cashAndEquivalents": 78.5,
+          "shortTermInvestments": 24.0,
+          "totalCash": 102.5,
+          "totalDebt": 135.0,
+          "netCash": -32.5,
+          "fcfMargin": 7.71,
+          "fcfConversion": 107.91,
+          "ocfToCapex": 1.87
         }
       ],
       "shareholders": {
@@ -5013,6 +5757,13 @@
             "뱅가드": 7.45,
             "블랙록": 6.15,
             "기타": 77.6
+          },
+          {
+            "year": 2025,
+            "제프베조스": 8.85,
+            "뱅가드": 7.25,
+            "블랙록": 6.05,
+            "기타/소액주주": 77.85
           }
         ]
       }
@@ -5144,6 +5895,29 @@
           "fcfMargin": 31.98,
           "fcfConversion": 84.59,
           "ocfToCapex": 2.37
+        },
+        {
+          "year": 2025,
+          "revenue": 168.5,
+          "operatingIncome": 68.5,
+          "netIncome": 56.4,
+          "operatingCashFlow": 78.5,
+          "capitalExpenditure": 36.5,
+          "freeCashFlow": 42.0,
+          "investingCashFlow": -39.0,
+          "financingCashFlow": -32.5,
+          "dividendsPaid": 5.2,
+          "shareRepurchase": 26.5,
+          "totalShareholderReturn": 31.7,
+          "netChangeInCash": 7.0,
+          "cashAndEquivalents": 42.5,
+          "shortTermInvestments": 28.0,
+          "totalCash": 70.5,
+          "totalDebt": 38.5,
+          "netCash": 32.0,
+          "fcfMargin": 24.93,
+          "fcfConversion": 74.47,
+          "ocfToCapex": 2.15
         }
       ],
       "shareholders": {
@@ -5212,6 +5986,13 @@
             "뱅가드": 8.2,
             "블랙록": 6.8,
             "기타": 71.5
+          },
+          {
+            "year": 2025,
+            "마크저커버그": 13.2,
+            "뱅가드": 8.15,
+            "블랙록": 6.65,
+            "기타/소액주주": 72.0
           }
         ]
       }
@@ -5343,6 +6124,29 @@
           "fcfMargin": 3.79,
           "fcfConversion": 44.05,
           "ocfToCapex": 1.34
+        },
+        {
+          "year": 2025,
+          "revenue": 112.5,
+          "operatingIncome": 11.2,
+          "netIncome": 9.8,
+          "operatingCashFlow": 16.5,
+          "capitalExpenditure": 9.5,
+          "freeCashFlow": 7.0,
+          "investingCashFlow": -10.5,
+          "financingCashFlow": -4.5,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.0,
+          "netChangeInCash": 1.5,
+          "cashAndEquivalents": 32.5,
+          "shortTermInvestments": 4.5,
+          "totalCash": 37.0,
+          "totalDebt": 8.5,
+          "netCash": 28.5,
+          "fcfMargin": 6.22,
+          "fcfConversion": 71.43,
+          "ocfToCapex": 1.74
         }
       ],
       "shareholders": {
@@ -5411,6 +6215,13 @@
             "뱅가드": 7.3,
             "블랙록": 5.9,
             "기타": 73.85
+          },
+          {
+            "year": 2025,
+            "일론머스크": 12.8,
+            "뱅가드": 7.45,
+            "블랙록": 6.05,
+            "기타/소액주주": 73.7
           }
         ]
       }
@@ -5542,6 +6353,29 @@
           "fcfMargin": 1.55,
           "fcfConversion": 50.0,
           "ocfToCapex": 1.05
+        },
+        {
+          "year": 2025,
+          "revenue": 36.5,
+          "operatingIncome": 9.8,
+          "netIncome": 8.6,
+          "operatingCashFlow": 16.8,
+          "capitalExpenditure": 9.2,
+          "freeCashFlow": 7.6,
+          "investingCashFlow": -9.8,
+          "financingCashFlow": -5.5,
+          "dividendsPaid": 0.65,
+          "shareRepurchase": 1.2,
+          "totalShareholderReturn": 1.85,
+          "netChangeInCash": 1.5,
+          "cashAndEquivalents": 11.5,
+          "shortTermInvestments": 2.5,
+          "totalCash": 14.0,
+          "totalDebt": 13.5,
+          "netCash": 0.5,
+          "fcfMargin": 20.82,
+          "fcfConversion": 88.37,
+          "ocfToCapex": 1.83
         }
       ],
       "shareholders": {
@@ -5617,6 +6451,13 @@
             "블랙록": 8.2,
             "스테이트스트리트": 5.3,
             "기타": 77.35
+          },
+          {
+            "year": 2025,
+            "뱅가드": 8.95,
+            "블랙록": 7.85,
+            "스테이트스트리트": 4.65,
+            "기타/소액주주": 78.55
           }
         ]
       }
@@ -5748,6 +6589,29 @@
           "fcfMargin": -26.74,
           "fcfConversion": 85.54,
           "ocfToCapex": 0.39
+        },
+        {
+          "year": 2025,
+          "revenue": 53.5,
+          "operatingIncome": -3.5,
+          "netIncome": -4.2,
+          "operatingCashFlow": 11.2,
+          "capitalExpenditure": 19.5,
+          "freeCashFlow": -8.3,
+          "investingCashFlow": -21.0,
+          "financingCashFlow": 8.5,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.0,
+          "netChangeInCash": -1.3,
+          "cashAndEquivalents": 12.5,
+          "shortTermInvestments": 10.0,
+          "totalCash": 22.5,
+          "totalDebt": 52.5,
+          "netCash": -30.0,
+          "fcfMargin": -15.51,
+          "fcfConversion": 197.62,
+          "ocfToCapex": 0.57
         }
       ],
       "shareholders": {
@@ -5816,6 +6680,13 @@
             "블랙록": 8.1,
             "스테이트스트리트": 4.55,
             "기타": 78.3
+          },
+          {
+            "year": 2025,
+            "뱅가드": 9.15,
+            "블랙록": 8.25,
+            "스테이트스트리트": 4.55,
+            "기타/소액주주": 78.05
           }
         ]
       }
@@ -5947,6 +6818,29 @@
           "fcfMargin": 9.92,
           "fcfConversion": 154.55,
           "ocfToCapex": 4.92
+        },
+        {
+          "year": 2025,
+          "revenue": 28.5,
+          "operatingIncome": 3.85,
+          "netIncome": 3.15,
+          "operatingCashFlow": 5.85,
+          "capitalExpenditure": 0.95,
+          "freeCashFlow": 4.9,
+          "investingCashFlow": -1.85,
+          "financingCashFlow": -2.85,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 2.65,
+          "totalShareholderReturn": 2.65,
+          "netChangeInCash": 1.15,
+          "cashAndEquivalents": 6.85,
+          "shortTermInvestments": 1.2,
+          "totalCash": 8.05,
+          "totalDebt": 2.5,
+          "netCash": 5.55,
+          "fcfMargin": 17.19,
+          "fcfConversion": 155.56,
+          "ocfToCapex": 6.16
         }
       ],
       "shareholders": {
@@ -6010,6 +6904,13 @@
             "뱅가드": 8.85,
             "블랙록": 7.4,
             "기타": 83.75
+          },
+          {
+            "year": 2025,
+            "뱅가드": 8.85,
+            "블랙록": 7.65,
+            "피델리티": 4.85,
+            "기타/소액주주": 78.65
           }
         ]
       }
@@ -6141,6 +7042,29 @@
           "fcfMargin": 26.82,
           "fcfConversion": 103.06,
           "ocfToCapex": 7.33
+        },
+        {
+          "year": 2025,
+          "revenue": 42.5,
+          "operatingIncome": 13.5,
+          "netIncome": 11.8,
+          "operatingCashFlow": 14.8,
+          "capitalExpenditure": 1.85,
+          "freeCashFlow": 12.95,
+          "investingCashFlow": -2.4,
+          "financingCashFlow": -11.2,
+          "dividendsPaid": 3.95,
+          "shareRepurchase": 6.85,
+          "totalShareholderReturn": 10.8,
+          "netChangeInCash": 1.2,
+          "cashAndEquivalents": 9.85,
+          "shortTermInvestments": 4.2,
+          "totalCash": 14.05,
+          "totalDebt": 15.2,
+          "netCash": -1.15,
+          "fcfMargin": 30.47,
+          "fcfConversion": 109.75,
+          "ocfToCapex": 8.0
         }
       ],
       "shareholders": {
@@ -6197,6 +7121,13 @@
             "뱅가드": 9.4,
             "블랙록": 7.8,
             "기타": 82.8
+          },
+          {
+            "year": 2025,
+            "뱅가드": 9.25,
+            "블랙록": 7.85,
+            "스테이트스트리트": 4.45,
+            "기타/소액주주": 78.45
           }
         ]
       }
@@ -6328,6 +7259,29 @@
           "fcfMargin": 42.48,
           "fcfConversion": 372.99,
           "ocfToCapex": 38.62
+        },
+        {
+          "year": 2025,
+          "revenue": 58.5,
+          "operatingIncome": 26.5,
+          "netIncome": 22.8,
+          "operatingCashFlow": 24.8,
+          "capitalExpenditure": 0.85,
+          "freeCashFlow": 23.95,
+          "investingCashFlow": -3.2,
+          "financingCashFlow": -19.5,
+          "dividendsPaid": 10.5,
+          "shareRepurchase": 7.8,
+          "totalShareholderReturn": 18.3,
+          "netChangeInCash": 2.1,
+          "cashAndEquivalents": 14.2,
+          "shortTermInvestments": 1.5,
+          "totalCash": 15.7,
+          "totalDebt": 72.5,
+          "netCash": -56.8,
+          "fcfMargin": 40.94,
+          "fcfConversion": 105.04,
+          "ocfToCapex": 29.18
         }
       ],
       "shareholders": {
@@ -6391,6 +7345,13 @@
             "뱅가드": 9.1,
             "블랙록": 7.65,
             "기타": 83.25
+          },
+          {
+            "year": 2025,
+            "뱅가드": 9.1,
+            "블랙록": 7.95,
+            "캐피탈그룹": 5.4,
+            "기타/소액주주": 77.55
           }
         ]
       }
@@ -6522,6 +7483,29 @@
           "fcfMargin": 10.12,
           "fcfConversion": 45.67,
           "ocfToCapex": 3.0
+        },
+        {
+          "year": 2025,
+          "revenue": 385.0,
+          "operatingIncome": 42.5,
+          "netIncome": 95.0,
+          "operatingCashFlow": 52.5,
+          "capitalExpenditure": 18.5,
+          "freeCashFlow": 34.0,
+          "investingCashFlow": -28.5,
+          "financingCashFlow": -12.5,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 8.5,
+          "totalShareholderReturn": 8.5,
+          "netChangeInCash": 11.5,
+          "cashAndEquivalents": 48.5,
+          "shortTermInvestments": 285.0,
+          "totalCash": 333.5,
+          "totalDebt": 118.5,
+          "netCash": 215.0,
+          "fcfMargin": 8.83,
+          "fcfConversion": 35.79,
+          "ocfToCapex": 2.84
         }
       ],
       "shareholders": {
@@ -6590,6 +7574,13 @@
             "뱅가드": 10.8,
             "블랙록": 8.4,
             "기타": 66.3
+          },
+          {
+            "year": 2025,
+            "워런버핏": 14.8,
+            "뱅가드": 7.15,
+            "블랙록": 5.85,
+            "기타/소액주주": 72.2
           }
         ]
       }
@@ -6721,6 +7712,29 @@
           "fcfMargin": 7.96,
           "fcfConversion": 22.91,
           "ocfToCapex": 3.63
+        },
+        {
+          "year": 2025,
+          "revenue": 172.5,
+          "operatingIncome": 64.5,
+          "netIncome": 52.8,
+          "operatingCashFlow": 72.5,
+          "capitalExpenditure": 4.5,
+          "freeCashFlow": 68.0,
+          "investingCashFlow": -18.5,
+          "financingCashFlow": -42.5,
+          "dividendsPaid": 14.8,
+          "shareRepurchase": 18.5,
+          "totalShareholderReturn": 33.3,
+          "netChangeInCash": 11.5,
+          "cashAndEquivalents": 580.0,
+          "shortTermInvestments": 0.0,
+          "totalCash": 580.0,
+          "totalDebt": 0.0,
+          "netCash": 580.0,
+          "fcfMargin": 39.42,
+          "fcfConversion": 128.79,
+          "ocfToCapex": 16.11
         }
       ],
       "shareholders": {
@@ -6777,6 +7791,13 @@
             "뱅가드": 9.45,
             "블랙록": 6.8,
             "기타": 83.75
+          },
+          {
+            "year": 2025,
+            "뱅가드": 9.45,
+            "블랙록": 6.85,
+            "스테이트스트리트": 4.65,
+            "기타/소액주주": 79.05
           }
         ]
       }
@@ -6908,6 +7929,29 @@
           "fcfMargin": 9.97,
           "fcfConversion": 90.13,
           "ocfToCapex": 2.42
+        },
+        {
+          "year": 2025,
+          "revenue": 358.0,
+          "operatingIncome": 46.5,
+          "netIncome": 38.5,
+          "operatingCashFlow": 58.5,
+          "capitalExpenditure": 24.5,
+          "freeCashFlow": 34.0,
+          "investingCashFlow": -25.5,
+          "financingCashFlow": -29.5,
+          "dividendsPaid": 16.5,
+          "shareRepurchase": 12.8,
+          "totalShareholderReturn": 29.3,
+          "netChangeInCash": 3.5,
+          "cashAndEquivalents": 34.5,
+          "shortTermInvestments": 2.5,
+          "totalCash": 37.0,
+          "totalDebt": 41.5,
+          "netCash": -4.5,
+          "fcfMargin": 9.5,
+          "fcfConversion": 88.31,
+          "ocfToCapex": 2.39
         }
       ],
       "shareholders": {
@@ -6964,6 +8008,13 @@
             "뱅가드": 9.5,
             "블랙록": 7.15,
             "기타": 83.35
+          },
+          {
+            "year": 2025,
+            "뱅가드": 9.35,
+            "블랙록": 7.15,
+            "스테이트스트리트": 5.25,
+            "기타/소액주주": 78.25
           }
         ]
       }
@@ -7095,6 +8146,29 @@
           "fcfMargin": 22.07,
           "fcfConversion": 107.69,
           "ocfToCapex": 5.26
+        },
+        {
+          "year": 2025,
+          "revenue": 91.5,
+          "operatingIncome": 22.5,
+          "netIncome": 18.5,
+          "operatingCashFlow": 24.5,
+          "capitalExpenditure": 4.2,
+          "freeCashFlow": 20.3,
+          "investingCashFlow": -6.5,
+          "financingCashFlow": -16.5,
+          "dividendsPaid": 12.4,
+          "shareRepurchase": 3.5,
+          "totalShareholderReturn": 15.9,
+          "netChangeInCash": 1.5,
+          "cashAndEquivalents": 24.5,
+          "shortTermInvestments": 4.5,
+          "totalCash": 29.0,
+          "totalDebt": 32.5,
+          "netCash": -3.5,
+          "fcfMargin": 22.19,
+          "fcfConversion": 109.73,
+          "ocfToCapex": 5.83
         }
       ],
       "shareholders": {
@@ -7151,6 +8225,13 @@
             "뱅가드": 9.35,
             "블랙록": 7.45,
             "기타": 83.2
+          },
+          {
+            "year": 2025,
+            "뱅가드": 9.15,
+            "블랙록": 7.45,
+            "스테이트스트리트": 5.45,
+            "기타/소액주주": 77.95
           }
         ]
       }
@@ -7282,6 +8363,29 @@
           "fcfMargin": 15.55,
           "fcfConversion": 62.5,
           "ocfToCapex": 2.56
+        },
+        {
+          "year": 2025,
+          "revenue": 48.5,
+          "operatingIncome": 17.5,
+          "netIncome": 14.2,
+          "operatingCashFlow": 16.5,
+          "capitalExpenditure": 4.8,
+          "freeCashFlow": 11.7,
+          "investingCashFlow": -6.8,
+          "financingCashFlow": -8.5,
+          "dividendsPaid": 5.2,
+          "shareRepurchase": 2.8,
+          "totalShareholderReturn": 8.0,
+          "netChangeInCash": 1.2,
+          "cashAndEquivalents": 4.85,
+          "shortTermInvestments": 1.5,
+          "totalCash": 6.35,
+          "totalDebt": 28.5,
+          "netCash": -22.15,
+          "fcfMargin": 24.12,
+          "fcfConversion": 82.39,
+          "ocfToCapex": 3.44
         }
       ],
       "shareholders": {
@@ -7350,6 +8454,13 @@
             "뱅가드": 8.75,
             "블랙록": 7.1,
             "기타": 73.35
+          },
+          {
+            "year": 2025,
+            "릴리재단": 10.45,
+            "뱅가드": 8.65,
+            "블랙록": 6.95,
+            "기타/소액주주": 73.95
           }
         ]
       }
@@ -7481,6 +8592,29 @@
           "fcfMargin": 2.5,
           "fcfConversion": 88.54,
           "ocfToCapex": 1.79
+        },
+        {
+          "year": 2025,
+          "revenue": 685.0,
+          "operatingIncome": 31.5,
+          "netIncome": 21.5,
+          "operatingCashFlow": 38.5,
+          "capitalExpenditure": 21.5,
+          "freeCashFlow": 17.0,
+          "investingCashFlow": -22.5,
+          "financingCashFlow": -14.5,
+          "dividendsPaid": 7.2,
+          "shareRepurchase": 6.8,
+          "totalShareholderReturn": 14.0,
+          "netChangeInCash": 1.5,
+          "cashAndEquivalents": 12.5,
+          "shortTermInvestments": 1.2,
+          "totalCash": 13.7,
+          "totalDebt": 62.5,
+          "netCash": -48.8,
+          "fcfMargin": 2.48,
+          "fcfConversion": 79.07,
+          "ocfToCapex": 1.79
         }
       ],
       "shareholders": {
@@ -7549,6 +8683,13 @@
             "뱅가드": 5.2,
             "블랙록": 4.1,
             "기타": 45.5
+          },
+          {
+            "year": 2025,
+            "월튼가문": 45.2,
+            "뱅가드": 5.45,
+            "블랙록": 4.15,
+            "기타/소액주주": 45.2
           }
         ]
       }
@@ -7680,6 +8821,29 @@
           "fcfMargin": 20.0,
           "fcfConversion": 96.3,
           "ocfToCapex": 20.5
+        },
+        {
+          "year": 2025,
+          "revenue": 42.5,
+          "operatingIncome": 10.8,
+          "netIncome": 9.2,
+          "operatingCashFlow": 10.2,
+          "capitalExpenditure": 0.45,
+          "freeCashFlow": 9.75,
+          "investingCashFlow": -0.65,
+          "financingCashFlow": -7.5,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 7.2,
+          "totalShareholderReturn": 7.2,
+          "netChangeInCash": 2.05,
+          "cashAndEquivalents": 8.85,
+          "shortTermInvestments": 1.2,
+          "totalCash": 10.05,
+          "totalDebt": 13.5,
+          "netCash": -3.45,
+          "fcfMargin": 22.94,
+          "fcfConversion": 105.98,
+          "ocfToCapex": 22.67
         }
       ],
       "shareholders": {
@@ -7748,6 +8912,13 @@
             "블랙록": 7.1,
             "창업자": 1.45,
             "기타": 82.75
+          },
+          {
+            "year": 2025,
+            "뱅가드": 8.75,
+            "블랙록": 7.25,
+            "FMR(피델리티)": 5.45,
+            "기타/소액주주": 78.55
           }
         ]
       }
@@ -7879,6 +9050,29 @@
           "fcfMargin": 22.28,
           "fcfConversion": 112.7,
           "ocfToCapex": 2.71
+        },
+        {
+          "year": 2025,
+          "revenue": 58.5,
+          "operatingIncome": 19.5,
+          "netIncome": 14.8,
+          "operatingCashFlow": 21.5,
+          "capitalExpenditure": 9.5,
+          "freeCashFlow": 12.0,
+          "investingCashFlow": -10.5,
+          "financingCashFlow": -9.5,
+          "dividendsPaid": 4.8,
+          "shareRepurchase": 4.2,
+          "totalShareholderReturn": 9.0,
+          "netChangeInCash": 1.5,
+          "cashAndEquivalents": 14.2,
+          "shortTermInvestments": 2.5,
+          "totalCash": 16.7,
+          "totalDebt": 88.5,
+          "netCash": -71.8,
+          "fcfMargin": 20.51,
+          "fcfConversion": 81.08,
+          "ocfToCapex": 2.26
         }
       ],
       "shareholders": {
@@ -7947,6 +9141,13 @@
             "뱅가드": 5.8,
             "블랙록": 4.5,
             "기타": 46.9
+          },
+          {
+            "year": 2025,
+            "래리엘리슨": 41.2,
+            "뱅가드": 6.15,
+            "블랙록": 5.15,
+            "기타/소액주주": 47.5
           }
         ]
       }
@@ -8078,6 +9279,29 @@
           "fcfMargin": 11.67,
           "fcfConversion": 100.0,
           "ocfToCapex": 1.88
+        },
+        {
+          "year": 2025,
+          "revenue": 1850.0,
+          "operatingIncome": 320.0,
+          "netIncome": 260.0,
+          "operatingCashFlow": 580.0,
+          "capitalExpenditure": 340.0,
+          "freeCashFlow": 240.0,
+          "investingCashFlow": -360.0,
+          "financingCashFlow": -180.0,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.0,
+          "netChangeInCash": 40.0,
+          "cashAndEquivalents": 480.0,
+          "shortTermInvestments": 140.0,
+          "totalCash": 620.0,
+          "totalDebt": 850.0,
+          "netCash": -230.0,
+          "fcfMargin": 12.97,
+          "fcfConversion": 92.31,
+          "ocfToCapex": 1.71
         }
       ],
       "shareholders": {
@@ -8146,6 +9370,13 @@
             "도시바": 39.8,
             "호야": 3.05,
             "기타": 3.05
+          },
+          {
+            "year": 2025,
+            "Bain컨소시엄(Pangea)": 49.8,
+            "도시바(Toshiba)": 38.5,
+            "호야(Hoya)": 2.8,
+            "소액주주/기타": 8.9
           }
         ]
       }
@@ -8277,6 +9508,29 @@
           "fcfMargin": 30.41,
           "fcfConversion": 70.62,
           "ocfToCapex": 1.89
+        },
+        {
+          "year": 2025,
+          "revenue": 2980.0,
+          "operatingIncome": 1420.0,
+          "netIncome": 1280.0,
+          "operatingCashFlow": 1680.0,
+          "capitalExpenditure": 980.0,
+          "freeCashFlow": 700.0,
+          "investingCashFlow": -1050.0,
+          "financingCashFlow": -480.0,
+          "dividendsPaid": 420.0,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 420.0,
+          "netChangeInCash": 150.0,
+          "cashAndEquivalents": 1850.0,
+          "shortTermInvestments": 300.0,
+          "totalCash": 2150.0,
+          "totalDebt": 970.0,
+          "netCash": 1180.0,
+          "fcfMargin": 23.49,
+          "fcfConversion": 54.69,
+          "ocfToCapex": 1.71
         }
       ],
       "shareholders": {
@@ -8345,6 +9599,13 @@
             "ADR기관": 20.52,
             "GIC": 3.15,
             "소액주주": 69.95
+          },
+          {
+            "year": 2025,
+            "대만행정원국가발전기금": 6.38,
+            "블랙록": 5.15,
+            "뱅가드": 3.85,
+            "외국인/소액주주": 84.62
           }
         ]
       }
@@ -8476,6 +9737,29 @@
           "fcfMargin": 17.14,
           "fcfConversion": 64.24,
           "ocfToCapex": 3.49
+        },
+        {
+          "year": 2025,
+          "revenue": 32.5,
+          "operatingIncome": 10.8,
+          "netIncome": 9.2,
+          "operatingCashFlow": 11.5,
+          "capitalExpenditure": 2.4,
+          "freeCashFlow": 9.1,
+          "investingCashFlow": -3.2,
+          "financingCashFlow": -7.5,
+          "dividendsPaid": 3.2,
+          "shareRepurchase": 4.1,
+          "totalShareholderReturn": 7.3,
+          "netChangeInCash": 0.8,
+          "cashAndEquivalents": 8.8,
+          "shortTermInvestments": 1.2,
+          "totalCash": 10.0,
+          "totalDebt": 4.8,
+          "netCash": 5.2,
+          "fcfMargin": 28.0,
+          "fcfConversion": 98.91,
+          "ocfToCapex": 4.79
         }
       ],
       "shareholders": {
@@ -8551,6 +9835,13 @@
             "블랙록": 8.15,
             "베일리": 4.5,
             "기타": 77.5
+          },
+          {
+            "year": 2025,
+            "블랙록": 7.95,
+            "캐피탈그룹": 6.85,
+            "뱅가드": 4.15,
+            "소액주주": 81.05
           }
         ]
       }
@@ -8682,6 +9973,29 @@
           "fcfMargin": 15.57,
           "fcfConversion": 79.61,
           "ocfToCapex": 4.0
+        },
+        {
+          "year": 2025,
+          "revenue": 2450.0,
+          "operatingIncome": 680.0,
+          "netIncome": 520.0,
+          "operatingCashFlow": 620.0,
+          "capitalExpenditure": 160.0,
+          "freeCashFlow": 460.0,
+          "investingCashFlow": -180.0,
+          "financingCashFlow": -320.0,
+          "dividendsPaid": 240.0,
+          "shareRepurchase": 70.0,
+          "totalShareholderReturn": 310.0,
+          "netChangeInCash": 120.0,
+          "cashAndEquivalents": 580.0,
+          "shortTermInvestments": 120.0,
+          "totalCash": 700.0,
+          "totalDebt": 0.0,
+          "netCash": 700.0,
+          "fcfMargin": 18.78,
+          "fcfConversion": 88.46,
+          "ocfToCapex": 3.88
         }
       ],
       "shareholders": {
@@ -8745,6 +10059,13 @@
             "마스터트러스트": 22.4,
             "커스터디": 7.85,
             "기타": 69.75
+          },
+          {
+            "year": 2025,
+            "일본마스터트러스트": 22.4,
+            "일본커스터디": 9.1,
+            "블랙록": 5.85,
+            "소액주주": 62.65
           }
         ]
       }
@@ -8876,6 +10197,29 @@
           "fcfMargin": 9.09,
           "fcfConversion": 83.0,
           "ocfToCapex": 2.95
+        },
+        {
+          "year": 2025,
+          "revenue": 46500.0,
+          "operatingIncome": 5200.0,
+          "netIncome": 4800.0,
+          "operatingCashFlow": 5400.0,
+          "capitalExpenditure": 2200.0,
+          "freeCashFlow": 3200.0,
+          "investingCashFlow": -3100.0,
+          "financingCashFlow": -1800.0,
+          "dividendsPaid": 1200.0,
+          "shareRepurchase": 500.0,
+          "totalShareholderReturn": 1700.0,
+          "netChangeInCash": 500.0,
+          "cashAndEquivalents": 7200.0,
+          "shortTermInvestments": 4200.0,
+          "totalCash": 11400.0,
+          "totalDebt": 31500.0,
+          "netCash": -20100.0,
+          "fcfMargin": 6.88,
+          "fcfConversion": 66.67,
+          "ocfToCapex": 2.45
         }
       ],
       "shareholders": {
@@ -8951,6 +10295,13 @@
             "도요타직기": 8.45,
             "커스터디": 6.2,
             "기타": 70.55
+          },
+          {
+            "year": 2025,
+            "토요타자동직기": 8.5,
+            "일본마스터트러스트": 14.8,
+            "덴소": 3.2,
+            "소액주주": 73.5
           }
         ]
       }
@@ -9082,6 +10433,29 @@
           "fcfMargin": 5.91,
           "fcfConversion": 79.38,
           "ocfToCapex": 2.13
+        },
+        {
+          "year": 2025,
+          "revenue": 13500.0,
+          "operatingIncome": 1380.0,
+          "netIncome": 1080.0,
+          "operatingCashFlow": 1550.0,
+          "capitalExpenditure": 580.0,
+          "freeCashFlow": 970.0,
+          "investingCashFlow": -720.0,
+          "financingCashFlow": -680.0,
+          "dividendsPaid": 120.0,
+          "shareRepurchase": 280.0,
+          "totalShareholderReturn": 400.0,
+          "netChangeInCash": 150.0,
+          "cashAndEquivalents": 1950.0,
+          "shortTermInvestments": 450.0,
+          "totalCash": 2400.0,
+          "totalDebt": 2850.0,
+          "netCash": -450.0,
+          "fcfMargin": 7.19,
+          "fcfConversion": 89.81,
+          "ocfToCapex": 2.67
         }
       ],
       "shareholders": {
@@ -9150,6 +10524,13 @@
             "커스터디": 6.8,
             "ADR": 9.2,
             "기타": 66.5
+          },
+          {
+            "year": 2025,
+            "일본마스터트러스트": 17.2,
+            "일본커스터디": 6.8,
+            "블랙록": 5.2,
+            "소액주주": 70.8
           }
         ]
       }
@@ -9281,6 +10662,29 @@
           "fcfMargin": 13.82,
           "fcfConversion": 84.78,
           "ocfToCapex": 3.44
+        },
+        {
+          "year": 2025,
+          "revenue": 91.5,
+          "operatingIncome": 23.5,
+          "netIncome": 16.2,
+          "operatingCashFlow": 21.5,
+          "capitalExpenditure": 7.8,
+          "freeCashFlow": 13.7,
+          "investingCashFlow": -8.5,
+          "financingCashFlow": -11.5,
+          "dividendsPaid": 7.5,
+          "shareRepurchase": 2.5,
+          "totalShareholderReturn": 10.0,
+          "netChangeInCash": 1.5,
+          "cashAndEquivalents": 12.5,
+          "shortTermInvestments": 2.5,
+          "totalCash": 15.0,
+          "totalDebt": 38.5,
+          "netCash": -23.5,
+          "fcfMargin": 14.97,
+          "fcfConversion": 84.57,
+          "ocfToCapex": 2.76
         }
       ],
       "shareholders": {
@@ -9337,6 +10741,13 @@
             "아르노가문": 48.6,
             "기관투자자": 6.8,
             "소액주주": 44.6
+          },
+          {
+            "year": 2025,
+            "아르노가문": 48.6,
+            "블랙록": 3.2,
+            "뱅가드": 2.1,
+            "소액주주": 46.1
           }
         ]
       }
@@ -9468,6 +10879,29 @@
           "fcfMargin": 35.06,
           "fcfConversion": 95.51,
           "ocfToCapex": 3.87
+        },
+        {
+          "year": 2025,
+          "revenue": 310.0,
+          "operatingIncome": 142.0,
+          "netIncome": 115.0,
+          "operatingCashFlow": 128.0,
+          "capitalExpenditure": 38.0,
+          "freeCashFlow": 90.0,
+          "investingCashFlow": -42.0,
+          "financingCashFlow": -78.0,
+          "dividendsPaid": 28.0,
+          "shareRepurchase": 48.0,
+          "totalShareholderReturn": 76.0,
+          "netChangeInCash": 8.0,
+          "cashAndEquivalents": 34.0,
+          "shortTermInvestments": 8.0,
+          "totalCash": 42.0,
+          "totalDebt": 42.0,
+          "netCash": 0.0,
+          "fcfMargin": 29.03,
+          "fcfConversion": 78.26,
+          "ocfToCapex": 3.37
         }
       ],
       "shareholders": {
@@ -9536,6 +10970,13 @@
             "뱅가드": 4.1,
             "블랙록": 3.85,
             "기타": 63.95
+          },
+          {
+            "year": 2025,
+            "노보홀딩스": 28.4,
+            "블랙록": 5.15,
+            "뱅가드": 3.45,
+            "소액주주": 63.0
           }
         ]
       }
@@ -9667,6 +11108,29 @@
           "fcfMargin": 16.84,
           "fcfConversion": 84.56,
           "ocfToCapex": 5.26
+        },
+        {
+          "year": 2025,
+          "revenue": 34.5,
+          "operatingIncome": 8.8,
+          "netIncome": 6.8,
+          "operatingCashFlow": 8.5,
+          "capitalExpenditure": 1.4,
+          "freeCashFlow": 7.1,
+          "investingCashFlow": -2.1,
+          "financingCashFlow": -5.5,
+          "dividendsPaid": 2.8,
+          "shareRepurchase": 2.4,
+          "totalShareholderReturn": 5.2,
+          "netChangeInCash": 0.9,
+          "cashAndEquivalents": 11.5,
+          "shortTermInvestments": 1.8,
+          "totalCash": 13.3,
+          "totalDebt": 14.2,
+          "netCash": -0.9,
+          "fcfMargin": 20.58,
+          "fcfConversion": 104.41,
+          "ocfToCapex": 6.07
         }
       ],
       "shareholders": {
@@ -9723,6 +11187,13 @@
             "플래트너": 6.15,
             "기관투자자": 10.2,
             "소액주주": 83.65
+          },
+          {
+            "year": 2025,
+            "하소플래트너": 6.2,
+            "블랙록": 5.85,
+            "뱅가드": 3.95,
+            "소액주주": 84.0
           }
         ]
       }
@@ -9854,6 +11325,29 @@
           "fcfMargin": 22.72,
           "fcfConversion": 150.0,
           "ocfToCapex": 8.8
+        },
+        {
+          "year": 2025,
+          "revenue": 52.5,
+          "operatingIncome": 10.5,
+          "netIncome": 8.4,
+          "operatingCashFlow": 12.8,
+          "capitalExpenditure": 1.85,
+          "freeCashFlow": 10.95,
+          "investingCashFlow": -3.2,
+          "financingCashFlow": -8.5,
+          "dividendsPaid": 5.2,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 5.2,
+          "netChangeInCash": 1.1,
+          "cashAndEquivalents": 8.5,
+          "shortTermInvestments": 1.2,
+          "totalCash": 9.7,
+          "totalDebt": 28.5,
+          "netCash": -18.8,
+          "fcfMargin": 20.86,
+          "fcfConversion": 130.36,
+          "ocfToCapex": 6.92
         }
       ],
       "shareholders": {
@@ -9910,6 +11404,13 @@
             "뱅가드": 8.1,
             "블랙록": 7.45,
             "기타": 84.45
+          },
+          {
+            "year": 2025,
+            "블랙록": 7.85,
+            "뱅가드": 4.25,
+            "스테이트스트리트": 3.45,
+            "소액주주": 84.45
           }
         ]
       }
@@ -10041,6 +11542,29 @@
           "fcfMargin": 31.99,
           "fcfConversion": 103.26,
           "ocfToCapex": 7.79
+        },
+        {
+          "year": 2025,
+          "revenue": 16.2,
+          "operatingIncome": 6.8,
+          "netIncome": 4.8,
+          "operatingCashFlow": 5.8,
+          "capitalExpenditure": 1.1,
+          "freeCashFlow": 4.7,
+          "investingCashFlow": -1.5,
+          "financingCashFlow": -3.6,
+          "dividendsPaid": 2.8,
+          "shareRepurchase": 0.5,
+          "totalShareholderReturn": 3.3,
+          "netChangeInCash": 0.7,
+          "cashAndEquivalents": 10.8,
+          "shortTermInvestments": 1.5,
+          "totalCash": 12.3,
+          "totalDebt": 2.1,
+          "netCash": 10.2,
+          "fcfMargin": 29.01,
+          "fcfConversion": 97.92,
+          "ocfToCapex": 5.27
         }
       ],
       "shareholders": {
@@ -10092,6 +11616,12 @@
             "year": 2024,
             "에르메스가문": 66.7,
             "기관/소액주주": 33.3
+          },
+          {
+            "year": 2025,
+            "에르메스가문": 66.8,
+            "블랙록": 1.95,
+            "소액주주": 31.25
           }
         ]
       }
@@ -10223,6 +11753,29 @@
           "fcfMargin": 13.19,
           "fcfConversion": 111.76,
           "ocfToCapex": 2.58
+        },
+        {
+          "year": 2025,
+          "revenue": 7450.0,
+          "operatingIncome": 1120.0,
+          "netIncome": 980.0,
+          "operatingCashFlow": 1450.0,
+          "capitalExpenditure": 480.0,
+          "freeCashFlow": 970.0,
+          "investingCashFlow": -850.0,
+          "financingCashFlow": -420.0,
+          "dividendsPaid": 140.0,
+          "shareRepurchase": 180.0,
+          "totalShareholderReturn": 320.0,
+          "netChangeInCash": 180.0,
+          "cashAndEquivalents": 4200.0,
+          "shortTermInvestments": 1500.0,
+          "totalCash": 5700.0,
+          "totalDebt": 18500.0,
+          "netCash": -12800.0,
+          "fcfMargin": 13.02,
+          "fcfConversion": 98.98,
+          "ocfToCapex": 3.02
         }
       ],
       "shareholders": {
@@ -10279,6 +11832,12 @@
             "손정의": 34.2,
             "마스터트러스트": 14.1,
             "기타": 51.7
+          },
+          {
+            "year": 2025,
+            "손정의(Masayoshi Son)": 29.5,
+            "일본마스터트러스트": 10.8,
+            "소액주주": 59.7
           }
         ]
       }
@@ -10410,6 +11969,29 @@
           "fcfMargin": 34.95,
           "fcfConversion": 131.13,
           "ocfToCapex": 7.57
+        },
+        {
+          "year": 2025,
+          "revenue": 685.0,
+          "operatingIncome": 215.0,
+          "netIncome": 178.0,
+          "operatingCashFlow": 248.0,
+          "capitalExpenditure": 48.0,
+          "freeCashFlow": 200.0,
+          "investingCashFlow": -85.0,
+          "financingCashFlow": -142.0,
+          "dividendsPaid": 38.0,
+          "shareRepurchase": 98.0,
+          "totalShareholderReturn": 136.0,
+          "netChangeInCash": 21.0,
+          "cashAndEquivalents": 195.0,
+          "shortTermInvestments": 120.0,
+          "totalCash": 315.0,
+          "totalDebt": 345.0,
+          "netCash": -30.0,
+          "fcfMargin": 29.2,
+          "fcfConversion": 112.36,
+          "ocfToCapex": 5.17
         }
       ],
       "shareholders": {
@@ -10466,6 +12048,12 @@
             "프로서스": 24.8,
             "마화텅": 8.35,
             "기타": 66.85
+          },
+          {
+            "year": 2025,
+            "Prosus/Naspers": 24.8,
+            "마화텅": 8.4,
+            "소액주주": 66.8
           }
         ]
       }
@@ -10597,6 +12185,29 @@
           "fcfMargin": 16.18,
           "fcfConversion": 188.98,
           "ocfToCapex": 5.96
+        },
+        {
+          "year": 2025,
+          "revenue": 995.0,
+          "operatingIncome": 142.0,
+          "netIncome": 118.0,
+          "operatingCashFlow": 185.0,
+          "capitalExpenditure": 42.0,
+          "freeCashFlow": 143.0,
+          "investingCashFlow": -68.0,
+          "financingCashFlow": -108.0,
+          "dividendsPaid": 32.0,
+          "shareRepurchase": 72.0,
+          "totalShareholderReturn": 104.0,
+          "netChangeInCash": 9.0,
+          "cashAndEquivalents": 265.0,
+          "shortTermInvestments": 180.0,
+          "totalCash": 445.0,
+          "totalDebt": 210.0,
+          "netCash": 235.0,
+          "fcfMargin": 14.37,
+          "fcfConversion": 121.19,
+          "ocfToCapex": 4.4
         }
       ],
       "shareholders": {
@@ -10660,6 +12271,13 @@
             "소프트뱅크": 2.8,
             "마윈/차이": 5.8,
             "기타": 91.4
+          },
+          {
+            "year": 2025,
+            "소프트뱅크": 2.1,
+            "조셉차이/마윈": 3.8,
+            "뱅가드": 3.2,
+            "소액주주": 90.9
           }
         ]
       }
@@ -10791,6 +12409,29 @@
           "fcfMargin": 9.33,
           "fcfConversion": 174.13,
           "ocfToCapex": 1.52
+        },
+        {
+          "year": 2025,
+          "revenue": 745.0,
+          "operatingIncome": 48.5,
+          "netIncome": 41.2,
+          "operatingCashFlow": 68.5,
+          "capitalExpenditure": 42.0,
+          "freeCashFlow": 26.5,
+          "investingCashFlow": -48.0,
+          "financingCashFlow": -14.5,
+          "dividendsPaid": 11.2,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 11.2,
+          "netChangeInCash": 6.0,
+          "cashAndEquivalents": 68.5,
+          "shortTermInvestments": 24.0,
+          "totalCash": 92.5,
+          "totalDebt": 48.5,
+          "netCash": 44.0,
+          "fcfMargin": 3.56,
+          "fcfConversion": 64.32,
+          "ocfToCapex": 1.63
         }
       ],
       "shareholders": {
@@ -10859,6 +12500,12 @@
             "뤼샹양": 13.5,
             "버크셔해서웨이": 4.95,
             "기타": 63.9
+          },
+          {
+            "year": 2025,
+            "왕촨푸": 17.65,
+            "버크셔해서웨이": 4.8,
+            "소액주주": 77.55
           }
         ]
       }
@@ -10990,6 +12637,29 @@
           "fcfMargin": 10.0,
           "fcfConversion": 144.44,
           "ocfToCapex": 2.35
+        },
+        {
+          "year": 2025,
+          "revenue": 310.0,
+          "operatingIncome": 34.5,
+          "netIncome": 24.5,
+          "operatingCashFlow": 52.0,
+          "capitalExpenditure": 23.5,
+          "freeCashFlow": 28.5,
+          "investingCashFlow": -24.5,
+          "financingCashFlow": -25.5,
+          "dividendsPaid": 9.2,
+          "shareRepurchase": 14.5,
+          "totalShareholderReturn": 23.7,
+          "netChangeInCash": 2.0,
+          "cashAndEquivalents": 42.5,
+          "shortTermInvestments": 1.5,
+          "totalCash": 44.0,
+          "totalDebt": 74.5,
+          "netCash": -30.5,
+          "fcfMargin": 9.19,
+          "fcfConversion": 116.33,
+          "ocfToCapex": 2.21
         }
       ],
       "shareholders": {
@@ -11046,6 +12716,12 @@
             "뱅가드": 8.85,
             "블랙록": 7.3,
             "기타": 83.85
+          },
+          {
+            "year": 2025,
+            "블랙록": 8.45,
+            "뱅가드": 4.85,
+            "소액주주": 86.7
           }
         ]
       }
@@ -11177,6 +12853,29 @@
           "fcfMargin": 11.24,
           "fcfConversion": 114.48,
           "ocfToCapex": 2.47
+        },
+        {
+          "year": 2025,
+          "revenue": 218.0,
+          "operatingIncome": 28.5,
+          "netIncome": 20.8,
+          "operatingCashFlow": 38.5,
+          "capitalExpenditure": 17.5,
+          "freeCashFlow": 21.0,
+          "investingCashFlow": -18.5,
+          "financingCashFlow": -18.5,
+          "dividendsPaid": 7.8,
+          "shareRepurchase": 9.2,
+          "totalShareholderReturn": 17.0,
+          "netChangeInCash": 1.5,
+          "cashAndEquivalents": 31.5,
+          "shortTermInvestments": 1.2,
+          "totalCash": 32.7,
+          "totalDebt": 48.5,
+          "netCash": -15.8,
+          "fcfMargin": 9.63,
+          "fcfConversion": 100.96,
+          "ocfToCapex": 2.2
         }
       ],
       "shareholders": {
@@ -11233,6 +12932,12 @@
             "사원조합": 7.4,
             "블랙록": 6.8,
             "기타": 85.8
+          },
+          {
+            "year": 2025,
+            "블랙록": 6.85,
+            "프랑스연기금": 4.15,
+            "소액주주": 89.0
           }
         ]
       }
@@ -11364,6 +13069,29 @@
           "fcfMargin": 11.75,
           "fcfConversion": 94.07,
           "ocfToCapex": 3.06
+        },
+        {
+          "year": 2025,
+          "revenue": 94.5,
+          "operatingIncome": 16.5,
+          "netIncome": 11.5,
+          "operatingCashFlow": 16.8,
+          "capitalExpenditure": 5.2,
+          "freeCashFlow": 11.6,
+          "investingCashFlow": -6.5,
+          "financingCashFlow": -9.5,
+          "dividendsPaid": 8.4,
+          "shareRepurchase": 0.8,
+          "totalShareholderReturn": 9.2,
+          "netChangeInCash": 0.8,
+          "cashAndEquivalents": 8.5,
+          "shortTermInvestments": 1.5,
+          "totalCash": 10.0,
+          "totalDebt": 52.5,
+          "netCash": -42.5,
+          "fcfMargin": 12.28,
+          "fcfConversion": 100.87,
+          "ocfToCapex": 3.23
         }
       ],
       "shareholders": {
@@ -11408,6 +13136,12 @@
             "year": 2024,
             "기관투자자": 8.5,
             "소액주주": 91.5
+          },
+          {
+            "year": 2025,
+            "블랙록": 4.25,
+            "뱅가드": 3.15,
+            "소액주주": 92.6
           }
         ]
       }
@@ -11539,6 +13273,29 @@
           "fcfMargin": 20.75,
           "fcfConversion": 96.21,
           "ocfToCapex": 3.82
+        },
+        {
+          "year": 2025,
+          "revenue": 61.5,
+          "operatingIncome": 19.5,
+          "netIncome": 13.8,
+          "operatingCashFlow": 18.5,
+          "capitalExpenditure": 4.5,
+          "freeCashFlow": 14.0,
+          "investingCashFlow": -5.8,
+          "financingCashFlow": -11.5,
+          "dividendsPaid": 8.2,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 8.2,
+          "netChangeInCash": 1.2,
+          "cashAndEquivalents": 9.2,
+          "shortTermInvestments": 1.8,
+          "totalCash": 11.0,
+          "totalDebt": 28.5,
+          "netCash": -17.5,
+          "fcfMargin": 22.76,
+          "fcfConversion": 101.45,
+          "ocfToCapex": 4.11
         }
       ],
       "shareholders": {
@@ -11583,6 +13340,12 @@
             "year": 2024,
             "창업가문": 10.5,
             "소액주주": 89.5
+          },
+          {
+            "year": 2025,
+            "호프만/오에리 가문": 50.01,
+            "노바티스": 0.0,
+            "소액주주": 49.99
           }
         ]
       }
@@ -11714,6 +13477,29 @@
           "fcfMargin": 25.97,
           "fcfConversion": 121.95,
           "ocfToCapex": 5.0
+        },
+        {
+          "year": 2025,
+          "revenue": 4.08,
+          "operatingIncome": 1.21,
+          "netIncome": 0.89,
+          "operatingCashFlow": 1.34,
+          "capitalExpenditure": 0.26,
+          "freeCashFlow": 1.08,
+          "investingCashFlow": -0.68,
+          "financingCashFlow": -0.3,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 0.0,
+          "netChangeInCash": 0.3,
+          "cashAndEquivalents": 7.93,
+          "shortTermInvestments": 0.0,
+          "totalCash": 7.93,
+          "totalDebt": 0.0,
+          "netCash": 7.93,
+          "fcfMargin": 26.47,
+          "fcfConversion": 121.35,
+          "ocfToCapex": 5.15
         }
       ],
       "shareholders": {
@@ -11760,6 +13546,11 @@
             "year": 2023,
             "소프트뱅크": 90.0,
             "기타": 10.0
+          },
+          {
+            "year": 2024,
+            "소프트뱅크": 88.5,
+            "기타": 11.5
           },
           {
             "year": 2024,
@@ -11896,6 +13687,29 @@
           "fcfMargin": 39.3,
           "fcfConversion": 248.89,
           "ocfToCapex": 38.33
+        },
+        {
+          "year": 2025,
+          "revenue": 3.25,
+          "operatingIncome": 0.85,
+          "netIncome": 0.72,
+          "operatingCashFlow": 1.15,
+          "capitalExpenditure": 0.05,
+          "freeCashFlow": 1.1,
+          "investingCashFlow": -0.25,
+          "financingCashFlow": -0.65,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.35,
+          "totalShareholderReturn": 0.35,
+          "netChangeInCash": 0.25,
+          "cashAndEquivalents": 4.85,
+          "shortTermInvestments": 0.5,
+          "totalCash": 5.35,
+          "totalDebt": 0.0,
+          "netCash": 5.35,
+          "fcfMargin": 33.85,
+          "fcfConversion": 152.78,
+          "ocfToCapex": 23.0
         }
       ],
       "shareholders": {
@@ -11971,6 +13785,13 @@
             "알렉스카프": 2.45,
             "뱅가드": 9.2,
             "기타": 81.15
+          },
+          {
+            "year": 2025,
+            "피터틸/창업자": 7.8,
+            "뱅가드": 8.45,
+            "블랙록": 5.85,
+            "소액주주": 77.9
           }
         ]
       }
@@ -12102,6 +13923,29 @@
           "fcfMargin": 25.63,
           "fcfConversion": -98.91,
           "ocfToCapex": 23.75
+        },
+        {
+          "year": 2025,
+          "revenue": 4.15,
+          "operatingIncome": -0.65,
+          "netIncome": -0.55,
+          "operatingCashFlow": 1.12,
+          "capitalExpenditure": 0.08,
+          "freeCashFlow": 1.04,
+          "investingCashFlow": -0.35,
+          "financingCashFlow": -0.55,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.45,
+          "totalShareholderReturn": 0.45,
+          "netChangeInCash": 0.22,
+          "cashAndEquivalents": 4.65,
+          "shortTermInvestments": 0.4,
+          "totalCash": 5.05,
+          "totalDebt": 0.0,
+          "netCash": 5.05,
+          "fcfMargin": 25.06,
+          "fcfConversion": -189.09,
+          "ocfToCapex": 14.0
         }
       ],
       "shareholders": {
@@ -12165,6 +14009,13 @@
             "알티미터": 7.45,
             "뱅가드": 8.4,
             "기타": 84.15
+          },
+          {
+            "year": 2025,
+            "뱅가드": 8.15,
+            "블랙록": 5.45,
+            "워런버핏(버크셔)": 0.0,
+            "소액주주": 86.4
           }
         ]
       }
@@ -12296,6 +14147,29 @@
           "fcfMargin": 29.62,
           "fcfConversion": 278.57,
           "ocfToCapex": 5.18
+        },
+        {
+          "year": 2025,
+          "revenue": 4.35,
+          "operatingIncome": 0.45,
+          "netIncome": 0.38,
+          "operatingCashFlow": 1.35,
+          "capitalExpenditure": 0.12,
+          "freeCashFlow": 1.23,
+          "investingCashFlow": -0.45,
+          "financingCashFlow": -0.65,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.45,
+          "totalShareholderReturn": 0.45,
+          "netChangeInCash": 0.25,
+          "cashAndEquivalents": 4.25,
+          "shortTermInvestments": 0.3,
+          "totalCash": 4.55,
+          "totalDebt": 0.75,
+          "netCash": 3.8,
+          "fcfMargin": 28.28,
+          "fcfConversion": 323.68,
+          "ocfToCapex": 11.25
         }
       ],
       "shareholders": {
@@ -12364,6 +14238,13 @@
             "뱅가드": 9.1,
             "블랙록": 7.2,
             "기타": 78.3
+          },
+          {
+            "year": 2025,
+            "조지커츠": 6.1,
+            "뱅가드": 8.65,
+            "블랙록": 6.85,
+            "소액주주": 78.4
           }
         ]
       }
@@ -12495,6 +14376,29 @@
           "fcfMargin": 30.47,
           "fcfConversion": 206.25,
           "ocfToCapex": 14.59
+        },
+        {
+          "year": 2025,
+          "revenue": 38.5,
+          "operatingIncome": 7.85,
+          "netIncome": 6.15,
+          "operatingCashFlow": 12.8,
+          "capitalExpenditure": 0.95,
+          "freeCashFlow": 11.85,
+          "investingCashFlow": -2.1,
+          "financingCashFlow": -9.5,
+          "dividendsPaid": 1.6,
+          "shareRepurchase": 7.2,
+          "totalShareholderReturn": 8.8,
+          "netChangeInCash": 1.2,
+          "cashAndEquivalents": 14.5,
+          "shortTermInvestments": 2.1,
+          "totalCash": 16.6,
+          "totalDebt": 11.8,
+          "netCash": 4.8,
+          "fcfMargin": 30.78,
+          "fcfConversion": 192.68,
+          "ocfToCapex": 13.47
         }
       ],
       "shareholders": {
@@ -12563,6 +14467,13 @@
             "뱅가드": 8.95,
             "블랙록": 7.4,
             "기타": 80.85
+          },
+          {
+            "year": 2025,
+            "마크베니오프": 2.8,
+            "뱅가드": 8.75,
+            "블랙록": 7.45,
+            "소액주주": 81.0
           }
         ]
       }
@@ -12694,6 +14605,29 @@
           "fcfMargin": 35.66,
           "fcfConversion": 130.77,
           "ocfToCapex": 18.0
+        },
+        {
+          "year": 2025,
+          "revenue": 23.5,
+          "operatingIncome": 8.45,
+          "netIncome": 6.85,
+          "operatingCashFlow": 9.2,
+          "capitalExpenditure": 0.55,
+          "freeCashFlow": 8.65,
+          "investingCashFlow": -1.85,
+          "financingCashFlow": -6.8,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 6.2,
+          "totalShareholderReturn": 6.2,
+          "netChangeInCash": 0.55,
+          "cashAndEquivalents": 8.95,
+          "shortTermInvestments": 1.2,
+          "totalCash": 10.15,
+          "totalDebt": 4.1,
+          "netCash": 6.05,
+          "fcfMargin": 36.81,
+          "fcfConversion": 126.28,
+          "ocfToCapex": 16.73
         }
       ],
       "shareholders": {
@@ -12750,6 +14684,12 @@
             "뱅가드": 8.9,
             "블랙록": 7.65,
             "기타": 83.45
+          },
+          {
+            "year": 2025,
+            "뱅가드": 8.95,
+            "블랙록": 7.85,
+            "소액주주": 83.2
           }
         ]
       }
@@ -12881,6 +14821,29 @@
           "fcfMargin": 29.78,
           "fcfConversion": 112.5,
           "ocfToCapex": 8.36
+        },
+        {
+          "year": 2025,
+          "revenue": 28.83,
+          "operatingIncome": 8.8,
+          "netIncome": 7.78,
+          "operatingCashFlow": 9.84,
+          "capitalExpenditure": 1.16,
+          "freeCashFlow": 8.68,
+          "investingCashFlow": -1.42,
+          "financingCashFlow": -6.2,
+          "dividendsPaid": 1.21,
+          "shareRepurchase": 3.99,
+          "totalShareholderReturn": 5.2,
+          "netChangeInCash": 1.65,
+          "cashAndEquivalents": 8.44,
+          "shortTermInvestments": 1.26,
+          "totalCash": 9.7,
+          "totalDebt": 5.68,
+          "netCash": 4.02,
+          "fcfMargin": 30.11,
+          "fcfConversion": 111.57,
+          "ocfToCapex": 8.48
         }
       ],
       "shareholders": {
@@ -12931,6 +14894,12 @@
             "뱅가드": 8.95,
             "블랙록": 7.65,
             "기타": 83.4
+          },
+          {
+            "year": 2024,
+            "뱅가드": 9.15,
+            "블랙록": 7.8,
+            "기타": 83.05
           },
           {
             "year": 2024,
@@ -13068,6 +15037,29 @@
           "fcfMargin": 27.85,
           "fcfConversion": 109.21,
           "ocfToCapex": 12.86
+        },
+        {
+          "year": 2025,
+          "revenue": 18.5,
+          "operatingIncome": 6.15,
+          "netIncome": 5.25,
+          "operatingCashFlow": 6.45,
+          "capitalExpenditure": 0.55,
+          "freeCashFlow": 5.9,
+          "investingCashFlow": -1.25,
+          "financingCashFlow": -4.85,
+          "dividendsPaid": 1.15,
+          "shareRepurchase": 3.4,
+          "totalShareholderReturn": 4.55,
+          "netChangeInCash": 0.35,
+          "cashAndEquivalents": 6.25,
+          "shortTermInvestments": 0.85,
+          "totalCash": 7.1,
+          "totalDebt": 4.95,
+          "netCash": 2.15,
+          "fcfMargin": 31.89,
+          "fcfConversion": 112.38,
+          "ocfToCapex": 11.73
         }
       ],
       "shareholders": {
@@ -13124,6 +15116,12 @@
             "뱅가드": 9.25,
             "블랙록": 7.95,
             "기타": 82.8
+          },
+          {
+            "year": 2025,
+            "뱅가드": 8.95,
+            "블랙록": 7.85,
+            "소액주주": 83.2
           }
         ]
       }
@@ -13255,6 +15253,29 @@
           "fcfMargin": 25.28,
           "fcfConversion": 132.04,
           "ocfToCapex": 16.11
+        },
+        {
+          "year": 2025,
+          "revenue": 56.5,
+          "operatingIncome": 15.2,
+          "netIncome": 12.4,
+          "operatingCashFlow": 16.8,
+          "capitalExpenditure": 0.95,
+          "freeCashFlow": 15.85,
+          "investingCashFlow": -3.2,
+          "financingCashFlow": -12.5,
+          "dividendsPaid": 6.8,
+          "shareRepurchase": 4.8,
+          "totalShareholderReturn": 11.6,
+          "netChangeInCash": 1.15,
+          "cashAndEquivalents": 21.5,
+          "shortTermInvestments": 4.5,
+          "totalCash": 26.0,
+          "totalDebt": 31.5,
+          "netCash": -5.5,
+          "fcfMargin": 28.05,
+          "fcfConversion": 127.82,
+          "ocfToCapex": 17.68
         }
       ],
       "shareholders": {
@@ -13311,6 +15332,12 @@
             "뱅가드": 9.4,
             "블랙록": 7.85,
             "기타": 82.75
+          },
+          {
+            "year": 2025,
+            "뱅가드": 9.15,
+            "블랙록": 7.85,
+            "소액주주": 83.0
           }
         ]
       }
@@ -13442,6 +15469,29 @@
           "fcfMargin": 14.99,
           "fcfConversion": 155.24,
           "ocfToCapex": 24.29
+        },
+        {
+          "year": 2025,
+          "revenue": 48.5,
+          "operatingIncome": 4.85,
+          "netIncome": 4.15,
+          "operatingCashFlow": 7.85,
+          "capitalExpenditure": 0.45,
+          "freeCashFlow": 7.4,
+          "investingCashFlow": -1.5,
+          "financingCashFlow": -5.2,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 4.5,
+          "totalShareholderReturn": 4.5,
+          "netChangeInCash": 1.15,
+          "cashAndEquivalents": 7.85,
+          "shortTermInvestments": 1.2,
+          "totalCash": 9.05,
+          "totalDebt": 9.5,
+          "netCash": -0.45,
+          "fcfMargin": 15.26,
+          "fcfConversion": 178.31,
+          "ocfToCapex": 17.44
         }
       ],
       "shareholders": {
@@ -13503,6 +15553,13 @@
             "뱅가드": 8.5,
             "블랙록": 6.8,
             "기타": 84.7
+          },
+          {
+            "year": 2025,
+            "소프트뱅크": 0.0,
+            "뱅가드": 8.25,
+            "블랙록": 6.85,
+            "소액주주": 84.9
           }
         ]
       }
@@ -13634,6 +15691,29 @@
           "fcfMargin": 37.05,
           "fcfConversion": 169.39,
           "ocfToCapex": 84.0
+        },
+        {
+          "year": 2025,
+          "revenue": 11.5,
+          "operatingIncome": 2.95,
+          "netIncome": 2.65,
+          "operatingCashFlow": 4.65,
+          "capitalExpenditure": 0.05,
+          "freeCashFlow": 4.6,
+          "investingCashFlow": -0.85,
+          "financingCashFlow": -3.5,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 3.2,
+          "totalShareholderReturn": 3.2,
+          "netChangeInCash": 0.3,
+          "cashAndEquivalents": 11.85,
+          "shortTermInvestments": 0.5,
+          "totalCash": 12.35,
+          "totalDebt": 1.95,
+          "netCash": 10.4,
+          "fcfMargin": 40.0,
+          "fcfConversion": 173.58,
+          "ocfToCapex": 93.0
         }
       ],
       "shareholders": {
@@ -13697,6 +15777,13 @@
             "창업자3인": 29.6,
             "뱅가드": 6.8,
             "기타": 63.6
+          },
+          {
+            "year": 2025,
+            "브라이언체스키": 11.2,
+            "뱅가드": 6.85,
+            "블랙록": 4.95,
+            "소액주주": 77.0
           }
         ]
       }
@@ -13828,6 +15915,29 @@
           "fcfMargin": 13.59,
           "fcfConversion": 186.4,
           "ocfToCapex": 20.42
+        },
+        {
+          "year": 2025,
+          "revenue": 17.5,
+          "operatingIncome": 1.65,
+          "netIncome": 1.35,
+          "operatingCashFlow": 2.45,
+          "capitalExpenditure": 0.05,
+          "freeCashFlow": 2.4,
+          "investingCashFlow": -0.45,
+          "financingCashFlow": -1.65,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 1.2,
+          "totalShareholderReturn": 1.2,
+          "netChangeInCash": 0.35,
+          "cashAndEquivalents": 5.45,
+          "shortTermInvestments": 0.85,
+          "totalCash": 6.3,
+          "totalDebt": 1.85,
+          "netCash": 4.45,
+          "fcfMargin": 13.71,
+          "fcfConversion": 177.78,
+          "ocfToCapex": 49.0
         }
       ],
       "shareholders": {
@@ -13903,6 +16013,12 @@
             "로렌손": 10.9,
             "베일리": 11.5,
             "기타": 62.0
+          },
+          {
+            "year": 2025,
+            "다니엘에크": 15.2,
+            "텐센트": 8.8,
+            "소액주주": 76.0
           }
         ]
       }
@@ -14034,6 +16150,29 @@
           "fcfMargin": 55.16,
           "fcfConversion": 184.86,
           "ocfToCapex": 115.0
+        },
+        {
+          "year": 2025,
+          "revenue": 6.85,
+          "operatingIncome": 2.45,
+          "netIncome": 2.1,
+          "operatingCashFlow": 3.15,
+          "capitalExpenditure": 0.05,
+          "freeCashFlow": 3.1,
+          "investingCashFlow": -0.85,
+          "financingCashFlow": -1.85,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 1.5,
+          "totalShareholderReturn": 1.5,
+          "netChangeInCash": 0.45,
+          "cashAndEquivalents": 8.85,
+          "shortTermInvestments": 1.2,
+          "totalCash": 10.05,
+          "totalDebt": 4.2,
+          "netCash": 5.85,
+          "fcfMargin": 45.26,
+          "fcfConversion": 147.62,
+          "ocfToCapex": 63.0
         }
       ],
       "shareholders": {
@@ -14095,6 +16234,13 @@
             "a16z": 7.8,
             "뱅가드": 7.1,
             "기타": 70.9
+          },
+          {
+            "year": 2025,
+            "브라이언암스트롱": 13.8,
+            "뱅가드": 7.45,
+            "블랙록": 5.15,
+            "소액주주": 73.6
           }
         ]
       }
@@ -14226,6 +16372,29 @@
           "fcfMargin": 6.73,
           "fcfConversion": 145.22,
           "ocfToCapex": 10.28
+        },
+        {
+          "year": 2025,
+          "revenue": 25.5,
+          "operatingIncome": 1.25,
+          "netIncome": 0.98,
+          "operatingCashFlow": 2.45,
+          "capitalExpenditure": 0.25,
+          "freeCashFlow": 2.2,
+          "investingCashFlow": -0.65,
+          "financingCashFlow": -1.5,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 1.2,
+          "totalShareholderReturn": 1.2,
+          "netChangeInCash": 0.3,
+          "cashAndEquivalents": 8.25,
+          "shortTermInvestments": 1.45,
+          "totalCash": 9.7,
+          "totalDebt": 5.85,
+          "netCash": 3.85,
+          "fcfMargin": 8.63,
+          "fcfConversion": 224.49,
+          "ocfToCapex": 9.8
         }
       ],
       "shareholders": {
@@ -14294,6 +16463,12 @@
             "뱅가드": 8.4,
             "블랙록": 6.5,
             "기타": 76.2
+          },
+          {
+            "year": 2025,
+            "잭도시": 8.45,
+            "뱅가드": 7.85,
+            "소액주주": 83.7
           }
         ]
       }
@@ -14425,6 +16600,29 @@
           "fcfMargin": 26.01,
           "fcfConversion": 355.17,
           "ocfToCapex": 8.92
+        },
+        {
+          "year": 2025,
+          "revenue": 22.5,
+          "operatingIncome": 2.65,
+          "netIncome": 2.15,
+          "operatingCashFlow": 3.85,
+          "capitalExpenditure": 0.85,
+          "freeCashFlow": 3.0,
+          "investingCashFlow": -1.25,
+          "financingCashFlow": -2.1,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 1.5,
+          "totalShareholderReturn": 1.5,
+          "netChangeInCash": 0.5,
+          "cashAndEquivalents": 5.45,
+          "shortTermInvestments": 2.85,
+          "totalCash": 8.3,
+          "totalDebt": 6.2,
+          "netCash": 2.1,
+          "fcfMargin": 13.33,
+          "fcfConversion": 139.53,
+          "ocfToCapex": 4.53
         }
       ],
       "shareholders": {
@@ -14493,6 +16691,12 @@
             "베일리": 10.8,
             "뱅가드": 6.9,
             "기타": 74.85
+          },
+          {
+            "year": 2025,
+            "마르코스갈페린": 7.45,
+            "베일리기포드": 8.95,
+            "소액주주": 83.6
           }
         ]
       }
@@ -14624,6 +16828,29 @@
           "fcfMargin": 14.55,
           "fcfConversion": 369.23,
           "ocfToCapex": 10.6
+        },
+        {
+          "year": 2025,
+          "revenue": 16.8,
+          "operatingIncome": 1.15,
+          "netIncome": 0.95,
+          "operatingCashFlow": 2.25,
+          "capitalExpenditure": 0.45,
+          "freeCashFlow": 1.8,
+          "investingCashFlow": -0.85,
+          "financingCashFlow": -0.95,
+          "dividendsPaid": 0.0,
+          "shareRepurchase": 0.65,
+          "totalShareholderReturn": 0.65,
+          "netChangeInCash": 0.45,
+          "cashAndEquivalents": 9.45,
+          "shortTermInvestments": 1.85,
+          "totalCash": 11.3,
+          "totalDebt": 4.2,
+          "netCash": 7.1,
+          "fcfMargin": 10.71,
+          "fcfConversion": 189.47,
+          "ocfToCapex": 5.0
         }
       ],
       "shareholders": {
@@ -14687,6 +16914,12 @@
             "포레스트리": 18.5,
             "텐센트": 18.4,
             "기타": 63.1
+          },
+          {
+            "year": 2025,
+            "포레스트리": 24.5,
+            "텐센트": 18.2,
+            "소액주주": 57.3
           }
         ]
       }
@@ -14818,6 +17051,29 @@
           "fcfMargin": 20.77,
           "fcfConversion": 84.29,
           "ocfToCapex": 12.8
+        },
+        {
+          "year": 2025,
+          "revenue": 1580.0,
+          "operatingIncome": 420.0,
+          "netIncome": 340.0,
+          "operatingCashFlow": 460.0,
+          "capitalExpenditure": 40.0,
+          "freeCashFlow": 420.0,
+          "investingCashFlow": -120.0,
+          "financingCashFlow": -280.0,
+          "dividendsPaid": 210.0,
+          "shareRepurchase": 50.0,
+          "totalShareholderReturn": 260.0,
+          "netChangeInCash": 60.0,
+          "cashAndEquivalents": 1420.0,
+          "shortTermInvestments": 650.0,
+          "totalCash": 2070.0,
+          "totalDebt": 0.0,
+          "netCash": 2070.0,
+          "fcfMargin": 26.58,
+          "fcfConversion": 123.53,
+          "ocfToCapex": 11.5
         }
       ],
       "shareholders": {
@@ -14886,6 +17142,12 @@
             "마스터트러스트": 16.4,
             "커스터디": 6.8,
             "기타": 68.22
+          },
+          {
+            "year": 2025,
+            "사우디PIF": 8.58,
+            "일본마스터트러스트": 15.4,
+            "소액주주": 76.02
           }
         ]
       }
@@ -15017,6 +17279,29 @@
           "fcfMargin": 7.84,
           "fcfConversion": 145.45,
           "ocfToCapex": 3.46
+        },
+        {
+          "year": 2025,
+          "revenue": 21500.0,
+          "operatingIncome": 1420.0,
+          "netIncome": 1150.0,
+          "operatingCashFlow": 1780.0,
+          "capitalExpenditure": 520.0,
+          "freeCashFlow": 1260.0,
+          "investingCashFlow": -980.0,
+          "financingCashFlow": -680.0,
+          "dividendsPaid": 340.0,
+          "shareRepurchase": 260.0,
+          "totalShareholderReturn": 600.0,
+          "netChangeInCash": 120.0,
+          "cashAndEquivalents": 3200.0,
+          "shortTermInvestments": 850.0,
+          "totalCash": 4050.0,
+          "totalDebt": 8500.0,
+          "netCash": -4450.0,
+          "fcfMargin": 5.86,
+          "fcfConversion": 109.57,
+          "ocfToCapex": 3.42
         }
       ],
       "shareholders": {
@@ -15073,6 +17358,11 @@
             "마스터트러스트": 15.2,
             "커스터디": 6.4,
             "기타": 78.4
+          },
+          {
+            "year": 2025,
+            "일본마스터트러스트": 15.2,
+            "소액주주": 84.8
           }
         ]
       }
@@ -15204,6 +17494,29 @@
           "fcfMargin": 4.03,
           "fcfConversion": 65.52,
           "ocfToCapex": 2.08
+        },
+        {
+          "year": 2025,
+          "revenue": 72.5,
+          "operatingIncome": 6.45,
+          "netIncome": 4.85,
+          "operatingCashFlow": 6.85,
+          "capitalExpenditure": 3.4,
+          "freeCashFlow": 3.45,
+          "investingCashFlow": -3.85,
+          "financingCashFlow": -2.4,
+          "dividendsPaid": 2.45,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 2.45,
+          "netChangeInCash": 0.6,
+          "cashAndEquivalents": 16.5,
+          "shortTermInvestments": 2.85,
+          "totalCash": 19.35,
+          "totalDebt": 13.8,
+          "netCash": 5.55,
+          "fcfMargin": 4.76,
+          "fcfConversion": 71.13,
+          "ocfToCapex": 2.01
         }
       ],
       "shareholders": {
@@ -15272,6 +17585,11 @@
             "독일": 10.85,
             "스페인": 4.1,
             "기타": 74.15
+          },
+          {
+            "year": 2025,
+            "프랑스/독일/스페인정부": 25.8,
+            "소액주주": 74.2
           }
         ]
       }
@@ -15403,6 +17721,29 @@
           "fcfMargin": 20.6,
           "fcfConversion": 93.24,
           "ocfToCapex": 2.92
+        },
+        {
+          "year": 2025,
+          "revenue": 7.15,
+          "operatingIncome": 2.1,
+          "netIncome": 1.55,
+          "operatingCashFlow": 2.35,
+          "capitalExpenditure": 0.95,
+          "freeCashFlow": 1.4,
+          "investingCashFlow": -1.05,
+          "financingCashFlow": -1.1,
+          "dividendsPaid": 0.55,
+          "shareRepurchase": 0.45,
+          "totalShareholderReturn": 1.0,
+          "netChangeInCash": 0.2,
+          "cashAndEquivalents": 1.85,
+          "shortTermInvestments": 0.65,
+          "totalCash": 2.5,
+          "totalDebt": 3.1,
+          "netCash": -0.6,
+          "fcfMargin": 19.58,
+          "fcfConversion": 90.32,
+          "ocfToCapex": 2.47
         }
       ],
       "shareholders": {
@@ -15466,6 +17807,12 @@
             "엑소르": 24.4,
             "피에로": 10.4,
             "기타": 65.2
+          },
+          {
+            "year": 2025,
+            "Exor(아넬리가문)": 24.4,
+            "피에로페라리": 10.4,
+            "소액주주": 65.2
           }
         ]
       }
@@ -15597,6 +17944,29 @@
           "fcfMargin": 14.95,
           "fcfConversion": 77.78,
           "ocfToCapex": 2.08
+        },
+        {
+          "year": 2025,
+          "revenue": 54.5,
+          "operatingIncome": 14.8,
+          "netIncome": 10.5,
+          "operatingCashFlow": 15.8,
+          "capitalExpenditure": 7.8,
+          "freeCashFlow": 8.0,
+          "investingCashFlow": -8.2,
+          "financingCashFlow": -7.2,
+          "dividendsPaid": 6.8,
+          "shareRepurchase": 0.0,
+          "totalShareholderReturn": 6.8,
+          "netChangeInCash": 0.4,
+          "cashAndEquivalents": 11.5,
+          "shortTermInvestments": 1.2,
+          "totalCash": 12.7,
+          "totalDebt": 14.5,
+          "netCash": -1.8,
+          "fcfMargin": 14.68,
+          "fcfConversion": 76.19,
+          "ocfToCapex": 2.03
         }
       ],
       "shareholders": {
@@ -15665,6 +18035,12 @@
             "블랙록": 8.9,
             "뱅가드": 6.8,
             "기타": 69.7
+          },
+          {
+            "year": 2025,
+            "Chinalco(중국알루미늄)": 14.6,
+            "블랙록": 8.95,
+            "소액주주": 76.45
           }
         ]
       }

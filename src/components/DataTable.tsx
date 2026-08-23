@@ -28,7 +28,7 @@ export const DataTable: React.FC<DataTableProps> = ({
   currency,
   onSelectCompany
 }) => {
-  const [selectedYear, setSelectedYear] = useState<number>(2024)
+  const [selectedYear, setSelectedYear] = useState<number>(2025)
   const [sortField, setSortField] = useState<SortField>('freeCashFlow')
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc')
   const [filterText, setFilterText] = useState('')
@@ -138,7 +138,7 @@ export const DataTable: React.FC<DataTableProps> = ({
         <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
           {/* Year Buttons */}
           <div className="flex items-center bg-gray-800 rounded-lg p-1 border border-gray-700">
-            {[2020, 2021, 2022, 2023, 2024].map((yr) => (
+            {[2020, 2021, 2022, 2023, 2024, 2025].map((yr) => (
               <button
                 key={yr}
                 onClick={() => setSelectedYear(yr)}
