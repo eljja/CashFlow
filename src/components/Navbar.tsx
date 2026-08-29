@@ -1,12 +1,12 @@
 import React from 'react'
-import { Activity, DollarSign, BarChart3, Table, Layers, Search } from 'lucide-react'
+import { Activity, DollarSign, BarChart3, Table, Layers, Search, Compass } from 'lucide-react'
 import { Category, Currency, DatasetMetadata } from '../types'
 import { DataFreshnessBadge } from './DataFreshnessBadge'
 
 interface NavbarProps {
   metadata: DatasetMetadata
-  activeTab: 'overview' | 'comparison' | 'table'
-  setActiveTab: (tab: 'overview' | 'comparison' | 'table') => void
+  activeTab: 'overview' | 'matrix' | 'comparison' | 'table'
+  setActiveTab: (tab: 'overview' | 'matrix' | 'comparison' | 'table') => void
   selectedCategory: Category
   setSelectedCategory: (cat: Category) => void
   selectedSector: string
@@ -80,35 +80,46 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="hidden md:flex items-center bg-gray-900/80 p-1 rounded-xl border border-gray-800">
             <button
               onClick={() => setActiveTab('overview')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 activeTab === 'overview'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
                   : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
               }`}
             >
-              <BarChart3 className="w-4 h-4" />
+              <BarChart3 className="w-3.5 h-3.5" />
               <span>기업별 심층 분석</span>
             </button>
             <button
+              onClick={() => setActiveTab('matrix')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                activeTab === 'matrix'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
+                  : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
+              }`}
+            >
+              <Compass className="w-3.5 h-3.5" />
+              <span>현금 매트릭스 지형도</span>
+            </button>
+            <button
               onClick={() => setActiveTab('comparison')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 activeTab === 'comparison'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
                   : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
               }`}
             >
-              <Layers className="w-4 h-4" />
+              <Layers className="w-3.5 h-3.5" />
               <span>경쟁사 비교 배틀</span>
             </button>
             <button
               onClick={() => setActiveTab('table')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 activeTab === 'table'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
                   : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
               }`}
             >
-              <Table className="w-4 h-4" />
+              <Table className="w-3.5 h-3.5" />
               <span>전체 데이터 테이블</span>
             </button>
           </div>
@@ -176,7 +187,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex md:hidden py-2 gap-1 border-t border-gray-800 overflow-x-auto">
           <button
             onClick={() => setActiveTab('overview')}
-            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-medium text-center whitespace-nowrap ${
+            className={`flex-1 py-1.5 px-2.5 rounded-lg text-xs font-medium text-center whitespace-nowrap ${
               activeTab === 'overview'
                 ? 'bg-blue-600 text-white'
                 : 'text-gray-400 bg-gray-900'
@@ -185,8 +196,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             기업별 분석
           </button>
           <button
+            onClick={() => setActiveTab('matrix')}
+            className={`flex-1 py-1.5 px-2.5 rounded-lg text-xs font-medium text-center whitespace-nowrap ${
+              activeTab === 'matrix'
+                ? 'bg-blue-600 text-white'
+                : 'text-gray-400 bg-gray-900'
+            }`}
+          >
+            매트릭스 지형도
+          </button>
+          <button
             onClick={() => setActiveTab('comparison')}
-            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-medium text-center whitespace-nowrap ${
+            className={`flex-1 py-1.5 px-2.5 rounded-lg text-xs font-medium text-center whitespace-nowrap ${
               activeTab === 'comparison'
                 ? 'bg-blue-600 text-white'
                 : 'text-gray-400 bg-gray-900'
@@ -196,7 +217,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
           <button
             onClick={() => setActiveTab('table')}
-            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-medium text-center whitespace-nowrap ${
+            className={`flex-1 py-1.5 px-2.5 rounded-lg text-xs font-medium text-center whitespace-nowrap ${
               activeTab === 'table'
                 ? 'bg-blue-600 text-white'
                 : 'text-gray-400 bg-gray-900'

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Company, Currency } from '../types'
 import { convertValue } from '../utils/formatters'
-import { Download, Search, ArrowUpDown, ChevronUp, ChevronDown } from 'lucide-react'
+import { calculateCashQuality } from '../utils/analysis'
+import { Download, Search, ArrowUpDown, ChevronUp, ChevronDown, Award, Zap } from 'lucide-react'
 import * as XLSX from 'xlsx'
 
 interface DataTableProps {
@@ -12,12 +13,14 @@ interface DataTableProps {
 
 type SortField =
   | 'name'
+  | 'score'
   | 'revenue'
   | 'operatingIncome'
   | 'operatingCashFlow'
   | 'capitalExpenditure'
   | 'freeCashFlow'
   | 'fcfMargin'
+  | 'conversion'
   | 'totalCash'
   | 'totalDebt'
   | 'netCash'
@@ -65,6 +68,18 @@ export const DataTable: React.FC<DataTableProps> = ({
         : b.nameKo.localeCompare(a.nameKo)
     }
 
+    if (sortField === 'score') {
+      const qA = calculateCashQuality(a).score
+      const qB = calculateCashQuality(b).score
+      return sortDirection === 'asc' ? qA - qB : qB - qA
+    }
+
+    if (sortField === 'conversion') {
+      const convA = calculateCashQuality(a).fcfConversionRate
+      const convB = calculateCashQuality(b).fcfConversionRate
+      return sortDirection === 'asc' ? convA - convB : convB - convA
+    }
+
     // Convert values to USD for consistent sorting comparison across countries
     const valA = convertValue(finA[sortField] as number, a, 'USD').value
     const valB = convertValue(finB[sortField] as number, b, 'USD').value
@@ -76,10 +91,14 @@ export const DataTable: React.FC<DataTableProps> = ({
   const exportToExcel = () => {
     const dataToExport = sorted.map((c) => {
       const fin = c.financials.find((f) => f.year === selectedYear) || c.financials[c.financials.length - 1]
+      const quality = calculateCashQuality(c)
       return {
         '기업명 (한글)': c.nameKo,
         '기업명 (영문)': c.name,
         '티커 (Ticker)': c.ticker,
+        '품질 등급': quality.grade,
+        '품질 종합점수': quality.score,
+        '현금 패턴': quality.patternType.title,
         '카테고리': c.category,
         '섹터': c.sector,
         '국가': c.country,
@@ -91,6 +110,8 @@ export const DataTable: React.FC<DataTableProps> = ({
         [`설비투자 CapEx (${currency})`]: convertValue(fin.capitalExpenditure, c, currency).value,
         [`잉여현금흐름 FCF (${currency})`]: convertValue(fin.freeCashFlow, c, currency).value,
         'FCF 마진 (%)': fin.fcfMargin,
+        'FCF 전환율 (%)': quality.fcfConversionRate,
+        'CapEx 재투자율 (%)': quality.capexReinvestmentRate,
         [`총 가용현금 (${currency})`]: convertValue(fin.totalCash, c, currency).value,
         [`총차입금 (${currency})`]: convertValue(fin.totalDebt, c, currency).value,
         [`순현금 Net Cash (${currency})`]: convertValue(fin.netCash, c, currency).value,
@@ -119,19 +140,27 @@ export const DataTable: React.FC<DataTableProps> = ({
 
   const unitLabel = convertValue(1, companies[0], currency).unitLabel
 
+  const gradeColors: Record<string, string> = {
+    'A+': 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+    'A': 'bg-emerald-600/20 text-emerald-400 border-emerald-500/30',
+    'B': 'bg-blue-600/20 text-blue-300 border-blue-500/30',
+    'C': 'bg-amber-600/20 text-amber-300 border-amber-500/30',
+    'D': 'bg-rose-600/20 text-rose-300 border-rose-500/30'
+  }
+
   return (
-    <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg space-y-4">
+    <div className="bg-gray-900/60 border border-gray-800 rounded-3xl p-6 shadow-xl space-y-4">
       {/* Header controls: Search, Year Switcher, Export */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
           <h3 className="text-base font-bold text-white flex items-center gap-2">
-            <span>전체 80개 기업 현금 지표 상세 수치표</span>
+            <span>전체 80개 기업 현금 지표 & 품질 평가 종합 수치표</span>
             <span className="text-xs px-2 py-0.5 rounded-md bg-gray-800 text-gray-300 font-mono">
               {sorted.length}개사 표시 중
             </span>
           </h3>
           <p className="text-xs text-gray-400 mt-0.5">
-            모든 컬럼 정렬, 검색 및 엑셀(Excel) / CSV 다운로드가 가능합니다. (표시 단위: {unitLabel})
+            현금품질 등급, FCF 전환율, 재투자율, 순현금 정렬 및 엑셀(XLSX) 다운로드가 가능합니다. (표시 단위: {unitLabel})
           </p>
         </div>
 
@@ -165,23 +194,32 @@ export const DataTable: React.FC<DataTableProps> = ({
       </div>
 
       {/* Table Container */}
-      <div className="overflow-x-auto rounded-xl border border-gray-800">
+      <div className="overflow-x-auto rounded-2xl border border-gray-800">
         <table className="w-full text-xs text-left">
           <thead className="bg-gray-800/80 text-gray-400 border-b border-gray-700 sticky top-0 z-10">
             <tr>
               <th
                 onClick={() => handleSort('name')}
-                className="py-3 px-3.5 font-semibold text-gray-200 cursor-pointer hover:text-white group"
+                className="py-3 px-3 font-semibold text-gray-200 cursor-pointer hover:text-white group"
               >
                 <div className="flex items-center gap-1.5">
                   <span>기업명 (티커)</span>
                   {renderSortIcon('name')}
                 </div>
               </th>
-              <th className="py-3 px-3 font-semibold">카테고리 / 섹터</th>
+              <th
+                onClick={() => handleSort('score')}
+                className="py-3 px-2 font-semibold text-center cursor-pointer hover:text-white group"
+              >
+                <div className="flex items-center justify-center gap-1">
+                  <span>품질 등급</span>
+                  {renderSortIcon('score')}
+                </div>
+              </th>
+              <th className="py-3 px-2.5 font-semibold">현금 패턴 진단</th>
               <th
                 onClick={() => handleSort('revenue')}
-                className="py-3 px-3 font-semibold text-right cursor-pointer hover:text-white group"
+                className="py-3 px-2.5 font-semibold text-right cursor-pointer hover:text-white group"
               >
                 <div className="flex items-center justify-end gap-1.5">
                   <span>매출액</span>
@@ -190,43 +228,52 @@ export const DataTable: React.FC<DataTableProps> = ({
               </th>
               <th
                 onClick={() => handleSort('operatingCashFlow')}
-                className="py-3 px-3 font-semibold text-right text-blue-400 cursor-pointer hover:text-blue-300 group"
+                className="py-3 px-2.5 font-semibold text-right text-blue-400 cursor-pointer hover:text-blue-300 group"
               >
                 <div className="flex items-center justify-end gap-1.5">
-                  <span>영업현금 (OCF)</span>
+                  <span>영업현금(OCF)</span>
                   {renderSortIcon('operatingCashFlow')}
                 </div>
               </th>
               <th
                 onClick={() => handleSort('capitalExpenditure')}
-                className="py-3 px-3 font-semibold text-right text-orange-400 cursor-pointer hover:text-orange-300 group"
+                className="py-3 px-2.5 font-semibold text-right text-orange-400 cursor-pointer hover:text-orange-300 group"
               >
                 <div className="flex items-center justify-end gap-1.5">
-                  <span>설비투자 (CapEx)</span>
+                  <span>설비투자(CapEx)</span>
                   {renderSortIcon('capitalExpenditure')}
                 </div>
               </th>
               <th
                 onClick={() => handleSort('freeCashFlow')}
-                className="py-3 px-3 font-semibold text-right text-emerald-400 cursor-pointer hover:text-emerald-300 group"
+                className="py-3 px-2.5 font-semibold text-right text-emerald-400 cursor-pointer hover:text-emerald-300 group"
               >
                 <div className="flex items-center justify-end gap-1.5">
-                  <span>잉여현금 (FCF)</span>
+                  <span>잉여현금(FCF)</span>
                   {renderSortIcon('freeCashFlow')}
                 </div>
               </th>
               <th
                 onClick={() => handleSort('fcfMargin')}
-                className="py-3 px-3 font-semibold text-right cursor-pointer hover:text-white group"
+                className="py-3 px-2 font-semibold text-right cursor-pointer hover:text-white group"
               >
-                <div className="flex items-center justify-end gap-1.5">
+                <div className="flex items-center justify-end gap-1">
                   <span>FCF 마진</span>
                   {renderSortIcon('fcfMargin')}
                 </div>
               </th>
               <th
+                onClick={() => handleSort('conversion')}
+                className="py-3 px-2 font-semibold text-right cursor-pointer hover:text-white group"
+              >
+                <div className="flex items-center justify-end gap-1">
+                  <span>현금전환율</span>
+                  {renderSortIcon('conversion')}
+                </div>
+              </th>
+              <th
                 onClick={() => handleSort('totalCash')}
-                className="py-3 px-3 font-semibold text-right text-cyan-400 cursor-pointer hover:text-cyan-300 group"
+                className="py-3 px-2.5 font-semibold text-right text-cyan-400 cursor-pointer hover:text-cyan-300 group"
               >
                 <div className="flex items-center justify-end gap-1.5">
                   <span>총 가용현금</span>
@@ -235,7 +282,7 @@ export const DataTable: React.FC<DataTableProps> = ({
               </th>
               <th
                 onClick={() => handleSort('totalDebt')}
-                className="py-3 px-3 font-semibold text-right text-rose-400 cursor-pointer hover:text-rose-300 group"
+                className="py-3 px-2.5 font-semibold text-right text-rose-400 cursor-pointer hover:text-rose-300 group"
               >
                 <div className="flex items-center justify-end gap-1.5">
                   <span>총차입금</span>
@@ -244,19 +291,19 @@ export const DataTable: React.FC<DataTableProps> = ({
               </th>
               <th
                 onClick={() => handleSort('netCash')}
-                className="py-3 px-3 font-semibold text-right text-emerald-400 cursor-pointer hover:text-emerald-300 group"
+                className="py-3 px-2.5 font-semibold text-right text-blue-400 cursor-pointer hover:text-blue-300 group"
               >
                 <div className="flex items-center justify-end gap-1.5">
-                  <span>순현금 (Net Cash)</span>
+                  <span>순현금(Net Cash)</span>
                   {renderSortIcon('netCash')}
                 </div>
               </th>
               <th
                 onClick={() => handleSort('totalShareholderReturn')}
-                className="py-3 px-3 font-semibold text-right text-amber-400 cursor-pointer hover:text-amber-300 group"
+                className="py-3 px-2.5 font-semibold text-right text-amber-400 cursor-pointer hover:text-amber-300 group"
               >
                 <div className="flex items-center justify-end gap-1.5">
-                  <span>주주환원 (배당+자사주)</span>
+                  <span>주주환원총액</span>
                   {renderSortIcon('totalShareholderReturn')}
                 </div>
               </th>
@@ -265,50 +312,61 @@ export const DataTable: React.FC<DataTableProps> = ({
           <tbody className="divide-y divide-gray-800 bg-gray-900/40">
             {sorted.map((c) => {
               const fin = c.financials.find((f) => f.year === selectedYear) || c.financials[c.financials.length - 1]
+              const quality = calculateCashQuality(c)
               return (
                 <tr
                   key={c.id}
                   onClick={() => onSelectCompany(c.id)}
                   className="hover:bg-blue-600/10 cursor-pointer transition-colors"
                 >
-                  <td className="py-2.5 px-3.5 font-medium text-white">
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-white hover:text-blue-400 transition-colors">
+                  <td className="py-2.5 px-3 font-medium text-white">
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-semibold text-white hover:text-blue-400 transition-colors truncate max-w-[130px]">
                         {c.nameKo}
                       </span>
-                      <span className="text-[10px] text-gray-500 font-mono bg-gray-800 px-1.5 py-0.5 rounded">
+                      <span className="text-[10px] text-gray-500 font-mono bg-gray-800 px-1 py-0.5 rounded">
                         {c.ticker}
                       </span>
                     </div>
                   </td>
-                  <td className="py-2.5 px-3 text-gray-400 text-[11px]">
-                    <span className="text-gray-300">{c.sector}</span> · {c.country}
+                  <td className="py-2.5 px-2 text-center">
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-extrabold border ${gradeColors[quality.grade]}`}>
+                      {quality.grade} <span className="text-[9px] font-normal ml-1">({quality.score})</span>
+                    </span>
                   </td>
-                  <td className="py-2.5 px-3 text-right font-mono text-gray-200">
+                  <td className="py-2.5 px-2.5">
+                    <span className={`inline-block px-2 py-0.5 rounded-lg text-[10px] font-medium border truncate max-w-[140px] ${quality.patternType.tagColor}`}>
+                      {quality.patternType.title.split(' ')[1] || quality.patternType.title}
+                    </span>
+                  </td>
+                  <td className="py-2.5 px-2.5 text-right font-mono text-gray-200">
                     {convertValue(fin.revenue, c, currency).formatted}
                   </td>
-                  <td className="py-2.5 px-3 text-right font-mono text-blue-400 font-medium">
+                  <td className="py-2.5 px-2.5 text-right font-mono text-blue-400 font-medium">
                     {convertValue(fin.operatingCashFlow, c, currency).formatted}
                   </td>
-                  <td className="py-2.5 px-3 text-right font-mono text-orange-400 font-medium">
+                  <td className="py-2.5 px-2.5 text-right font-mono text-orange-400 font-medium">
                     {convertValue(fin.capitalExpenditure, c, currency).formatted}
                   </td>
-                  <td className="py-2.5 px-3 text-right font-mono font-bold text-emerald-400">
+                  <td className="py-2.5 px-2.5 text-right font-mono font-bold text-emerald-400">
                     {convertValue(fin.freeCashFlow, c, currency).formatted}
                   </td>
-                  <td className="py-2.5 px-3 text-right font-mono text-gray-300 font-medium">
+                  <td className="py-2.5 px-2 text-right font-mono text-gray-300 font-medium">
                     {fin.fcfMargin.toFixed(1)}%
                   </td>
-                  <td className="py-2.5 px-3 text-right font-mono text-cyan-400">
+                  <td className="py-2.5 px-2 text-right font-mono text-emerald-300 font-medium">
+                    {quality.fcfConversionRate}%
+                  </td>
+                  <td className="py-2.5 px-2.5 text-right font-mono text-cyan-400">
                     {convertValue(fin.totalCash, c, currency).formatted}
                   </td>
-                  <td className="py-2.5 px-3 text-right font-mono text-rose-400">
+                  <td className="py-2.5 px-2.5 text-right font-mono text-rose-400">
                     {convertValue(fin.totalDebt, c, currency).formatted}
                   </td>
-                  <td className="py-2.5 px-3 text-right font-mono font-bold text-emerald-400">
+                  <td className="py-2.5 px-2.5 text-right font-mono font-bold text-blue-400">
                     {convertValue(fin.netCash, c, currency).formatted}
                   </td>
-                  <td className="py-2.5 px-3 text-right font-mono text-amber-400 font-medium">
+                  <td className="py-2.5 px-2.5 text-right font-mono text-amber-400 font-medium">
                     {convertValue(fin.totalShareholderReturn, c, currency).formatted}
                   </td>
                 </tr>

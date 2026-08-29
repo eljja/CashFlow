@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import ReactECharts from 'echarts-for-react'
 import { Company, Currency } from '../types'
 import { convertValue } from '../utils/formatters'
-import { Swords, Check, Plus, X, BarChart2 } from 'lucide-react'
+import { CashRadarChart } from './CashRadarChart'
+import { Swords, Check, Plus, X, BarChart2, Compass, Layers } from 'lucide-react'
 
 interface PeerComparisonProps {
   companies: Company[]
@@ -45,6 +46,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({ companies, curre
     'kioxia'
   ])
   const [metric, setMetric] = useState<'freeCashFlow' | 'capitalExpenditure' | 'netCash' | 'operatingCashFlow'>('freeCashFlow')
+  const [activeView, setActiveView] = useState<'barchart' | 'radar'>('barchart')
 
   const selectedCompanies = selectedIds
     .map((id) => companies.find((c) => c.id === id))
@@ -72,7 +74,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({ companies, curre
       borderWidth: 1,
       textStyle: { color: '#F3F4F6', fontSize: 12 },
       formatter: (params: any) => {
-        let res = `<div class="font-bold mb-1 border-b border-gray-700 pb-1 text-white">${params[0].name}년 ${metricLabels[metric]} (${unitLabel})</div>`
+        let res = `<div class="font-bold mb-1 border-b border-gray-700 pb-1 text-white">${params[0].name} ${metricLabels[metric]} (${unitLabel})</div>`
         params.forEach((item: any) => {
           const val = item.value
           const sign = val > 0 ? '+' : ''
@@ -150,7 +152,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({ companies, curre
   return (
     <div className="space-y-6">
       {/* Preset Battle Bar */}
-      <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-4 shadow-lg">
+      <div className="bg-gray-900/60 border border-gray-800 rounded-3xl p-5 shadow-xl">
         <div className="flex items-center gap-2 mb-3">
           <Swords className="w-4 h-4 text-blue-400" />
           <h3 className="text-xs font-bold text-gray-200 uppercase tracking-wider">
@@ -162,7 +164,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({ companies, curre
             <button
               key={idx}
               onClick={() => setSelectedIds(p.ids)}
-              className="px-3 py-1.5 rounded-xl bg-gray-800/60 hover:bg-blue-600/20 hover:border-blue-500/40 border border-gray-700/80 text-xs font-medium text-gray-300 hover:text-white transition-all"
+              className="px-3.5 py-1.5 rounded-xl bg-gray-800/60 hover:bg-blue-600/20 hover:border-blue-500/40 border border-gray-700/80 text-xs font-medium text-gray-300 hover:text-white transition-all shadow-sm"
             >
               {p.name}
             </button>
@@ -171,9 +173,9 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({ companies, curre
       </div>
 
       {/* Main Comparison Card */}
-      <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg">
+      <div className="bg-gray-900/60 border border-gray-800 rounded-3xl p-6 shadow-xl space-y-6">
         {/* Metric Selector & Active Tags */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 mb-6">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
           {/* Selected Company Pills */}
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs text-gray-400 font-semibold mr-1">비교 대상 ({selectedCompanies.length}/6):</span>
@@ -200,54 +202,79 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({ companies, curre
             ))}
           </div>
 
-          {/* Metric Selector Buttons */}
-          <div className="flex items-center bg-gray-800/80 p-1 rounded-xl border border-gray-700">
-            <button
-              onClick={() => setMetric('freeCashFlow')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                metric === 'freeCashFlow'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              잉여현금흐름 (FCF)
-            </button>
-            <button
-              onClick={() => setMetric('capitalExpenditure')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                metric === 'capitalExpenditure'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              설비투자 (CapEx)
-            </button>
-            <button
-              onClick={() => setMetric('netCash')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                metric === 'netCash'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              순현금 (Net Cash)
-            </button>
-            <button
-              onClick={() => setMetric('operatingCashFlow')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                metric === 'operatingCashFlow'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              영업현금 (OCF)
-            </button>
+          {/* View Type Toggle (Bar vs Radar) & Metric Selector */}
+          <div className="flex flex-wrap items-center gap-2">
+            {/* View Mode Toggle */}
+            <div className="flex items-center bg-gray-800/80 p-1 rounded-xl border border-gray-700">
+              <button
+                onClick={() => setActiveView('barchart')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors ${
+                  activeView === 'barchart' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                시계열 막대 비교
+              </button>
+              <button
+                onClick={() => setActiveView('radar')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors ${
+                  activeView === 'radar' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                5대 체력 레이더 배틀
+              </button>
+            </div>
+
+            {/* Metric Selector Buttons (Visible only in barchart mode) */}
+            {activeView === 'barchart' && (
+              <div className="flex items-center bg-gray-800/80 p-1 rounded-xl border border-gray-700">
+                <button
+                  onClick={() => setMetric('freeCashFlow')}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${
+                    metric === 'freeCashFlow' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  잉여현금(FCF)
+                </button>
+                <button
+                  onClick={() => setMetric('capitalExpenditure')}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${
+                    metric === 'capitalExpenditure' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  설비투자(CapEx)
+                </button>
+                <button
+                  onClick={() => setMetric('netCash')}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${
+                    metric === 'netCash' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  순현금(Net Cash)
+                </button>
+                <button
+                  onClick={() => setMetric('operatingCashFlow')}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${
+                    metric === 'operatingCashFlow' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  영업현금(OCF)
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* ECharts Visual Comparison */}
-        <div className="h-96 w-full">
-          <ReactECharts option={chartOption} style={{ height: '100%', width: '100%' }} notMerge={true} />
+        {/* ECharts Visual Comparison (Bar or Radar) */}
+        <div className="w-full">
+          {activeView === 'barchart' ? (
+            <div className="h-96 w-full">
+              <ReactECharts option={chartOption} style={{ height: '100%', width: '100%' }} notMerge={true} />
+            </div>
+          ) : (
+            <div className="h-96 w-full flex items-center justify-center">
+              <CashRadarChart companies={selectedCompanies} />
+            </div>
+          )}
         </div>
 
         {/* Side-by-Side Comparison Table */}

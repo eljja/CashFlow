@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Company, Currency } from '../types'
 import { CashFlowChart } from './CashFlowChart'
 import { CashLiquidityChart } from './CashLiquidityChart'
 import { ShareholderChart } from './ShareholderChart'
+import { CashRadarChart } from './CashRadarChart'
+import { CashQualityBadge } from './CashQualityBadge'
+import { CashFlowWaterfall } from './CashFlowWaterfall'
 import { convertValue } from '../utils/formatters'
-import { Building2, Globe, TrendingUp, DollarSign, ShieldCheck, Gift, BarChart3, Layers } from 'lucide-react'
+import { Globe, TrendingUp, ShieldCheck, Gift, BarChart3, Compass, Sparkles } from 'lucide-react'
 import ReactECharts from 'echarts-for-react'
 
 interface CompanyDeepDiveProps {
@@ -15,8 +18,9 @@ interface CompanyDeepDiveProps {
 export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, currency }) => {
   const latestFin = company.financials[company.financials.length - 1]
   const years = company.financials.map((f) => f.year.toString())
+  const [chartMode, setChartMode] = useState<'combo' | 'waterfall'>('combo')
 
-  // Cumulative 5-year FCF
+  // Cumulative FCF across all available years
   const cumFcf = company.financials.reduce((sum, f) => sum + f.freeCashFlow, 0)
   const cumFcfConv = convertValue(cumFcf, company, currency)
 
@@ -140,38 +144,37 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
             </p>
           </div>
 
-            {/* Quick Metrics Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
-              <div className="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-3 text-center shadow-lg shadow-emerald-950/30">
-                <span className="text-[11px] font-bold text-emerald-300 block mb-1">🌟 2025 잉여현금(FCF)</span>
-                <span className="text-lg font-black font-mono text-emerald-400">
-                  {convertValue(latestFin.freeCashFlow, company, currency).formatted}
-                </span>
-              </div>
-              <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
-                <span className="text-[11px] text-gray-400 block mb-1">2025 순현금(Net Cash)</span>
-                <span className="text-base font-extrabold font-mono text-blue-400">
-                  {convertValue(latestFin.netCash, company, currency).formatted}
-                </span>
-              </div>
-              <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
-                <span className="text-[11px] text-gray-400 block mb-1">FCF 마진율</span>
-                <span className="text-base font-extrabold font-mono text-cyan-400">
-                  {latestFin.fcfMargin.toFixed(1)}%
-                </span>
-              </div>
-              <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
-                <span className="text-[11px] text-gray-400 block mb-1">6개년 누적 FCF</span>
-                <span className="text-base font-extrabold font-mono text-amber-400">
-                  {cumFcfConv.formatted}
-                </span>
-              </div>
+          {/* Quick Metrics Badges */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
+            <div className="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-3 text-center shadow-lg shadow-emerald-950/30">
+              <span className="text-[11px] font-bold text-emerald-300 block mb-1">🌟 2025 잉여현금(FCF)</span>
+              <span className="text-lg font-black font-mono text-emerald-400">
+                {convertValue(latestFin.freeCashFlow, company, currency).formatted}
+              </span>
+            </div>
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
+              <span className="text-[11px] text-gray-400 block mb-1">2025 순현금(Net Cash)</span>
+              <span className="text-base font-extrabold font-mono text-blue-400">
+                {convertValue(latestFin.netCash, company, currency).formatted}
+              </span>
+            </div>
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
+              <span className="text-[11px] text-gray-400 block mb-1">FCF 마진율</span>
+              <span className="text-base font-extrabold font-mono text-cyan-400">
+                {latestFin.fcfMargin.toFixed(1)}%
+              </span>
+            </div>
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 text-center">
+              <span className="text-[11px] text-gray-400 block mb-1">6개년 누적 FCF</span>
+              <span className="text-base font-extrabold font-mono text-amber-400">
+                {cumFcfConv.formatted}
+              </span>
             </div>
           </div>
         </div>
 
         {/* Dedicated FCF Core Metric Breakdown Banner */}
-        <div className="bg-gradient-to-r from-emerald-950/50 via-gray-900 to-blue-950/40 border border-emerald-500/30 rounded-2xl p-4 shadow-lg">
+        <div className="bg-gradient-to-r from-emerald-950/50 via-gray-900 to-blue-950/40 border border-emerald-500/30 rounded-2xl p-4 shadow-lg mt-5">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-black text-xs">
@@ -200,7 +203,7 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
             </div>
           </div>
 
-          {/* 5-Year FCF Progression Pills */}
+          {/* 6-Year FCF Progression Pills */}
           <div className="mt-3 pt-3 border-t border-gray-800/80 flex flex-wrap items-center justify-between gap-2 text-xs">
             <span className="text-gray-400 font-medium">연도별 FCF 추이:</span>
             <div className="flex flex-wrap items-center gap-2">
@@ -224,28 +227,77 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
             </div>
           </div>
         </div>
+      </div>
 
-      {/* 2. Visual Charts Grid (Main Graphs) */}
+      {/* 2. Institutional Cash Quality & 5-Axis Health Radar */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div className="lg:col-span-7">
+          <CashQualityBadge company={company} />
+        </div>
+        <div className="lg:col-span-5 bg-gray-900/60 border border-gray-800 rounded-3xl p-5 shadow-xl">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="p-2 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+              <Compass className="w-4 h-4" />
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-white">5대 현금 체력 방사형 분석 (Cash Health Radar)</h3>
+              <p className="text-xs text-gray-400">FCF창출 · 순현금 · 현금전환율 · 주주환원 · 투자효율</p>
+            </div>
+          </div>
+          <CashRadarChart companies={[company]} />
+        </div>
+      </div>
+
+      {/* 3. Visual Charts Grid (Main Graphs with View Mode Switcher) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Chart 1: Cash Flow Waterfall & Combo Bar */}
-        <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg">
-          <div className="flex items-center justify-between mb-2">
+        <div className="bg-gray-900/60 border border-gray-800 rounded-3xl p-5 shadow-xl">
+          <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <div className="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
                 <TrendingUp className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-white">6개년 현금흐름 시계열 (2020~2025)</h3>
-                <p className="text-xs text-gray-400">영업현금흐름(OCF) · 설비투자(CapEx) · 잉여현금흐름(FCF)</p>
+                <h3 className="text-sm font-bold text-white">
+                  {chartMode === 'combo' ? '6개년 현금흐름 시계열 (2020~2025)' : '2025 현금 창출 워터폴 구조'}
+                </h3>
+                <p className="text-xs text-gray-400">
+                  {chartMode === 'combo' ? '영업현금(OCF) · 설비투자(CapEx) · 잉여현금(FCF)' : '매출액 → 영업현금 → 설비투자 → FCF → 순현금 변동'}
+                </p>
               </div>
             </div>
+
+            {/* View Mode Switcher Buttons */}
+            <div className="flex items-center bg-gray-800/80 p-1 rounded-xl border border-gray-700">
+              <button
+                onClick={() => setChartMode('combo')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors ${
+                  chartMode === 'combo' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                시계열 콤보
+              </button>
+              <button
+                onClick={() => setChartMode('waterfall')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors ${
+                  chartMode === 'waterfall' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                워터폴 구조
+              </button>
+            </div>
           </div>
-          <CashFlowChart company={company} currency={currency} />
+
+          {chartMode === 'combo' ? (
+            <CashFlowChart company={company} currency={currency} />
+          ) : (
+            <CashFlowWaterfall company={company} currency={currency} selectedYear={2025} />
+          )}
         </div>
 
         {/* Chart 2: Liquidity, Reserves & Net Cash */}
-        <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg">
-          <div className="flex items-center justify-between mb-2">
+        <div className="bg-gray-900/60 border border-gray-800 rounded-3xl p-5 shadow-xl">
+          <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 <ShieldCheck className="w-4 h-4" />
@@ -260,10 +312,10 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
         </div>
       </div>
 
-      {/* 3. Shareholder Return & Major Shareholder Structure */}
+      {/* 4. Shareholder Return & Major Shareholder Structure */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Shareholder Return Chart */}
-        <div className="lg:col-span-5 bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg">
+        <div className="lg:col-span-5 bg-gray-900/60 border border-gray-800 rounded-3xl p-5 shadow-xl">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
@@ -286,8 +338,8 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
         </div>
       </div>
 
-      {/* 4. Complete 6-Year Financial Statement Table */}
-      <div className="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 shadow-lg">
+      {/* 5. Complete 6-Year Financial Statement Table */}
+      <div className="bg-gray-900/60 border border-gray-800 rounded-3xl p-5 shadow-xl">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <div className="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">

@@ -7,13 +7,14 @@ import { CompanySelector } from './components/CompanySelector'
 import { CompanyDeepDive } from './components/CompanyDeepDive'
 import { PeerComparison } from './components/PeerComparison'
 import { DataTable } from './components/DataTable'
-import { Info, ExternalLink, Sparkles } from 'lucide-react'
+import { CashFlowScatterChart } from './components/CashFlowScatterChart'
+import { ExternalLink } from 'lucide-react'
 
 export const App: React.FC = () => {
   const data = dataset as Dataset
   const allCompanies: Company[] = data.companies
 
-  const [activeTab, setActiveTab] = useState<'overview' | 'comparison' | 'table'>('overview')
+  const [activeTab, setActiveTab] = useState<'overview' | 'matrix' | 'comparison' | 'table'>('overview')
   const [selectedCategory, setSelectedCategory] = useState<Category>('All')
   const [selectedSector, setSelectedSector] = useState<string>('All')
   const [currency, setCurrency] = useState<Currency>('USD')
@@ -109,7 +110,18 @@ export const App: React.FC = () => {
           </div>
         )}
 
-        {/* Tab 2: Peer Comparison Matrix */}
+        {/* Tab 2: Global Cash Matrix Landscape */}
+        {activeTab === 'matrix' && (
+          <div>
+            <CashFlowScatterChart
+              companies={filteredCompanies}
+              currency={currency}
+              onSelectCompany={handleSelectCompany}
+            />
+          </div>
+        )}
+
+        {/* Tab 3: Peer Comparison Matrix */}
         {activeTab === 'comparison' && (
           <div>
             <div className="mb-4">
@@ -127,7 +139,7 @@ export const App: React.FC = () => {
           </div>
         )}
 
-        {/* Tab 3: All 80 Companies Data Table */}
+        {/* Tab 4: All 80 Companies Data Table */}
         {activeTab === 'table' && (
           <div>
             <DataTable
@@ -144,7 +156,7 @@ export const App: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400">
           <div>
             <p className="font-semibold text-gray-300">
-              CashFlow Analytics · 글로벌 80대 기업 5개년 현금흐름 & 대주주 지분 분석
+              CashFlow Analytics · 글로벌 80대 기업 6개년(2020~2025) 현금흐름 & 대주주 지분 분석
             </p>
             <p className="text-[11px] text-gray-500 mt-1">
               백엔드 서버 없이 GitHub Pages(github.io) 상에서 100% 클라이언트 정적으로 구동됩니다.
