@@ -364,7 +364,7 @@ def get_raw_additional_companies():
             ]
         ),
         (
-            "nintendo", "Nintendo", "닌텐도", "7974.T", "Gaming & Entertainment", "Japan", "JPY", "100억 엔 (Billion JPY)", 1e10,
+            "nintendo", "Nintendo", "닌텐도", "7974.T", "Gaming & Entertainment", "Japan", "JPY", "10억 엔 (Billion JPY)", 1e9,
             "스위치(Switch), 슈퍼마리오, 포켓몬, 젤다의 전설 글로벌 IP 독보적 최강자",
             [
                 (2020, 1758.9, 640.6, 480.3, 560.8, 12.5, 548.3, -25.4, -280.5, 235.0, 0.0, 254.9, 1145.2, 380.0, 0.0),

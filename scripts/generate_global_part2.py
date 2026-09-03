@@ -7,7 +7,7 @@ Includes Kioxia, TSMC, ASML, Tokyo Electron, Toyota, Sony, LVMH, Novo Nordisk, e
 def get_raw_global_companies():
     return [
         (
-            "kioxia", "Kioxia Holdings", "키옥시아", "285A.T", "Semiconductors & NAND", "Japan", "JPY", "100억 엔 (Billion JPY)", 1e10,
+            "kioxia", "Kioxia Holdings", "키옥시아", "285A.T", "Semiconductors & NAND", "Japan", "JPY", "10억 엔 (Billion JPY)", 1e9,
             "글로벌 3위 낸드 플래시(BiCS FLASH) 메모리 제조사 (베인캐피탈 컨소시엄 인수 후 2024년 12월 도쿄증시 상장)",
             [
                 (2020, 1178.5, 6.7, -24.5, 235.4, 210.2, 25.2, -225.1, -12.4, 0.0, 0.0, -2.1, 142.5, 0.0, 920.5),
@@ -80,7 +80,7 @@ def get_raw_global_companies():
             ]
         ),
         (
-            "tokyo-electron", "Tokyo Electron", "도쿄일렉트론", "8035.T", "Semiconductor Equipment", "Japan", "JPY", "100억 엔 (Billion JPY)", 1e10,
+            "tokyo-electron", "Tokyo Electron", "도쿄일렉트론", "8035.T", "Semiconductor Equipment", "Japan", "JPY", "10억 엔 (Billion JPY)", 1e9,
             "글로벌 3대 반도체 전공정 제조장비(식각, 증착, 세정) 선도기업",
             [
                 (2020, 1127.2, 237.2, 185.2, 210.4, 52.4, 158.0, -58.2, -112.5, 88.5, 20.0, 39.7, 312.4, 0.0, 0.0),
