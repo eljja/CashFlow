@@ -6,6 +6,7 @@ import { ShareholderChart } from './ShareholderChart'
 import { CashRadarChart } from './CashRadarChart'
 import { CashQualityBadge } from './CashQualityBadge'
 import { CashFlowWaterfall } from './CashFlowWaterfall'
+import { CashFlowSimulator } from './CashFlowSimulator'
 import { convertValue } from '../utils/formatters'
 import { Globe, TrendingUp, ShieldCheck, Gift, BarChart3, Compass, Sparkles } from 'lucide-react'
 import ReactECharts from 'echarts-for-react'
@@ -338,7 +339,10 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({ company, curre
         </div>
       </div>
 
-      {/* 5. Complete 6-Year Financial Statement Table */}
+      {/* 5. What-If Financial & Net Cash Scenario Simulator */}
+      <CashFlowSimulator company={company} currency={currency} />
+
+      {/* 6. Complete 6-Year Financial Statement Table */}
       <div className="bg-gray-900/60 border border-gray-800 rounded-3xl p-5 shadow-xl">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
