@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import dataset from './data/companies.json'
 import { Company, Category, Currency, Dataset } from './types'
 import { Navbar } from './components/Navbar'
@@ -20,6 +20,46 @@ export const App: React.FC = () => {
   const [currency, setCurrency] = useState<Currency>('USD')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCompanyId, setSelectedCompanyId] = useState<string>('samsung-electronics')
+
+  // Synchronize state from URL parameters on initial load & popstate (Back/Forward)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const compParam = params.get('company')
+    const tabParam = params.get('tab')
+    const catParam = params.get('category')
+    const secParam = params.get('sector')
+    const currParam = params.get('currency')
+
+    if (compParam && allCompanies.some((c) => c.id === compParam)) {
+      setSelectedCompanyId(compParam)
+    }
+    if (tabParam && ['overview', 'matrix', 'comparison', 'table'].includes(tabParam)) {
+      setActiveTab(tabParam as any)
+    }
+    if (catParam && ['All', 'Domestic', 'US', 'Global', 'Additional'].includes(catParam)) {
+      setSelectedCategory(catParam as any)
+    }
+    if (secParam) {
+      setSelectedSector(secParam)
+    }
+    if (currParam && ['USD', 'KRW', 'Native'].includes(currParam)) {
+      setCurrency(currParam as any)
+    }
+
+    const handlePopState = () => {
+      const p = new URLSearchParams(window.location.search)
+      const c = p.get('company')
+      const t = p.get('tab')
+      if (c && allCompanies.some((comp) => comp.id === c)) {
+        setSelectedCompanyId(c)
+      }
+      if (t && ['overview', 'matrix', 'comparison', 'table'].includes(t)) {
+        setActiveTab(t as any)
+      }
+    }
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [allCompanies])
 
   // Filter companies by category, sector, and search query
   const filteredCompanies = useMemo(() => {
@@ -70,6 +110,41 @@ export const App: React.FC = () => {
     setActiveTab('overview')
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+
+  // Synchronize URL query params and Dynamic Meta Title for SEO & Direct Sharing
+  useEffect(() => {
+    const params = new URLSearchParams()
+    if (selectedCompanyId) {
+      params.set('company', selectedCompanyId)
+    }
+    if (activeTab !== 'overview') {
+      params.set('tab', activeTab)
+    }
+    if (selectedCategory !== 'All') {
+      params.set('category', selectedCategory)
+    }
+    if (selectedSector !== 'All') {
+      params.set('sector', selectedSector)
+    }
+    if (currency !== 'USD') {
+      params.set('currency', currency)
+    }
+
+    const queryStr = params.toString() ? `?${params.toString()}` : ''
+    const newUrl = `${window.location.pathname}${queryStr}${window.location.hash}`
+    window.history.replaceState(null, '', newUrl)
+
+    // Dynamic Title & Description for Google indexing and tab display
+    if (currentCompany && activeTab === 'overview') {
+      document.title = `${currentCompany.nameKo} (${currentCompany.name}) 6개년 현금흐름 & 대주주 지분 분석 (FCF·순현금) | CashFlow Analytics`
+    } else if (activeTab === 'matrix') {
+      document.title = `글로벌 80대 기업 현금흐름 매트릭스 산점도 분석 (FCF Margin vs Net Cash) | CashFlow Analytics`
+    } else if (activeTab === 'comparison') {
+      document.title = `반도체 4사 & 글로벌 동종업계 현금흐름 비교 분석 | CashFlow Analytics`
+    } else if (activeTab === 'table') {
+      document.title = `글로벌 80대 기업 6개년(2020-2025) 재무 데이터 전수 테이블 | CashFlow Analytics`
+    }
+  }, [selectedCompanyId, activeTab, selectedCategory, selectedSector, currency, currentCompany])
 
   return (
     <div className="min-h-screen bg-[#0B0F19] text-slate-100 flex flex-col selection:bg-blue-600 selection:text-white font-sans">
