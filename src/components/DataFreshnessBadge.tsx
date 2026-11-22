@@ -23,18 +23,22 @@ export const DataFreshnessBadge: React.FC<DataFreshnessBadgeProps> = ({ metadata
   const nextUpdateDate = new Date(updatedDate)
   nextUpdateDate.setDate(nextUpdateDate.getDate() + updateInterval)
 
+  // Compact date format (e.g., 26.11.22) for tight navbars
+  const shortDate = metadata.lastUpdated ? metadata.lastUpdated.slice(2).replace(/-/g, '.') : ''
+
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left shrink-0">
       {/* Badge Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border transition-all shadow-sm ${
+        className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all shadow-sm whitespace-nowrap shrink-0 ${
           isUpdateNeeded
             ? 'bg-amber-950/40 text-amber-300 border-amber-500/50 hover:bg-amber-950/60 shadow-amber-950/20'
             : 'bg-emerald-950/40 text-emerald-300 border-emerald-500/40 hover:bg-emerald-950/60 shadow-emerald-950/20'
         }`}
+        title={`데이터 업데이트: ${metadata.lastUpdated} (클릭하여 상세 갱신 주기 확인)`}
       >
-        <span className="relative flex h-2 w-2">
+        <span className="relative flex h-2 w-2 shrink-0">
           <span
             className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
               isUpdateNeeded ? 'bg-amber-400' : 'bg-emerald-400'
@@ -46,10 +50,13 @@ export const DataFreshnessBadge: React.FC<DataFreshnessBadgeProps> = ({ metadata
             }`}
           ></span>
         </span>
-        <span>
+        <span className="hidden 2xl:inline">
           {isUpdateNeeded
             ? `업데이트 권장 (${elapsedDays}일 경과)`
-            : `데이터 최신 (업데이트: ${metadata.lastUpdated})`}
+            : `데이터 최신 (${metadata.lastUpdated})`}
+        </span>
+        <span className="inline 2xl:hidden">
+          {isUpdateNeeded ? `갱신권장` : `최신 · ${shortDate}`}
         </span>
       </button>
 
@@ -60,14 +67,14 @@ export const DataFreshnessBadge: React.FC<DataFreshnessBadgeProps> = ({ metadata
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 mt-2 w-80 rounded-2xl bg-gray-900 border border-gray-700 shadow-2xl p-4 z-50 text-xs backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
+          <div className="absolute right-0 mt-2 w-80 max-w-[calc(100vw-2rem)] rounded-2xl bg-gray-900 border border-gray-700 shadow-2xl p-4 z-50 text-xs backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
             <div className="flex items-center justify-between border-b border-gray-800 pb-2.5 mb-3">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-blue-400" />
                 <span className="font-bold text-white text-sm">데이터 갱신 주기 관리</span>
               </div>
               <span
-                className={`px-2 py-0.5 rounded text-[10px] font-bold ${
+                className={`px-2 py-0.5 rounded text-[10px] font-bold whitespace-nowrap ${
                   isUpdateNeeded
                     ? 'bg-amber-900/60 text-amber-300 border border-amber-700'
                     : 'bg-emerald-900/60 text-emerald-300 border border-emerald-700'

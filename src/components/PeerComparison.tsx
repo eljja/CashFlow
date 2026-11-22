@@ -363,12 +363,12 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({
           </div>
 
           {/* View Type Toggle (Bar vs Radar) & Metric Selector */}
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2 w-full xl:w-auto">
             {/* View Mode Toggle */}
-            <div className="flex items-center bg-gray-800/80 p-1 rounded-xl border border-gray-700">
+            <div className="flex items-center bg-gray-800/80 p-1 rounded-xl border border-gray-700 shrink-0">
               <button
                 onClick={() => setActiveView('barchart')}
-                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors ${
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap ${
                   activeView === 'barchart'
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-400 hover:text-white'
@@ -378,7 +378,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({
               </button>
               <button
                 onClick={() => setActiveView('radar')}
-                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors ${
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap ${
                   activeView === 'radar'
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-400 hover:text-white'
@@ -390,7 +390,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({
 
             {/* Metric Selector Buttons */}
             {activeView === 'barchart' && (
-              <div className="flex flex-wrap items-center bg-gray-800/80 p-1 rounded-xl border border-gray-700">
+              <div className="flex items-center bg-gray-800/80 p-1 rounded-xl border border-gray-700 overflow-x-auto scrollbar-none max-w-full">
                 {(
                   [
                     { id: 'freeCashFlow', label: '잉여현금(FCF)' },
@@ -404,7 +404,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({
                   <button
                     key={m.id}
                     onClick={() => setMetric(m.id)}
-                    className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${
+                    className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors whitespace-nowrap shrink-0 ${
                       metric === m.id
                         ? 'bg-blue-600 text-white'
                         : 'text-gray-400 hover:text-white'
@@ -421,7 +421,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({
         {/* ECharts Visual Comparison (Bar or Radar) */}
         <div className="w-full">
           {activeView === 'barchart' ? (
-            <div className="h-96 w-full">
+            <div className="h-80 sm:h-96 w-full">
               <ReactECharts
                 option={chartOption}
                 style={{ height: '100%', width: '100%' }}
@@ -429,7 +429,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({
               />
             </div>
           ) : (
-            <div className="h-96 w-full flex items-center justify-center">
+            <div className="h-80 sm:h-96 w-full flex items-center justify-center">
               <CashRadarChart companies={selectedCompanies} />
             </div>
           )}
@@ -445,12 +445,12 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({
               </span>
             </h4>
 
-            <div className="flex items-center bg-gray-800 rounded-lg p-0.5 border border-gray-700">
+            <div className="flex items-center bg-gray-800 rounded-lg p-0.5 border border-gray-700 overflow-x-auto scrollbar-none">
               {years.map((yr) => (
                 <button
                   key={yr}
                   onClick={() => setTableYear(yr)}
-                  className={`px-2 py-0.5 text-xs font-mono font-semibold rounded-md transition-colors ${
+                  className={`px-2 py-0.5 text-xs font-mono font-semibold rounded-md transition-colors whitespace-nowrap shrink-0 ${
                     tableYear === yr
                       ? 'bg-blue-600 text-white'
                       : 'text-gray-400 hover:text-white'
@@ -463,7 +463,7 @@ export const PeerComparison: React.FC<PeerComparisonProps> = ({
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-xs text-left">
+            <table className="w-full text-xs text-left whitespace-nowrap">
               <thead>
                 <tr className="border-b border-gray-800 text-gray-400">
                   <th className="py-2.5 px-3 font-semibold">기업명 (클릭 시 상세)</th>

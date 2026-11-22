@@ -274,18 +274,18 @@ export const CashFlowScatterChart: React.FC<CashFlowScatterChartProps> = ({
           {/* Play 6-Year Time-Lapse Button */}
           <button
             onClick={handleTogglePlay}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all shadow-sm ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all shadow-sm whitespace-nowrap shrink-0 ${
               isPlaying
                 ? 'bg-amber-500/20 text-amber-300 border-amber-500/50 animate-pulse'
                 : 'bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border-emerald-500/40'
             }`}
           >
-            {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+            {isPlaying ? <Pause className="w-3.5 h-3.5 shrink-0" /> : <Play className="w-3.5 h-3.5 shrink-0" />}
             <span>{isPlaying ? '타임랩스 일시정지' : '6개년 타임랩스 재생'}</span>
           </button>
 
           {/* Year Buttons */}
-          <div className="flex items-center bg-gray-800/90 p-1 rounded-xl border border-gray-700">
+          <div className="flex items-center bg-gray-800/90 p-1 rounded-xl border border-gray-700 overflow-x-auto scrollbar-none">
             {years.map((yr) => (
               <button
                 key={yr}
@@ -293,7 +293,7 @@ export const CashFlowScatterChart: React.FC<CashFlowScatterChartProps> = ({
                   setIsPlaying(false)
                   setSelectedYear(yr)
                 }}
-                className={`px-2 py-1 rounded-lg text-xs font-mono font-semibold transition-colors ${
+                className={`px-2 py-1 rounded-lg text-xs font-mono font-semibold transition-colors whitespace-nowrap shrink-0 ${
                   selectedYear === yr
                     ? 'bg-blue-600 text-white shadow-sm'
                     : 'text-gray-400 hover:text-white'
@@ -307,14 +307,14 @@ export const CashFlowScatterChart: React.FC<CashFlowScatterChartProps> = ({
           {/* Toggle Labels */}
           <button
             onClick={() => setShowLabels(!showLabels)}
-            className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl border text-xs font-medium transition-colors ${
+            className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl border text-xs font-medium transition-colors whitespace-nowrap shrink-0 ${
               showLabels
                 ? 'bg-blue-600/20 border-blue-500/40 text-blue-300'
                 : 'bg-gray-800 border-gray-700 text-gray-400'
             }`}
             title="버블 위 기업명 라벨 표시 전환"
           >
-            {showLabels ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
+            {showLabels ? <Eye className="w-3.5 h-3.5 shrink-0" /> : <EyeOff className="w-3.5 h-3.5 shrink-0" />}
             <span>라벨</span>
           </button>
         </div>
@@ -322,49 +322,49 @@ export const CashFlowScatterChart: React.FC<CashFlowScatterChartProps> = ({
 
       {/* 4-Quadrant Summary Pill Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-        <div className="p-3 rounded-2xl bg-emerald-950/25 border border-emerald-500/30 flex items-center justify-between">
-          <div>
-            <span className="text-[11px] font-bold text-emerald-400 block">
+        <div className="p-3 rounded-2xl bg-emerald-950/25 border border-emerald-500/30 flex items-center justify-between gap-2">
+          <div className="min-w-0">
+            <span className="text-[11px] font-bold text-emerald-400 block truncate">
               1사분면 (FCF+ / 순현금+)
             </span>
-            <span className="text-[11px] text-gray-400">🏆 초우량 캐시카우 요새</span>
+            <span className="text-[11px] text-gray-400 block truncate">🏆 초우량 캐시카우 요새</span>
           </div>
-          <span className="text-lg font-black font-mono text-emerald-400">{q1Count}개사</span>
+          <span className="text-base sm:text-lg font-black font-mono text-emerald-400 whitespace-nowrap shrink-0">{q1Count}개사</span>
         </div>
 
-        <div className="p-3 rounded-2xl bg-blue-950/25 border border-blue-500/30 flex items-center justify-between">
-          <div>
-            <span className="text-[11px] font-bold text-blue-400 block">
+        <div className="p-3 rounded-2xl bg-blue-950/25 border border-blue-500/30 flex items-center justify-between gap-2">
+          <div className="min-w-0">
+            <span className="text-[11px] font-bold text-blue-400 block truncate">
               4사분면 (FCF+ / 순차입-)
             </span>
-            <span className="text-[11px] text-gray-400">🚀 고수익 레버리지 성장</span>
+            <span className="text-[11px] text-gray-400 block truncate">🚀 고수익 레버리지 성장</span>
           </div>
-          <span className="text-lg font-black font-mono text-blue-400">{q4Count}개사</span>
+          <span className="text-base sm:text-lg font-black font-mono text-blue-400 whitespace-nowrap shrink-0">{q4Count}개사</span>
         </div>
 
-        <div className="p-3 rounded-2xl bg-cyan-950/25 border border-cyan-500/30 flex items-center justify-between">
-          <div>
-            <span className="text-[11px] font-bold text-cyan-400 block">
+        <div className="p-3 rounded-2xl bg-cyan-950/25 border border-cyan-500/30 flex items-center justify-between gap-2">
+          <div className="min-w-0">
+            <span className="text-[11px] font-bold text-cyan-400 block truncate">
               2사분면 (FCF- / 순현금+)
             </span>
-            <span className="text-[11px] text-gray-400">🛡️ 현금보유 공격투자</span>
+            <span className="text-[11px] text-gray-400 block truncate">🛡️ 현금보유 공격투자</span>
           </div>
-          <span className="text-lg font-black font-mono text-cyan-400">{q2Count}개사</span>
+          <span className="text-base sm:text-lg font-black font-mono text-cyan-400 whitespace-nowrap shrink-0">{q2Count}개사</span>
         </div>
 
-        <div className="p-3 rounded-2xl bg-amber-950/25 border border-amber-500/30 flex items-center justify-between">
-          <div>
-            <span className="text-[11px] font-bold text-amber-400 block">
+        <div className="p-3 rounded-2xl bg-amber-950/25 border border-amber-500/30 flex items-center justify-between gap-2">
+          <div className="min-w-0">
+            <span className="text-[11px] font-bold text-amber-400 block truncate">
               3사분면 (FCF- / 순차입-)
             </span>
-            <span className="text-[11px] text-gray-400">⚡ 대규모 CapEx / 턴어라운드</span>
+            <span className="text-[11px] text-gray-400 block truncate">⚡ 대규모 CapEx / 턴어라운드</span>
           </div>
-          <span className="text-lg font-black font-mono text-amber-400">{q3Count}개사</span>
+          <span className="text-base sm:text-lg font-black font-mono text-amber-400 whitespace-nowrap shrink-0">{q3Count}개사</span>
         </div>
       </div>
 
       {/* Scatter Plot */}
-      <div className="h-[500px] w-full">
+      <div className="h-[380px] sm:h-[500px] w-full">
         <ReactECharts
           option={option}
           style={{ height: '100%', width: '100%' }}

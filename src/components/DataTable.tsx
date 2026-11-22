@@ -196,12 +196,12 @@ export const DataTable: React.FC<DataTableProps> = ({
 
         <div className="flex flex-wrap items-center gap-2.5 w-full lg:w-auto">
           {/* Year Buttons */}
-          <div className="flex items-center bg-gray-800 rounded-xl p-1 border border-gray-700">
+          <div className="flex items-center bg-gray-800 rounded-xl p-1 border border-gray-700 overflow-x-auto scrollbar-none">
             {[2020, 2021, 2022, 2023, 2024, 2025].map((yr) => (
               <button
                 key={yr}
                 onClick={() => setSelectedYear(yr)}
-                className={`px-2.5 py-1 text-xs font-mono font-semibold rounded-lg transition-colors ${
+                className={`px-2.5 py-1 text-xs font-mono font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 ${
                   selectedYear === yr
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-400 hover:text-white'
@@ -215,9 +215,9 @@ export const DataTable: React.FC<DataTableProps> = ({
           {/* Export Button */}
           <button
             onClick={exportToExcel}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 text-xs font-semibold transition-all shadow-sm"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 text-xs font-semibold transition-all shadow-sm whitespace-nowrap shrink-0"
           >
-            <Download className="w-3.5 h-3.5" />
+            <Download className="w-3.5 h-3.5 shrink-0" />
             <span>Excel 다운로드</span>
           </button>
         </div>
@@ -226,12 +226,12 @@ export const DataTable: React.FC<DataTableProps> = ({
       {/* Table Sub-Filter Bar: Search & Grade Filter Pills */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2 border-t border-gray-800/80">
         <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none">
-          <span className="text-xs text-gray-400 font-semibold mr-1">품질 등급 필터:</span>
+          <span className="text-xs text-gray-400 font-semibold mr-1 whitespace-nowrap shrink-0">품질 등급 필터:</span>
           {['ALL', 'A+', 'A', 'B', 'C', 'D'].map((g) => (
             <button
               key={g}
               onClick={() => setGradeFilter(g)}
-              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all whitespace-nowrap shrink-0 ${
                 gradeFilter === g
                   ? 'bg-blue-600 text-white shadow-sm'
                   : 'bg-gray-800/80 text-gray-400 hover:text-white border border-gray-700/60'
@@ -242,7 +242,7 @@ export const DataTable: React.FC<DataTableProps> = ({
           ))}
         </div>
 
-        <div className="relative w-full sm:w-64">
+        <div className="relative w-full sm:w-64 shrink-0">
           <Search className="w-3.5 h-3.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
@@ -264,7 +264,7 @@ export const DataTable: React.FC<DataTableProps> = ({
 
       {/* Table Container */}
       <div className="overflow-x-auto rounded-2xl border border-gray-800">
-        <table className="w-full text-xs text-left">
+        <table className="w-full text-xs text-left whitespace-nowrap">
           <thead className="bg-gray-800/90 text-gray-400 border-b border-gray-700 sticky top-0 z-10">
             <tr>
               <th className="py-3 px-2.5 font-semibold text-center w-10">#</th>

@@ -92,25 +92,25 @@ export const ExecutiveSummary: React.FC<ExecutiveSummaryProps> = ({
       {/* Control Ribbon */}
       <div className="flex flex-wrap items-center justify-between gap-2 mb-3 px-1">
         <div className="flex flex-wrap items-center gap-2">
-          <div className="flex items-center gap-1.5 text-xs font-bold text-gray-200">
-            <Trophy className="w-4 h-4 text-amber-400" />
+          <div className="flex items-center gap-1.5 text-xs font-bold text-gray-200 whitespace-nowrap">
+            <Trophy className="w-4 h-4 text-amber-400 shrink-0" />
             <span>{selectedYear}년 글로벌 현금흐름 리더보드 (TOP 5)</span>
           </div>
 
           {isFilteredActive && (
-            <div className="flex items-center bg-gray-900 rounded-lg p-0.5 border border-gray-800 text-[11px]">
+            <div className="flex items-center bg-gray-900 rounded-lg p-0.5 border border-gray-800 text-[11px] shrink-0">
               <button
                 onClick={() => setUseFilteredScope(true)}
-                className={`px-2 py-0.5 rounded-md font-semibold flex items-center gap-1 transition-colors ${
+                className={`px-2 py-0.5 rounded-md font-semibold flex items-center gap-1 transition-colors whitespace-nowrap ${
                   useFilteredScope ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-white'
                 }`}
               >
-                <Filter className="w-2.5 h-2.5" />
+                <Filter className="w-2.5 h-2.5 shrink-0" />
                 <span>현재 필터 ({filteredCompanies.length}개사)</span>
               </button>
               <button
                 onClick={() => setUseFilteredScope(false)}
-                className={`px-2 py-0.5 rounded-md font-semibold transition-colors ${
+                className={`px-2 py-0.5 rounded-md font-semibold transition-colors whitespace-nowrap ${
                   !useFilteredScope ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'
                 }`}
               >
@@ -120,14 +120,14 @@ export const ExecutiveSummary: React.FC<ExecutiveSummaryProps> = ({
           )}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           {/* Year Pills */}
-          <div className="flex items-center bg-gray-900/90 rounded-lg p-0.5 border border-gray-800">
+          <div className="flex items-center bg-gray-900/90 rounded-lg p-0.5 border border-gray-800 shrink-0">
             {[2020, 2021, 2022, 2023, 2024, 2025].map((yr) => (
               <button
                 key={yr}
                 onClick={() => setSelectedYear(yr)}
-                className={`px-2 py-0.5 text-[11px] font-mono font-semibold rounded-md transition-colors ${
+                className={`px-2 py-0.5 text-[11px] font-mono font-semibold rounded-md transition-colors whitespace-nowrap ${
                   selectedYear === yr
                     ? 'bg-blue-600 text-white shadow-sm'
                     : 'text-gray-400 hover:text-white'
@@ -141,10 +141,10 @@ export const ExecutiveSummary: React.FC<ExecutiveSummaryProps> = ({
           {/* Collapse Button */}
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-gray-900 hover:bg-gray-800 text-gray-400 hover:text-white border border-gray-800 text-[11px] font-medium transition-colors"
+            className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-gray-900 hover:bg-gray-800 text-gray-400 hover:text-white border border-gray-800 text-[11px] font-medium transition-colors whitespace-nowrap shrink-0"
           >
-            <span>{isCollapsed ? '리더보드 펼치기' : '접기'}</span>
-            {isCollapsed ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronUp className="w-3.5 h-3.5" />}
+            <span>{isCollapsed ? '펼치기' : '접기'}</span>
+            {isCollapsed ? <ChevronDown className="w-3.5 h-3.5 shrink-0" /> : <ChevronUp className="w-3.5 h-3.5 shrink-0" />}
           </button>
         </div>
       </div>
@@ -192,18 +192,20 @@ export const ExecutiveSummary: React.FC<ExecutiveSummaryProps> = ({
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
           {/* 1. Top Free Cash Flow */}
-          <div className="bg-gradient-to-br from-gray-900/95 via-emerald-950/20 to-blue-950/30 border border-emerald-500/40 rounded-2xl p-4 shadow-xl shadow-emerald-950/20 backdrop-blur-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 px-2.5 py-0.5 bg-emerald-500/20 border-b border-l border-emerald-500/40 rounded-bl-lg text-[10px] font-bold text-emerald-300">
-              핵심 1위 지표 (FCF)
-            </div>
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <div className="p-2 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-black text-xs">
+          <div className="bg-gradient-to-br from-gray-900/95 via-emerald-950/20 to-blue-950/30 border border-emerald-500/40 rounded-2xl p-4 shadow-xl shadow-emerald-950/20 backdrop-blur-sm">
+            <div className="flex items-center justify-between gap-2 mb-3">
+              <div className="flex items-center gap-2 min-w-0">
+                <div className="p-2 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-black text-xs shrink-0">
                   FCF
                 </div>
-                <div>
-                  <h3 className="text-xs font-bold text-white">{selectedYear} 잉여현금흐름 TOP 5</h3>
-                  <p className="text-[11px] text-emerald-400/80">OCF(영업현금) - CapEx(설비투자)</p>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <h3 className="text-xs font-bold text-white truncate">{selectedYear} 잉여현금 TOP 5</h3>
+                    <span className="px-1.5 py-0.2 bg-emerald-500/20 border border-emerald-500/40 rounded text-[9px] font-bold text-emerald-300 whitespace-nowrap shrink-0">
+                      핵심 1위
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-emerald-400/80 truncate">OCF(영업현금) - CapEx(설비투자)</p>
                 </div>
               </div>
             </div>

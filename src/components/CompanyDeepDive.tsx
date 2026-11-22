@@ -279,69 +279,69 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({
   return (
     <div className="space-y-6">
       {/* 1. Header Profile Banner */}
-      <div className="bg-gradient-to-r from-gray-900 via-gray-900/95 to-blue-950/40 border border-gray-800 rounded-3xl p-6 shadow-xl backdrop-blur-md">
+      <div className="bg-gradient-to-r from-gray-900 via-gray-900/95 to-blue-950/40 border border-gray-800 rounded-3xl p-4 sm:p-6 shadow-xl backdrop-blur-md">
         {/* Top Utility & Quick Switch Toolbar */}
-        <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-gray-800/80">
-          <div className="flex items-center gap-1.5">
+        <div className="flex flex-wrap items-center justify-between gap-2 pb-3.5 mb-4 border-b border-gray-800/80">
+          <div className="flex items-center gap-1.5 shrink-0">
             {onPrevCompany && onNextCompany && (
-              <div className="flex items-center bg-gray-800/80 rounded-xl p-0.5 border border-gray-700/80">
+              <div className="flex items-center bg-gray-800/80 rounded-xl p-0.5 border border-gray-700/80 shrink-0">
                 <button
                   onClick={onPrevCompany}
-                  className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs text-gray-300 hover:text-white hover:bg-gray-700/60 transition-colors"
+                  className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs text-gray-300 hover:text-white hover:bg-gray-700/60 transition-colors whitespace-nowrap"
                   title="이전 기업 (단축키: [ )"
                 >
-                  <ChevronLeft className="w-3.5 h-3.5" />
+                  <ChevronLeft className="w-3.5 h-3.5 shrink-0" />
                   <span>이전</span>
                 </button>
-                <span className="px-2 text-[11px] font-mono text-gray-400">
+                <span className="px-2 text-[11px] font-mono text-gray-400 whitespace-nowrap">
                   {currentIndex + 1} / {totalFiltered}
                 </span>
                 <button
                   onClick={onNextCompany}
-                  className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs text-gray-300 hover:text-white hover:bg-gray-700/60 transition-colors"
+                  className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs text-gray-300 hover:text-white hover:bg-gray-700/60 transition-colors whitespace-nowrap"
                   title="다음 기업 (단축키: ] )"
                 >
                   <span>다음</span>
-                  <ChevronRight className="w-3.5 h-3.5" />
+                  <ChevronRight className="w-3.5 h-3.5 shrink-0" />
                 </button>
               </div>
             )}
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             {/* Favorite Toggle */}
             {onToggleFavorite && (
               <button
                 onClick={() => onToggleFavorite(company.id)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all ${
+                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
                   isFavorite
                     ? 'bg-amber-500/20 border-amber-500/50 text-amber-300'
                     : 'bg-gray-800/70 hover:bg-gray-800 border-gray-700 text-gray-300 hover:text-white'
                 }`}
               >
-                <Star className={`w-3.5 h-3.5 ${isFavorite ? 'fill-amber-400 text-amber-400' : ''}`} />
-                <span>{isFavorite ? '관심기업 등록됨' : '관심기업 추가'}</span>
+                <Star className={`w-3.5 h-3.5 shrink-0 ${isFavorite ? 'fill-amber-400 text-amber-400' : ''}`} />
+                <span>{isFavorite ? '관심기업 등록됨' : '관심기업'}</span>
               </button>
             )}
 
             {/* Add to Peer Comparison Battle */}
             {onToggleComparison && (
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 shrink-0">
                 <button
                   onClick={() => onToggleComparison(company.id)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all ${
+                  className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
                     isInComparison
                       ? 'bg-purple-600/25 border-purple-500/50 text-purple-300'
                       : 'bg-gray-800/70 hover:bg-gray-800 border-gray-700 text-gray-300 hover:text-white'
                   }`}
                 >
-                  <Swords className="w-3.5 h-3.5 text-purple-400" />
-                  <span>{isInComparison ? '비교함 담김 ✓' : '+ 비교 배틀 담기'}</span>
+                  <Swords className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                  <span>{isInComparison ? '비교함 담김 ✓' : '+ 비교 담기'}</span>
                 </button>
                 {isInComparison && onGoToComparison && (
                   <button
                     onClick={onGoToComparison}
-                    className="px-2.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold transition-colors shadow-sm"
+                    className="px-2.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold transition-colors shadow-sm whitespace-nowrap shrink-0"
                   >
                     비교 보기 →
                   </button>
@@ -352,119 +352,124 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({
             {/* Share Direct Link */}
             <button
               onClick={handleCopyShareLink}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-800/70 hover:bg-gray-800 border border-gray-700 text-xs font-semibold text-gray-300 hover:text-white transition-all"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-gray-800/70 hover:bg-gray-800 border border-gray-700 text-xs font-semibold text-gray-300 hover:text-white transition-all whitespace-nowrap shrink-0"
               title="현재 기업 분석 직링크 복사"
             >
               {copiedLink ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400">링크 복사됨!</span>
+                  <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span className="text-emerald-400">복사됨!</span>
                 </>
               ) : (
                 <>
-                  <Share2 className="w-3.5 h-3.5 text-blue-400" />
-                  <span>분석 링크 공유</span>
+                  <Share2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                  <span>링크 공유</span>
                 </>
               )}
             </button>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-          <div>
-            <div className="flex flex-wrap items-center gap-2 mb-2.5">
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                {company.category === 'Domestic'
-                  ? '🇰🇷 국내 대표 20'
-                  : company.category === 'US'
-                  ? '🇺🇸 미국 대표 20'
-                  : company.category === 'Global'
-                  ? '🌍 글로벌 대표 20'
-                  : '🚀 추가 혁신 20'}
-              </span>
-              <span className="text-xs px-2.5 py-1 rounded-full bg-gray-800 text-gray-300 border border-gray-700">
-                {company.sector}
-              </span>
-              <span className="text-xs px-2.5 py-1 rounded-full bg-gray-800 text-gray-300 border border-gray-700 flex items-center gap-1">
-                <Globe className="w-3 h-3 text-gray-400" />
-                {company.country}
-              </span>
-              <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded-md bg-blue-950 text-blue-300 border border-blue-800">
-                {company.ticker}
-              </span>
-              <span className="text-xs font-mono px-2 py-0.5 rounded-md bg-gray-800/80 text-gray-400 border border-gray-700">
-                원천단위: {company.unit}
-              </span>
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white flex flex-wrap items-baseline gap-3">
-              <span>{company.nameKo}</span>
-              <span className="text-lg font-normal text-gray-400">({company.name})</span>
-            </h2>
-            <p className="text-xs sm:text-sm text-gray-300 mt-2 max-w-3xl leading-relaxed">
-              {company.description}
-            </p>
+        {/* Company Identity & Description */}
+        <div>
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-2.5">
+            <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 whitespace-nowrap">
+              {company.category === 'Domestic'
+                ? '🇰🇷 국내 대표 20'
+                : company.category === 'US'
+                ? '🇺🇸 미국 대표 20'
+                : company.category === 'Global'
+                ? '🌍 글로벌 대표 20'
+                : '🚀 추가 혁신 20'}
+            </span>
+            <span className="text-xs px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-300 border border-gray-700 whitespace-nowrap">
+              {company.sector}
+            </span>
+            <span className="text-xs px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-300 border border-gray-700 flex items-center gap-1 whitespace-nowrap">
+              <Globe className="w-3 h-3 text-gray-400 shrink-0" />
+              {company.country}
+            </span>
+            <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded-md bg-blue-950 text-blue-300 border border-blue-800 whitespace-nowrap">
+              {company.ticker}
+            </span>
+            <span className="text-xs font-mono px-2 py-0.5 rounded-md bg-gray-800/80 text-gray-400 border border-gray-700 whitespace-nowrap">
+              원천단위: {company.unit}
+            </span>
           </div>
 
-          {/* Quick Metrics Badges with YoY / Context */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
-            <div className="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-3.5 text-center shadow-lg shadow-emerald-950/30">
-              <span className="text-[11px] font-bold text-emerald-300 block mb-1">
-                🌟 2025 잉여현금(FCF)
-              </span>
-              <span
-                className={`text-lg font-black font-mono block ${
-                  latestFin.freeCashFlow >= 0 ? 'text-emerald-400' : 'text-rose-400'
-                }`}
-              >
-                {convertValue(latestFin.freeCashFlow, company, currency).formatted}
-              </span>
-              <span className={`text-[10px] font-semibold mt-0.5 block ${fcfYoY.color}`}>
-                {fcfYoY.text}
-              </span>
-            </div>
+          <h2 className="text-xl sm:text-3xl font-extrabold text-white flex flex-wrap items-baseline gap-2 sm:gap-3">
+            <span>{company.nameKo}</span>
+            <span className="text-base sm:text-lg font-normal text-gray-400">({company.name})</span>
+          </h2>
+          <p className="text-xs sm:text-sm text-gray-300 mt-1.5 max-w-4xl leading-relaxed">
+            {company.description}
+          </p>
+        </div>
 
-            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3.5 text-center">
-              <span className="text-[11px] text-gray-400 block mb-1">2025 순현금(Net Cash)</span>
-              <span
-                className={`text-base font-extrabold font-mono block ${
-                  latestFin.netCash >= 0 ? 'text-blue-400' : 'text-rose-400'
-                }`}
-              >
-                {convertValue(latestFin.netCash, company, currency).formatted}
-              </span>
-              <span className="text-[10px] text-gray-400 mt-0.5 block">
-                {latestFin.netCash >= 0 ? '🛡️ 무차입 순현금 상태' : '⚡ 순차입 레버리지'}
-              </span>
-            </div>
+        {/* 4 Hero KPI Badges (Full-Width 2x2 on Mobile, 4-Column on Desktop -> Zero Cramping!) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 w-full mt-5">
+          <div className="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-3 sm:p-4 text-center shadow-lg shadow-emerald-950/30">
+            <span className="text-[11px] font-bold text-emerald-300 block mb-1 whitespace-nowrap">
+              🌟 2025 잉여현금(FCF)
+            </span>
+            <span
+              className={`text-base sm:text-xl font-black font-mono block whitespace-nowrap ${
+                latestFin.freeCashFlow >= 0 ? 'text-emerald-400' : 'text-rose-400'
+              }`}
+            >
+              {convertValue(latestFin.freeCashFlow, company, currency).formatted}
+            </span>
+            <span className={`text-[10px] font-semibold mt-0.5 block whitespace-nowrap ${fcfYoY.color}`}>
+              {fcfYoY.text}
+            </span>
+          </div>
 
-            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3.5 text-center">
-              <span className="text-[11px] text-gray-400 block mb-1">2025 FCF 마진율</span>
-              <span
-                className={`text-base font-extrabold font-mono block ${
-                  latestFin.fcfMargin >= 0 ? 'text-cyan-400' : 'text-rose-400'
-                }`}
-              >
-                {latestFin.fcfMargin.toFixed(1)}%
-              </span>
-              <span className="text-[10px] text-gray-400 mt-0.5 block font-mono">
-                6년 평균: {avgFcfMargin.toFixed(1)}%
-              </span>
-            </div>
+          <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 sm:p-4 text-center">
+            <span className="text-[11px] text-gray-400 block mb-1 whitespace-nowrap">
+              2025 순현금(Net Cash)
+            </span>
+            <span
+              className={`text-base sm:text-xl font-extrabold font-mono block whitespace-nowrap ${
+                latestFin.netCash >= 0 ? 'text-blue-400' : 'text-rose-400'
+              }`}
+            >
+              {convertValue(latestFin.netCash, company, currency).formatted}
+            </span>
+            <span className="text-[10px] text-gray-400 mt-0.5 block whitespace-nowrap">
+              {latestFin.netCash >= 0 ? '🛡️ 무차입 순현금 상태' : '⚡ 순차입 레버리지'}
+            </span>
+          </div>
 
-            <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3.5 text-center">
-              <span className="text-[11px] text-gray-400 block mb-1">6개년 누적 FCF 창출</span>
-              <span
-                className={`text-base font-extrabold font-mono block ${
-                  cumFcf >= 0 ? 'text-amber-400' : 'text-rose-400'
-                }`}
-              >
-                {cumFcfConv.formatted}
-              </span>
-              <span className="text-[10px] text-gray-400 mt-0.5 block font-mono">
-                누적 주주환원: {cumTsrConv.formatted}
-              </span>
-            </div>
+          <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 sm:p-4 text-center">
+            <span className="text-[11px] text-gray-400 block mb-1 whitespace-nowrap">
+              2025 FCF 마진율
+            </span>
+            <span
+              className={`text-base sm:text-xl font-extrabold font-mono block whitespace-nowrap ${
+                latestFin.fcfMargin >= 0 ? 'text-cyan-400' : 'text-rose-400'
+              }`}
+            >
+              {latestFin.fcfMargin.toFixed(1)}%
+            </span>
+            <span className="text-[10px] text-gray-400 mt-0.5 block font-mono whitespace-nowrap">
+              6년 평균: {avgFcfMargin.toFixed(1)}%
+            </span>
+          </div>
+
+          <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl p-3 sm:p-4 text-center">
+            <span className="text-[11px] text-gray-400 block mb-1 whitespace-nowrap">
+              6개년 누적 FCF 창출
+            </span>
+            <span
+              className={`text-base sm:text-xl font-extrabold font-mono block whitespace-nowrap ${
+                cumFcf >= 0 ? 'text-amber-400' : 'text-rose-400'
+              }`}
+            >
+              {cumFcfConv.formatted}
+            </span>
+            <span className="text-[10px] text-gray-400 mt-0.5 block font-mono whitespace-nowrap truncate">
+              누적 주주환원: {cumTsrConv.formatted}
+            </span>
           </div>
         </div>
 
@@ -770,15 +775,15 @@ export const CompanyDeepDive: React.FC<CompanyDeepDiveProps> = ({
 
           <button
             onClick={handleExportCompanyExcel}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 text-xs font-semibold transition-all"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 text-xs font-semibold transition-all whitespace-nowrap shrink-0"
           >
-            <Download className="w-3.5 h-3.5" />
+            <Download className="w-3.5 h-3.5 shrink-0" />
             <span>{company.nameKo} 재무제표 Excel 저장</span>
           </button>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-xs text-left">
+          <table className="w-full text-xs text-left whitespace-nowrap">
             <thead>
               <tr className="border-b border-gray-800 text-gray-400">
                 <th className="py-2.5 px-3 font-semibold">재무 지표 항목</th>

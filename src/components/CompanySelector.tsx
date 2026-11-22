@@ -100,23 +100,23 @@ export const CompanySelector: React.FC<CompanySelectorProps> = ({
         </div>
 
         {/* Sort & Density Controls */}
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="flex items-center bg-gray-800/80 p-0.5 rounded-xl border border-gray-700/80 text-[11px]">
-            <span className="px-2 text-gray-400 flex items-center gap-1">
-              <ArrowUpDown className="w-3 h-3" />
+        <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
+          <div className="flex items-center bg-gray-800/80 p-0.5 rounded-xl border border-gray-700/80 text-[11px] overflow-x-auto scrollbar-none">
+            <span className="px-2 text-gray-400 flex items-center gap-1 whitespace-nowrap shrink-0">
+              <ArrowUpDown className="w-3 h-3 shrink-0" />
               <span className="hidden sm:inline">정렬:</span>
             </span>
             {[
               { id: 'default', label: '기본순' },
               { id: 'fcf', label: 'FCF순' },
               { id: 'netCash', label: '순현금순' },
-              { id: 'score', label: '품질등급순' },
-              { id: 'margin', label: '마진율순' }
+              { id: 'score', label: '품질순' },
+              { id: 'margin', label: '마진순' }
             ].map((opt) => (
               <button
                 key={opt.id}
                 onClick={() => setSortBy(opt.id as SelectorSort)}
-                className={`px-2 py-1 rounded-lg font-medium transition-colors ${
+                className={`px-2 py-1 rounded-lg font-medium transition-colors whitespace-nowrap shrink-0 ${
                   sortBy === opt.id
                     ? 'bg-blue-600 text-white shadow-sm'
                     : 'text-gray-400 hover:text-white'
@@ -127,7 +127,7 @@ export const CompanySelector: React.FC<CompanySelectorProps> = ({
             ))}
           </div>
 
-          <div className="flex items-center bg-gray-800/80 p-0.5 rounded-xl border border-gray-700/80">
+          <div className="flex items-center bg-gray-800/80 p-0.5 rounded-xl border border-gray-700/80 shrink-0">
             <button
               onClick={() => setCompactMode(false)}
               className={`p-1.5 rounded-lg transition-colors ${
