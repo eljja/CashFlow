@@ -320,8 +320,13 @@ def generate_seo():
     
     html = re.sub(r'<script type="application/ld\+json">.*?</script>', script_replacement, html, flags=re.DOTALL)
 
-    # Replace <div id="root">...</div> with <div id="root">{prerender_html}</div>
-    html = re.sub(r'<div id="root">.*?</div>', f'<div id="root">\n{prerender_html}\n    </div>', html, flags=re.DOTALL)
+    # Replace <div id="root">...</div> idempotently up to <script type="module"
+    html = re.sub(
+        r'<div id="root">.*?(?=\s*<script type="module")',
+        f'<div id="root">\n{prerender_html}\n    </div>',
+        html,
+        flags=re.DOTALL
+    )
 
     with open('index.html', 'w', encoding='utf-8') as f:
         f.write(html)
