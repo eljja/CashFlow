@@ -86,10 +86,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="sticky top-0 z-50 bg-[#0B0F19]/95 backdrop-blur-xl border-b border-gray-800/90 shadow-lg shadow-black/20">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        {/* ROW 1: Primary Brand, Main View Switcher, Global Controls (Strictly Single-Line) */}
-        <div className="flex items-center justify-between h-14 sm:h-15 gap-2">
-          {/* Left: Logo & Brand (shrink-0, whitespace-nowrap) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* ROW 1: Brand (Left) | Main 4 View Tabs (Center) | Freshness + Currency + GitHub (Right) */}
+        <div className="w-full flex items-center justify-between h-14 sm:h-15 gap-3">
+          {/* Left: Logo & Brand */}
           <button
             onClick={() => {
               onResetFilters()
@@ -107,8 +107,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               <h1 className="text-base sm:text-lg font-extrabold bg-gradient-to-r from-white via-slate-100 to-blue-400 bg-clip-text text-transparent whitespace-nowrap">
                 CashFlow Analytics
               </h1>
-              <span className="hidden xl:inline-block text-[10px] px-2 py-0.5 rounded-full bg-blue-950/90 text-blue-400 border border-blue-800/80 font-mono font-semibold whitespace-nowrap">
-                '20~'25
+              <span className="hidden lg:inline-block text-[10px] px-2 py-0.5 rounded-full bg-blue-950/90 text-blue-400 border border-blue-800/80 font-mono font-semibold whitespace-nowrap">
+                2020~2025
               </span>
             </div>
           </button>
@@ -120,39 +120,36 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <button
               onClick={() => setActiveTab('overview')}
-              className={`flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
                 activeTab === 'overview'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
                   : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
               }`}
             >
               <BarChart3 className="w-3.5 h-3.5 shrink-0" />
-              <span className="hidden xl:inline">기업별 심층 분석</span>
-              <span className="inline xl:hidden">기업 분석</span>
+              <span>기업별 심층 분석</span>
             </button>
             <button
               onClick={() => setActiveTab('matrix')}
-              className={`flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
                 activeTab === 'matrix'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
                   : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
               }`}
             >
               <Compass className="w-3.5 h-3.5 shrink-0" />
-              <span className="hidden xl:inline">현금 매트릭스</span>
-              <span className="inline xl:hidden">매트릭스</span>
+              <span>현금 매트릭스</span>
             </button>
             <button
               onClick={() => setActiveTab('comparison')}
-              className={`flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
                 activeTab === 'comparison'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
                   : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
               }`}
             >
               <Layers className="w-3.5 h-3.5 shrink-0" />
-              <span className="hidden xl:inline">경쟁사 비교</span>
-              <span className="inline xl:hidden">비교</span>
+              <span>경쟁사 비교</span>
               <span
                 className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono ${
                   activeTab === 'comparison'
@@ -165,43 +162,29 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
             <button
               onClick={() => setActiveTab('table')}
-              className={`flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
                 activeTab === 'table'
                   ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
                   : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
               }`}
             >
               <Table className="w-3.5 h-3.5 shrink-0" />
-              <span className="hidden xl:inline">데이터 테이블</span>
-              <span className="inline xl:hidden">전체 표</span>
+              <span>데이터 테이블</span>
             </button>
           </nav>
 
-          {/* Right: Quick Search (Ctrl+K), Freshness, Currency, GitHub (Strictly Single-Line) */}
-          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            {/* Command Palette Trigger */}
-            <button
-              onClick={onOpenCommandPalette}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-gray-900 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700/80 text-xs transition-all shadow-sm whitespace-nowrap shrink-0"
-              title="80개 기업 빠른 검색 및 이동 (단축키: Ctrl + K)"
-            >
-              <Search className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-              <span className="hidden sm:inline font-medium">빠른 검색</span>
-              <kbd className="hidden lg:inline-block px-1.5 py-0.5 text-[10px] font-mono bg-gray-800 text-gray-400 rounded border border-gray-700">
-                Ctrl+K
-              </kbd>
-            </button>
-
+          {/* Right: Data Freshness, Currency Selector, GitHub Link (Flush Right Edge) */}
+          <div className="flex items-center gap-2 shrink-0">
             {/* Data Freshness Badge (Desktop lg+) */}
             <div className="hidden lg:block shrink-0">
               <DataFreshnessBadge metadata={metadata} />
             </div>
 
-            {/* Currency Selector (Strictly whitespace-nowrap) */}
+            {/* Currency Selector */}
             <div className="flex items-center bg-gray-900 rounded-lg p-0.5 border border-gray-800 shrink-0">
               <button
                 onClick={() => setCurrency('USD')}
-                className={`px-2 py-1 text-[11px] sm:text-xs font-semibold rounded-md transition-colors whitespace-nowrap ${
+                className={`px-2.5 py-1 text-[11px] sm:text-xs font-semibold rounded-md transition-colors whitespace-nowrap ${
                   currency === 'USD'
                     ? 'bg-blue-600 text-white shadow-sm'
                     : 'text-gray-400 hover:text-white'
@@ -212,7 +195,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
               <button
                 onClick={() => setCurrency('KRW')}
-                className={`px-2 py-1 text-[11px] sm:text-xs font-semibold rounded-md transition-colors whitespace-nowrap ${
+                className={`px-2.5 py-1 text-[11px] sm:text-xs font-semibold rounded-md transition-colors whitespace-nowrap ${
                   currency === 'KRW'
                     ? 'bg-blue-600 text-white shadow-sm'
                     : 'text-gray-400 hover:text-white'
@@ -223,7 +206,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
               <button
                 onClick={() => setCurrency('NATIVE')}
-                className={`px-2 py-1 text-[11px] sm:text-xs font-semibold rounded-md transition-colors whitespace-nowrap ${
+                className={`px-2.5 py-1 text-[11px] sm:text-xs font-semibold rounded-md transition-colors whitespace-nowrap ${
                   currency === 'NATIVE'
                     ? 'bg-blue-600 text-white shadow-sm'
                     : 'text-gray-400 hover:text-white'
@@ -274,7 +257,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
 
-        {/* ROW 2 (Mobile Only): 4 Main View Mode Tabs */}
+        {/* Mobile 4 View Mode Tabs */}
         <div className="grid grid-cols-4 md:hidden py-1.5 gap-1 border-t border-gray-800/80">
           <button
             onClick={() => setActiveTab('overview')}
@@ -322,14 +305,15 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </div>
 
-        {/* ROW 3: Filter & Search Bar (Always visible on Desktop md+, collapsible on Mobile to save vertical viewport!) */}
+        {/* ROW 2 & 3: Category Filter, Quick Search (Moved Here!), and Sector Theme Bar */}
         <div
           className={`${
             mobileFilterExpanded ? 'block' : 'hidden md:block'
           } border-t border-gray-800/60 py-2 space-y-1.5`}
         >
-          {/* Category Pills + Favorites + Inline Search */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+          {/* ROW 2: Category Pills (Left) | Inline Filter Input + Quick Search Ctrl+K (Right - Flush Aligned!) */}
+          <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-2">
+            {/* Left: Categories + Favorites + Reset */}
             <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none pb-0.5 md:pb-0">
               {categories.map((cat) => (
                 <button
@@ -381,9 +365,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </div>
 
-            {/* Inline Filter Input */}
+            {/* Right: Inline Filter Input + Quick Search (Ctrl+K) Button (Aligned flush right!) */}
             <div className="flex items-center gap-2 shrink-0">
-              <div className="relative w-full md:w-56 lg:w-64">
+              <div className="relative flex-1 md:w-52 lg:w-64">
                 <Search className="w-3.5 h-3.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
@@ -401,14 +385,24 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </button>
                 )}
               </div>
-              <div className="md:hidden">
-                <DataFreshnessBadge metadata={metadata} />
-              </div>
+
+              {/* Command Palette Trigger (Moved to lower row right side!) */}
+              <button
+                onClick={onOpenCommandPalette}
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-600/15 hover:bg-blue-600/25 text-blue-300 hover:text-white border border-blue-500/40 text-xs transition-all shadow-sm whitespace-nowrap shrink-0"
+                title="80개 기업 빠른 검색 모달 열기 (단축키: Ctrl + K)"
+              >
+                <Command className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                <span className="font-semibold">빠른 검색</span>
+                <kbd className="hidden sm:inline-block px-1.5 py-0.2 text-[10px] font-mono bg-gray-900/90 text-blue-300 rounded border border-blue-500/30">
+                  Ctrl+K
+                </kbd>
+              </button>
             </div>
           </div>
 
-          {/* Sector Theme Rail */}
-          <div className="flex items-center justify-between gap-2 pt-1 border-t border-gray-800/40 text-xs">
+          {/* ROW 3: Sector Theme Rail (Left) | Active Count (Right - Flush Aligned!) */}
+          <div className="w-full flex items-center justify-between gap-2 pt-1.5 border-t border-gray-800/40 text-xs">
             <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none">
               <span className="text-gray-500 text-[11px] font-semibold whitespace-nowrap shrink-0 mr-0.5">
                 테마:
@@ -428,8 +422,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               ))}
             </div>
 
-            <div className="hidden lg:flex items-center gap-1.5 text-[11px] text-gray-400 whitespace-nowrap shrink-0 font-mono">
-              <span>표시:</span>
+            <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-gray-400 whitespace-nowrap shrink-0 font-mono">
+              <span>표시 기업:</span>
               <span className="font-bold text-blue-400">{filteredCount}</span>
               <span className="text-gray-600">/ 80개사</span>
             </div>
